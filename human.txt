@@ -1,0 +1,53 @@
+/* ===================================================== */
+/* HUMANS.TXT */
+/* The humans responsible for this site */
+/* ===================================================== */
+
+
+/* TEAM */
+
+Name: Nicholas Van-Orton
+Title: Independent Researcher
+Location: Paris, France
+Email: 0730nicholas@gmail.com
+Email: nvo@nvo987.us
+
+ORCID: https://orcid.org/0009-0007-4628-1871
+ISNI: https://isni.org/isni/0000000529640885
+OpenAlex: https://openalex.org/A5120949417
+Wikidata: https://www.wikidata.org/wiki/Q137675227
+
+Website: https://nvo987.us
+Identity: https://identity.nvo987.us
+
+GitHub: https://github.com/nvo987-art-history
+Twitter/X: https://x.com/nvo987
+Substack: https://nvo987.substack.com/
+RSS: https://nvo987.substack.com/feed
+
+
+/* ABOUT */
+
+Nicholas Van-Orton is an independent researcher and artist working
+at the intersection of visual theory, color studies, and algorithmic culture.
+The site functions as a scholarly identity hub and research infrastructure
+aggregating persistent identifiers, academic profiles, and open knowledge systems.
+
+
+/* SITE */
+
+Standards: HTML5, Schema.org JSON-LD, OpenGraph, RSS, rel=me, Canonical, Sitemap
+Stack: Hand-coded static site
+Hosting: GitHub Pages
+Domain: identity.nvo987.us
+License: CC-BY 4.0 unless otherwise noted
+
+
+/* THANKS */
+
+Wikimedia Commons
+ORCID
+OpenAlex
+Crossref
+Wikidata
+Open Web community 
