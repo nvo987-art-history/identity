@@ -1,0 +1,5 @@
+Contact: mailto:nvo987@gmail.com
+Preferred-Languages: en, hu
+Canonical: https://identity.nvo987.us/.well-known/security.txt
+Policy: https://identity.nvo987.us/#contact
+Expires: 2027-12-31T23:59:59Z
