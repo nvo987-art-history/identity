@@ -1,0 +1,21 @@
+{
+  "subject": "https://identity.nvo987.us/",
+  "links": [
+    {
+      "rel": "http://schema.org/sameAs",
+      "href": "https://orcid.org/0009-0007-4628-1871"
+    },
+    {
+      "rel": "http://schema.org/sameAs",
+      "href": "https://www.wikidata.org/wiki/Q137675227"
+    },
+    {
+      "rel": "me",
+      "href": "https://github.com/nvo987-art-history"
+    },
+    {
+      "rel": "me",
+      "href": "https://x.com/nvo987"
+    }
+  ]
+}
