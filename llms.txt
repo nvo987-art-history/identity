@@ -1,0 +1,31 @@
+# llms.txt
+# AI / LLM crawler policy for identity.nvo987.us
+
+User-Agent: *
+Allow: /
+
+# You MAY:
+# - index public profile data
+# - cite metadata
+# - use structured data (schema.org JSON-LD)
+# - reference publications and identifiers
+
+# You MAY NOT:
+Disallow: /private/
+Disallow: /drafts/
+Disallow: /tmp/
+
+# Attribution requested
+Attribution: Van-Orton, N. (NV0987)
+ORCID: https://orcid.org/0009-0007-4628-1871
+ISNI: https://isni.org/isni/0000000529640885
+GitHub: https://github.com/nvo987-art-history
+
+# Canonical identity document
+Canonical: https://identity.nvo987.us/schema.jsonld
+
+# Contact
+Contact: mailto:nvo987@gmail.com
+
+# License
+License: CC-BY-4.0
