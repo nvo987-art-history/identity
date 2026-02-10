@@ -1,0 +1,66 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "Person",
+      "@id": "https://identity.nvo987.us/#person",
+
+      "name": "Nicholas Van-Orton",
+      "alternateName": "NV0987",
+      "jobTitle": "Independent Researcher",
+      "description": "Independent researcher and artist working at the intersection of visual theory, color studies, and algorithmic culture.",
+
+      "url": "https://identity.nvo987.us",
+
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ORCID",
+          "value": "0009-0007-4628-1871",
+          "url": "https://orcid.org/0009-0007-4628-1871"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ISNI",
+          "value": "0000000529640885",
+          "url": "https://isni.org/isni/0000000529640885"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "OpenAlex",
+          "value": "A5120949417",
+          "url": "https://openalex.org/A5120949417"
+        }
+      ],
+
+      "sameAs": [
+        "https://orcid.org/0009-0007-4628-1871",
+        "https://github.com/nvo987-art-history",
+        "https://w3id.org/nvo987",
+        "https://openalex.org/A5120949417",
+        "https://scholar.google.com/citations?user=iRM-GNQAAAAJ"
+      ],
+
+      "knowsAbout": [
+        "visual theory",
+        "color theory",
+        "color studies",
+        "aesthetics",
+        "algorithmic culture",
+        "digital humanities",
+        "generative systems"
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://identity.nvo987.us/#website",
+      "url": "https://identity.nvo987.us",
+      "name": "NVO987 | Research Identity",
+      "publisher": {
+        "@id": "https://identity.nvo987.us/#person"
+      }
+    }
+  ]
+}
