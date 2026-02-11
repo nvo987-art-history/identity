@@ -7,16 +7,21 @@
 
 /* ===== BODY ===== */
 body {
-  font-family: system-ui, Arial, sans-serif;
-  background: #5b3522; /* barna */
-  color: #ffffff;
-  line-height: 1.6;
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  background-color: #6b3f2a; /* barna */
+  color: #fff;
 }
 
-/* ===== HERO BANNER (CSAK KÉP, NINCS OVERLAY) ===== */
+/* ===== HERO ===== */
 .hero {
-  height: 380px;
-  background: url("banner.jpg") center/cover no-repeat;
+  width: 100%;
+  height: 45vh;              /* <<< mobilbarát, nem fix px */
+  min-height: 280px;
+  max-height: 520px;
+
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-position: center;
 
   display: flex;
   align-items: center;
@@ -25,35 +30,41 @@ body {
   text-align: center;
 }
 
-/* csak a szöveg */
+/* csak szöveg doboz */
 .hero-overlay {
-  background: none;   /* <<< EZ A LÉNYEG */
+  background: none;
+  padding: 20px;
 }
 
+/* cím */
 .hero h1 {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
+  margin-bottom: 8px;
 }
 
+/* alcím */
 .hero p {
-  font-size: 20px;
-  opacity: 0.9;
+  font-size: 18px;
+  opacity: 0.95;
 }
 
-/* ===== TARTALOM ===== */
+/* ===== MAIN (külön blokk a banner alatt) ===== */
 main {
+  background-color: #6b3f2a; /* biztos külön háttér */
+  padding: 60px 24px;
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 24px;
 }
 
+/* ===== SZEKCIÓK ===== */
 section {
   margin-bottom: 60px;
 }
 
 h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 26px;
+  margin-bottom: 18px;
 }
 
 /* ===== LISTA ===== */
@@ -65,10 +76,11 @@ li {
   margin: 10px 0;
 }
 
-/* ===== LINK SZÍN (nem sárga!) ===== */
+/* ===== LINK (nem sárga, elegáns bézs) ===== */
 a {
-  color: #e7c7a7;   /* világos bézs */
+  color: #e6c4a8;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 a:hover {
