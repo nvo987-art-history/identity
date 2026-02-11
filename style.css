@@ -1,102 +1,120 @@
-/* ===== RESET ===== */
+/* =========================
+   RESET
+========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
+
+/* =========================
+   ALAP OLDAL
+========================= */
+
 body {
-  font-family: system-ui, -apple-system, Arial, sans-serif;
-  background-color: #6b3f2a; /* barna */
-  color: #fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  background: #6b3f2a;   /* barna háttér */
+  color: #ffffff;
+
+  line-height: 1.6;
 }
 
-/* ===== HERO ===== */
-.hero {
-  width: 100%;
-  height: 45vh;              /* <<< mobilbarát, nem fix px */
-  min-height: 280px;
-  max-height: 520px;
 
-  background-image: url("banner.jpg");
+/* =========================
+   HERO / BANNER
+========================= */
+
+.hero {
+  position: relative;
+
+  height: 60vh;          /* nagy banner */
+  min-height: 420px;     /* mobilon se legyen kicsi */
+
+  background-image: url("banner.jpg"); /* IDE a képed neve */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
+
+  overflow: hidden;      /* megakadályozza a barna ráfolyást */
 }
 
-/* csak szöveg doboz */
+
+/* sötét overlay az olvashatóság miatt */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+
+/* szöveg */
 .hero-overlay {
-  background: none;
+  position: relative;
+  z-index: 2;
   padding: 20px;
+  color: white;
 }
 
-/* cím */
 .hero h1 {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-/* alcím */
 .hero p {
   font-size: 18px;
   opacity: 0.95;
 }
 
-.hero {
-  position: relative;
-}
 
-/* sötét overlay a kép fölött */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45); /* sötétítés */
-}
+/* =========================
+   TARTALOM RÉSZ
+========================= */
 
-/* szöveg legyen felül */
-.hero-overlay {
-  position: relative;
-  z-index: 2;
-}
-
-/* ===== MAIN (külön blokk a banner alatt) ===== */
 main {
-  background-color: #6b3f2a; /* biztos külön háttér */
-  padding: 60px 24px;
   max-width: 900px;
   margin: 0 auto;
+  padding: 60px 20px;
 }
 
-/* ===== SZEKCIÓK ===== */
 section {
   margin-bottom: 60px;
 }
 
 h2 {
-  font-size: 26px;
-  margin-bottom: 18px;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
-/* ===== LISTA ===== */
+
+/* =========================
+   LISTÁK
+========================= */
+
 ul {
   list-style: none;
 }
 
 li {
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
-/* ===== LINK (nem sárga, elegáns bézs) ===== */
+
+/* =========================
+   LINKEK (nem sárga!)
+========================= */
+
 a {
-  color: #e6c4a8;
+  color: #f1e3d3;          /* világos bézs */
   text-decoration: none;
   transition: 0.2s;
 }
@@ -104,4 +122,21 @@ a {
 a:hover {
   color: #ffffff;
   text-decoration: underline;
+}
+
+
+/* =========================
+   MOBIL
+========================= */
+
+@media (max-width: 600px) {
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
 }
