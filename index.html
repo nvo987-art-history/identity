@@ -177,6 +177,14 @@
 <footer>
 <p>© 2026 Nicholas Van-Orton — NVO987</p>
 </footer>
-
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => console.log('SW registered'))
+      .catch(err => console.error('SW failed:', err));
+  });
+}
+</script>
 </body>
   </html>
