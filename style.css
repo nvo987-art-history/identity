@@ -49,6 +49,24 @@ body {
   opacity: 0.95;
 }
 
+.hero {
+  position: relative;
+}
+
+/* sötét overlay a kép fölött */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* sötétítés */
+}
+
+/* szöveg legyen felül */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+}
+
 /* ===== MAIN (külön blokk a banner alatt) ===== */
 main {
   background-color: #6b3f2a; /* biztos külön háttér */
