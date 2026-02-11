@@ -1,0 +1,20 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "NV0987 — Art History & Visual Research",
+  "home_page_url": "https://identity.nvo987.us/",
+  "feed_url": "https://identity.nvo987.us/feed.json",
+  "description": "Notes, research, and projects by Nicholas Van-Orton (NV0987)",
+  "author": {
+    "name": "Nicholas Van-Orton",
+    "url": "https://identity.nvo987.us/"
+  },
+  "items": [
+    {
+      "id": "launch-001",
+      "url": "https://identity.nvo987.us/",
+      "title": "Identity node launched",
+      "content_text": "Personal decentralized identity hub with IndieAuth, Mastodon, Bluesky and Webmention.",
+      "date_published": "2026-02-11T00:00:00Z"
+    }
+  ]
+}
