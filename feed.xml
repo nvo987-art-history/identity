@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>NV0987 Research Updates</title>
+  <subtitle>Nicholas Van-Orton – Research Identity Hub</subtitle>
+
+  <id>https://identity.nvo987.us/</id>
+  <link href="https://identity.nvo987.us/feed.xml" rel="self"/>
+  <link href="https://identity.nvo987.us/"/>
+
+  <updated>2026-02-11T00:00:00Z</updated>
+
+  <author>
+    <name>Nicholas Van-Orton</name>
+    <uri>https://identity.nvo987.us/</uri>
+  </author>
+
+  <rights>© 2026 Nicholas Van-Orton</rights>
+
+  <entry>
+    <title>Research Identity Hub launched</title>
+    <id>https://identity.nvo987.us/#launch</id>
+    <updated>2026-02-11T00:00:00Z</updated>
+    <link href="https://identity.nvo987.us/"/>
+    <summary>Personal research identity, scholarly profiles, persistent identifiers, and linked open data.</summary>
+  </entry>
+
+</feed> 
