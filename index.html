@@ -116,38 +116,103 @@
 
 <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@graph":[
-  {
-   "@type":"Person",
-   "@id":"https://identity.nvo987.us/#person",
-   "name":"Nicholas Van-Orton",
-   "alternateName":"NVO987",
-   "jobTitle":"Independent Researcher",
-   "url":"https://identity.nvo987.us/",
-   "identifier":[
-     "https://orcid.org/0009-0007-4628-1871",
-     "https://isni.org/isni/0000000529640885",
-     "https://openalex.org/A5120949417",
-     "https://w3id.org/nvo987"
-   ],
-   "sameAs":[
-     "https://github.com/nvo987-art-history",
-     "https://www.researchgate.net/profile/Nicholas-Van-Orton",
-     "https://nvo987.substack.com/",
-     "https://hcommons.org/members/nicholasvanorton/"
-   ]
-  },
-  {
-   "@type":"WebSite",
-   "url":"https://identity.nvo987.us/",
-   "name":"NVO987 Research Identity"
-  },
-  {
-   "@type":"ProfilePage",
-   "mainEntity":{"@id":"https://identity.nvo987.us/#person"}
-  }
- ]
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "Person",
+      "@id": "https://identity.nvo987.us/#person",
+
+      "name": "Nicholas Van-Orton",
+      "alternateName": "NVO987",
+      "jobTitle": "Independent Researcher",
+
+      "url": "https://identity.nvo987.us/",
+      "image": "https://identity.nvo987.us/og-image.jpg",
+
+      "description": "Independent researcher and artist working at the intersection of visual theory, color studies and algorithmic culture.",
+
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ORCID",
+          "value": "0009-0007-4628-1871",
+          "url": "https://orcid.org/0009-0007-4628-1871"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ISNI",
+          "value": "0000000529640885",
+          "url": "https://isni.org/isni/0000000529640885"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "OpenAlex",
+          "value": "A5120949417",
+          "url": "https://openalex.org/A5120949417"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "W3ID",
+          "value": "nvo987",
+          "url": "https://w3id.org/nvo987"
+        }
+      ],
+
+      "sameAs": [
+        "https://orcid.org/0009-0007-4628-1871",
+        "https://github.com/nvo987-art-history",
+        "https://nvo987.substack.com/",
+        "https://www.linkedin.com/in/nvo987/",
+        "https://x.com/nvo987",
+        "https://scholar.google.com/citations?user=iRM-GNQAAAAJ",
+        "https://www.researchgate.net/profile/Nicholas-Van-Orton",
+        "https://hcommons.org/members/nicholasvanorton/",
+        "https://osf.io/t8bek/",
+        "https://cv.hal.science/van-orton-nicholas",
+        "https://www.wikidata.org/wiki/Q137675227"
+      ],
+
+      "knowsAbout": [
+        "visual theory",
+        "color systems",
+        "algorithmic aesthetics",
+        "art history",
+        "digital humanities",
+        "computational art",
+        "research infrastructures"
+      ],
+
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Independent Research"
+      }
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://identity.nvo987.us/#website",
+      "url": "https://identity.nvo987.us/",
+      "name": "NVO987 Research Identity",
+      "publisher": {
+        "@id": "https://identity.nvo987.us/#person"
+      }
+    },
+
+    {
+      "@type": "ProfilePage",
+      "@id": "https://identity.nvo987.us/#profile",
+      "url": "https://identity.nvo987.us/",
+      "name": "Nicholas Van-Orton — Research Identity",
+      "isPartOf": {
+        "@id": "https://identity.nvo987.us/#website"
+      },
+      "mainEntity": {
+        "@id": "https://identity.nvo987.us/#person"
+      }
+    }
+
+  ]
 }
 </script>
 
