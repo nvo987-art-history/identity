@@ -1,0 +1,155 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY / ALAP
+========================= */
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.6;
+
+  background-color: #4b2e1f;   /* meleg barna */
+  color: #ffffff;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================
+   HERO / BANNER
+========================= */
+
+.hero {
+  height: 420px;
+
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* sötét overlay hogy olvasható legyen a szöveg */
+.hero-overlay {
+  background: rgba(0,0,0,0.55);
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+
+/* cím */
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+
+/* alcím */
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+
+/* szekciók */
+
+section {
+  margin-bottom: 60px;
+}
+
+
+/* címek */
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+
+/* listák */
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+
+/* =========================
+   LINKEK (nem sárga)
+========================= */
+
+a {
+  color: #e6d3c1;     /* világos bézs – elegáns */
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+
+/* =========================
+   MOBIL OPTIMALIZÁLÁS
+========================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    height: 300px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  main {
+    padding: 40px 18px;
+  }
+}
