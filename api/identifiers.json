@@ -6,6 +6,7 @@
   "resource": "identifiers",
 
   "self": "https://identity.nvo987.us/api/identifiers.json",
+  "url": "https://identity.nvo987.us/api/identifiers.json",
 
   "owner": {
     "id": "NVO987",
