@@ -1,0 +1,39 @@
+{
+  "api": "IdentityAPI",
+  "version": "1.0",
+  "resource": "identifiers",
+
+  "self": "https://identity.nvo987.us/api/identifiers.json",
+
+  "owner": {
+    "id": "NVO987",
+    "name": "Nicholas Van-Orton"
+  },
+
+  "persistent": {
+    "orcid": {
+      "id": "0009-0007-4628-1871",
+      "url": "https://orcid.org/0009-0007-4628-1871"
+    },
+    "isni": {
+      "id": "0000000529640885",
+      "url": "https://isni.org/isni/0000000529640885"
+    },
+    "wikidata": {
+      "id": "Q137675227",
+      "url": "https://www.wikidata.org/wiki/Q137675227"
+    }
+  },
+
+  "scholarly": {
+    "webOfScience": "PDY-1682-2025",
+    "googleScholar": "iRM-GNQAAAAJ"
+  },
+
+  "local": {
+    "alias": "NVO987",
+    "domain": "identity.nvo987.us"
+  },
+
+  "updated": "2026-02-12"
+}
