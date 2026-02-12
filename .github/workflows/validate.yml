@@ -1,4 +1,4 @@
-name: Validate site (STRICT)
+name: Brutal Site Validate PRO
 
 on:
   push:
@@ -20,73 +20,75 @@ jobs:
           sudo apt-get install -y jq libxml2-utils curl poppler-utils
 
       # -------------------------------------------------
-      # JSON
+      # JSON validate
       # -------------------------------------------------
       - name: Validate JSON
         run: |
           find . -name "*.json" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "JSON: $f"
+            echo "JSON $f"
             jq empty "$f" || exit 1
           done
 
       # -------------------------------------------------
-      # XML
+      # XML validate
       # -------------------------------------------------
       - name: Validate XML
         run: |
           find . -name "*.xml" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "XML: $f"
+            echo "XML $f"
             xmllint --noout "$f" || exit 1
           done
 
       # -------------------------------------------------
-      # HTML
+      # HTML validate
       # -------------------------------------------------
       - name: Validate HTML
         run: |
           find . -name "*.html" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "HTML: $f"
+            echo "HTML $f"
             xmllint --html --noout "$f" || true
           done
 
       # -------------------------------------------------
-      # PDFs readable
+      # PDF readable
       # -------------------------------------------------
       - name: Validate PDFs
         run: |
           find . -name "*.pdf" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "PDF: $f"
+            echo "PDF $f"
             pdftotext "$f" /dev/null || exit 1
           done
 
       # -------------------------------------------------
-      # Required files
+      # Required files (strict)
       # -------------------------------------------------
-      - name: Check required files
+      - name: Required files
         run: |
-          test -f robots.txt || (echo "robots.txt missing" && exit 1)
-          test -f sitemap.xml || (echo "sitemap.xml missing" && exit 1)
+          test -f robots.txt || exit 1
+          test -f llms.txt || exit 1
+          test -f sitemap.xml || exit 1
 
       # -------------------------------------------------
       # schema.org required
       # -------------------------------------------------
       - name: Require schema.org
         run: |
-          grep -r "schema.org" . >/dev/null || (echo "schema.org missing" && exit 1)
+          grep -r "schema.org" . >/dev/null || exit 1
 
       # -------------------------------------------------
-      # robots / llms format check
+      # robots/llms format
       # -------------------------------------------------
       - name: Validate robots/llms format
         run: |
-          grep -E "User-Agent:" robots.txt llms.txt >/dev/null || echo "Warning: missing User-Agent"
+          grep -E "User-Agent:" robots.txt llms.txt >/dev/null || exit 1
 
       # -------------------------------------------------
-      # Block REAL http links only
+      # BLOCK REAL HTTP links ONLY (SMART)
       # -------------------------------------------------
-      - name: Block real HTTP links
+      - name: Block insecure HTTP links
         run: |
-          bad=$(grep -rhoE 'http://[A-Za-z0-9.-]+\.[A-Za-z]{2,}' . || true)
+          bad=$(grep -rhoE '(href|src)="http://[^"]+"' . \
+            --include=\*.html --include=\*.xml --include=\*.txt || true)
 
           if [ ! -z "$bad" ]; then
             echo "INSECURE HTTP links found:"
@@ -95,7 +97,7 @@ jobs:
           fi
 
       # -------------------------------------------------
-      # Check external links (safe, non-blocking)
+      # Broken links test
       # -------------------------------------------------
       - name: Check broken links
         run: |
@@ -110,7 +112,7 @@ jobs:
           exit 0
 
       # -------------------------------------------------
-      # Test sitemap URLs
+      # Sitemap URLs test
       # -------------------------------------------------
       - name: Test sitemap URLs
         run: |
@@ -121,22 +123,29 @@ jobs:
               curl -Is --max-time 10 "$u" >/dev/null
             done
           fi
-          exit 0
 
       # -------------------------------------------------
-      # SHA256 checksums
+      # File size limit (1MB strict)
+      # -------------------------------------------------
+      - name: Check file sizes
+        run: |
+          find . -type f -size +1M ! -path "./.git/*" -print && exit 1 || true
+
+      # -------------------------------------------------
+      # SHA256 generate
       # -------------------------------------------------
       - name: Generate SHA256 checksums
         run: |
-          find . -type f -not -path "./.git/*" -exec sha256sum {} \; > checksums.sha256
+          find . -type f ! -path "./.git/*" -exec sha256sum {} \; > checksums.sha256
 
       # -------------------------------------------------
-      # AI dataset
+      # Build AI dataset
       # -------------------------------------------------
       - name: Generate AI dataset
         run: |
           mkdir -p ai_dataset
-          find . \( -name "*.json" -o -name "*.xml" -o -name "*.txt" -o -name "*.html" \) -exec cp {} ai_dataset/ \;
+          find . \( -name "*.json" -o -name "*.xml" -o -name "*.txt" -o -name "*.html" \) \
+            -exec cp {} ai_dataset/ \; 2>/dev/null || true
           tar -czf ai_dataset.tar.gz ai_dataset
 
       # -------------------------------------------------
@@ -144,7 +153,7 @@ jobs:
       # -------------------------------------------------
       - uses: actions/upload-artifact@v4
         with:
-          name: ai-build
+          name: build-artifacts
           path: |
             checksums.sha256
             ai_dataset.tar.gz
