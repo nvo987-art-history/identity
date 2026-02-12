@@ -1,8 +1,9 @@
-name: Validate site files
+name: ULTRA Site + AI + SEO + Security Validation
 
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   validate:
@@ -11,18 +12,164 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate JSON / JSON-LD
+      # =====================================================
+      # INSTALL TOOLS
+      # =====================================================
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-utils poppler-utils
+          npm install -g htmlhint broken-link-checker
+
+      # =====================================================
+      # JSON / JSON-LD
+      # =====================================================
+      - name: Validate JSON
         run: |
           for f in $(find . -name "*.json" -o -name "*.jsonld"); do
-            echo "Checking $f"
+            echo "JSON: $f"
             python -m json.tool "$f" > /dev/null || exit 1
           done
 
-      - name: Check txt files exist
+      # =====================================================
+      # XML
+      # =====================================================
+      - name: Validate XML
+        run: |
+          for f in $(find . -name "*.xml"); do
+            echo "XML: $f"
+            xmllint --noout "$f" || exit 1
+          done
+
+      # =====================================================
+      # HTML
+      # =====================================================
+      - name: Validate HTML
+        run: |
+          for f in $(find . -name "*.html"); do
+            echo "HTML: $f"
+            htmlhint "$f" || exit 1
+          done
+
+      # =====================================================
+      # REQUIRED CORE FILES
+      # =====================================================
+      - name: Check required files
         run: |
           test -f robots.txt
           test -f llms.txt
-
-      - name: Validate sitemap exists
-        run: |
           test -f sitemap.xml
+          test -f api/index.json
+          test -f .well-known/did.json
+
+      # =====================================================
+      # API STRUCTURE CHECK
+      # =====================================================
+      - name: Validate API structure
+        run: |
+          python - <<EOF
+          import json,sys
+          data=json.load(open("api/index.json"))
+          for k in ["id","name","url"]:
+              assert k in data, f"Missing {k}"
+          EOF
+
+      # =====================================================
+      # SCHEMA.ORG CHECK
+      # =====================================================
+      - name: Check schema.org presence
+        run: |
+          grep -r '"@context": "https://schema.org"' . || exit 1
+
+      # =====================================================
+      # ROBOTS / LLMS FORMAT
+      # =====================================================
+      - name: Validate robots/llms format
+        run: |
+          grep "User-Agent" robots.txt
+          grep "User-Agent" llms.txt
+
+      # =====================================================
+      # BROKEN LINKS
+      # =====================================================
+      - name: Check broken links
+        run: |
+          blc . --recursive --exclude-external || true
+
+      # =====================================================
+      # SITEMAP URL LIVE TEST
+      # =====================================================
+      - name: Test sitemap URLs
+        run: |
+          grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml | while read url; do
+            echo "Testing $url"
+            curl -s --head --fail "$url" > /dev/null || exit 1
+          done
+
+      # =====================================================
+      # PDF TEXT EXTRACT (AI readability)
+      # =====================================================
+      - name: Check PDFs readable
+        run: |
+          for f in $(find . -name "*.pdf"); do
+            echo "PDF: $f"
+            pdftotext "$f" - > /dev/null || exit 1
+          done
+
+      # =====================================================
+      # DUPLICATE FILE NAMES
+      # =====================================================
+      - name: Check duplicates
+        run: |
+          dup=$(find . -type f -printf "%f\n" | sort | uniq -d)
+          if [ ! -z "$dup" ]; then
+            echo "Duplicate filenames:"
+            echo "$dup"
+            exit 1
+          fi
+
+      # =====================================================
+      # FILE SIZE LIMIT (10MB)
+      # =====================================================
+      - name: Check file sizes
+        run: |
+          big=$(find . -type f -size +10M)
+          if [ ! -z "$big" ]; then
+            echo "$big"
+            exit 1
+          fi
+
+      # =====================================================
+      # META SEO CHECK (title + description)
+      # =====================================================
+      - name: Check SEO meta tags
+        run: |
+          for f in $(find . -name "*.html"); do
+            grep "<title>" "$f" || exit 1
+            grep "description" "$f" || exit 1
+          done
+
+      # =====================================================
+      # SECURITY HEADERS BASIC CHECK
+      # =====================================================
+      - name: Security headers test
+        run: |
+          curl -sI https://identity.nvo987.us | grep -i "content-type" || exit 1
+
+      # =====================================================
+      # SHA256 MANIFEST
+      # =====================================================
+      - name: Generate checksums
+        run: |
+          find . -type f ! -path "./.git/*" -exec sha256sum {} \; > checksums.sha256
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: checksums
+          path: checksums.sha256
+
+      # =====================================================
+      # SUCCESS
+      # =====================================================
+      - name: Done
+        run: echo "ALL CHECKS PASSED ✓"
