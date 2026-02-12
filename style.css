@@ -121,3 +121,14 @@ a:hover {
   }
 
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
