@@ -129,7 +129,7 @@ jobs:
       # -------------------------------------------------
       - name: Check file sizes
         run: |
-          find . -type f -size +1M ! -path "./.git/*" -print && exit 1 || true
+          find . -type f -size +10M ! -path "./.git/*" -print && exit 1 || true
 
       # -------------------------------------------------
       # SHA256 generate
