@@ -1,0 +1,28 @@
+name: Validate site files
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON / JSON-LD
+        run: |
+          for f in $(find . -name "*.json" -o -name "*.jsonld"); do
+            echo "Checking $f"
+            python -m json.tool "$f" > /dev/null || exit 1
+          done
+
+      - name: Check txt files exist
+        run: |
+          test -f robots.txt
+          test -f llms.txt
+
+      - name: Validate sitemap exists
+        run: |
+          test -f sitemap.xml
