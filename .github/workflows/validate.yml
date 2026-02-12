@@ -1,4 +1,4 @@
-name: Validate site
+name: ULTRA BRUTAL Site Audit (Enterprise AI + SEO + Security)
 
 on:
   push:
@@ -17,122 +17,152 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq libxml2-utils curl poppler-utils
+          sudo apt-get install -y jq libxml2-utils curl poppler-utils nodejs npm
+          npm install -g lighthouse
 
       # -----------------------
-      # Validate JSON / API
+      # JSON strict
       # -----------------------
-      - name: Validate JSON files
-        run: |
-          find . -name "*.json" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "Checking $f"
-            jq empty "$f" || exit 1
-          done
+      - name: Validate JSON
+        run: find . -name "*.json" -type f -exec jq empty {} \;
 
       # -----------------------
-      # Validate XML
+      # XML strict
       # -----------------------
-      - name: Validate XML files
-        run: |
-          find . -name "*.xml" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "Checking $f"
-            xmllint --noout "$f" || exit 1
-          done
+      - name: Validate XML
+        run: find . -name "*.xml" -type f -exec xmllint --noout {} \;
 
       # -----------------------
-      # Validate HTML
+      # HTML strict
       # -----------------------
-      - name: Validate HTML files
-        run: |
-          find . -name "*.html" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "Checking $f"
-            xmllint --html --noout "$f" || true
-          done
+      - name: Validate HTML
+        run: find . -name "*.html" -type f -exec xmllint --html --noout {} \;
 
       # -----------------------
-      # Required files
+      # Required files HARD
       # -----------------------
-      - name: Check required files
+      - name: Required files
         run: |
-          test -f robots.txt || echo "robots.txt missing"
-          test -f llms.txt || echo "llms.txt missing"
-          test -f sitemap.xml || echo "sitemap.xml missing"
+          test -f robots.txt
+          test -f llms.txt
+          test -f sitemap.xml
 
       # -----------------------
-      # Schema.org presence
+      # Require schema.org
       # -----------------------
-      - name: Check schema.org presence
-        run: |
-          grep -r "schema.org" . || echo "No schema.org found (warning)"
+      - name: Require schema.org
+        run: grep -r "schema.org" . >/dev/null
 
       # -----------------------
-      # Validate robots / llms
+      # SEO tags required
       # -----------------------
-      - name: Validate robots/llms format
+      - name: SEO tags
         run: |
-          grep -E "User-Agent:" robots.txt llms.txt || echo "No User-Agent found (warning)"
+          grep -r "<title>" .
+          grep -r "description" .
+          grep -r "canonical" .
 
       # -----------------------
-      # Check broken links (SAFE)
+      # HTTPS only
       # -----------------------
-      - name: Check broken links
+      - name: Block HTTP links
         run: |
-          set +e
+          ! grep -r "http://" . || exit 1
+
+      # -----------------------
+      # Empty files FAIL
+      # -----------------------
+      - name: No empty files
+        run: |
+          test -z "$(find . -type f -empty -not -path './.git/*')"
+
+      # -----------------------
+      # Duplicate filenames FAIL
+      # -----------------------
+      - name: No duplicates
+        run: |
+          dup=$(find . -type f -exec basename {} \; | sort | uniq -d)
+          test -z "$dup"
+
+      # -----------------------
+      # Large files FAIL
+      # -----------------------
+      - name: Size limit
+        run: |
+          big=$(find . -type f -size +10M)
+          test -z "$big"
+
+      # -----------------------
+      # Broken links HARD
+      # -----------------------
+      - name: Check all links
+        run: |
           urls=$(grep -rhoE 'https?://[A-Za-z0-9._~:/?#@!$&()*+,;=%-]+' . | sort -u)
-
           for u in $urls; do
-            echo "Testing $u"
-            curl -Is --max-time 10 "$u" >/dev/null
-          done
-
-          exit 0
-
-      # -----------------------
-      # Test sitemap URLs
-      # -----------------------
-      - name: Test sitemap URLs
-        run: |
-          if [ -f sitemap.xml ]; then
-            urls=$(grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml)
-            for u in $urls; do
-              echo "Testing $u"
-              curl -Is --max-time 10 "$u" >/dev/null
-            done
-          fi
-          exit 0
-
-      # -----------------------
-      # Check PDFs readable
-      # -----------------------
-      - name: Check PDFs readable
-        run: |
-          find . -name "*.pdf" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "Checking $f"
-            pdftotext "$f" /dev/null || true
+            code=$(curl -Is -o /dev/null -w "%{http_code}" --max-time 10 "$u")
+            echo "$u -> $code"
+            [ "$code" = "200" ] || exit 1
           done
 
       # -----------------------
-      # Generate SHA256
+      # Sitemap links
       # -----------------------
-      - name: Generate SHA256 checksums
+      - name: Check sitemap
+        run: |
+          urls=$(grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml)
+          for u in $urls; do
+            code=$(curl -Is -o /dev/null -w "%{http_code}" "$u")
+            [ "$code" = "200" ] || exit 1
+          done
+
+      # -----------------------
+      # Security headers
+      # -----------------------
+      - name: Security headers
+        run: |
+          url=$(grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml | head -n1)
+          headers=$(curl -Is "$url")
+          echo "$headers" | grep -i "strict-transport-security"
+          echo "$headers" | grep -i "content-security-policy"
+
+      # -----------------------
+      # PDF readable
+      # -----------------------
+      - name: PDFs readable
+        run: |
+          find . -name "*.pdf" -type f -exec pdftotext {} /dev/null \;
+
+      # -----------------------
+      # SHA256
+      # -----------------------
+      - name: Checksums
         run: |
           find . -type f -not -path "./.git/*" -exec sha256sum {} \; > checksums.sha256
 
       # -----------------------
-      # Generate AI dataset
+      # AI dataset
       # -----------------------
-      - name: Generate AI dataset
+      - name: AI dataset
         run: |
-          mkdir -p ai_dataset
-          cp -r *.json *.xml *.txt *.html ai_dataset/ 2>/dev/null || true
+          mkdir ai_dataset
+          find . -type f \( -name "*.json" -o -name "*.xml" -o -name "*.txt" -o -name "*.html" \) -exec cp {} ai_dataset/ \;
           tar -czf ai_dataset.tar.gz ai_dataset
+
+      # -----------------------
+      # Lighthouse SEO audit
+      # -----------------------
+      - name: Lighthouse audit
+        run: |
+          url=$(grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml | head -n1)
+          lighthouse "$url" --chrome-flags="--headless" --only-categories=seo,performance,accessibility --output=json --output-path=report.json
 
       # -----------------------
       # Upload artifacts
       # -----------------------
       - uses: actions/upload-artifact@v4
         with:
-          name: ai-build
+          name: ultra-report
           path: |
             checksums.sha256
             ai_dataset.tar.gz
+            report.json 
