@@ -1,5 +1,6 @@
 {
   "id": "identifiers",
+  "name": "Identifiers",
   "api": "IdentityAPI",
   "version": "1.0",
   "resource": "identifiers",
