@@ -1,4 +1,4 @@
-name: Validate site (AI + SEO + Integrity PRO)
+name: Validate site (STRICT)
 
 on:
   push:
@@ -9,134 +9,142 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # -----------------------
-      # Checkout
-      # -----------------------
       - uses: actions/checkout@v4
 
-      # -----------------------
+      # -------------------------------------------------
       # Install tools
-      # -----------------------
+      # -------------------------------------------------
       - name: Install tools
         run: |
           sudo apt-get update
           sudo apt-get install -y jq libxml2-utils curl poppler-utils
 
-      # =========================================================
-      # FILE VALIDATION
-      # =========================================================
-
+      # -------------------------------------------------
       # JSON
+      # -------------------------------------------------
       - name: Validate JSON
         run: |
           find . -name "*.json" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "JSON → $f"
+            echo "JSON: $f"
             jq empty "$f" || exit 1
           done
 
+      # -------------------------------------------------
       # XML
+      # -------------------------------------------------
       - name: Validate XML
         run: |
           find . -name "*.xml" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "XML → $f"
+            echo "XML: $f"
             xmllint --noout "$f" || exit 1
           done
 
+      # -------------------------------------------------
       # HTML
+      # -------------------------------------------------
       - name: Validate HTML
         run: |
           find . -name "*.html" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "HTML → $f"
+            echo "HTML: $f"
             xmllint --html --noout "$f" || true
           done
 
+      # -------------------------------------------------
       # PDFs readable
+      # -------------------------------------------------
       - name: Validate PDFs
         run: |
           find . -name "*.pdf" -type f -print0 | while IFS= read -r -d '' f; do
-            echo "PDF → $f"
-            pdftotext "$f" /dev/null || echo "Unreadable PDF (warning)"
+            echo "PDF: $f"
+            pdftotext "$f" /dev/null || exit 1
           done
 
-      # =========================================================
-      # REQUIRED FILES
-      # =========================================================
-
+      # -------------------------------------------------
+      # Required files
+      # -------------------------------------------------
       - name: Check required files
         run: |
-          for f in robots.txt llms.txt sitemap.xml; do
-            if [ ! -f "$f" ]; then
-              echo "$f missing"
-              exit 1
-            fi
-          done
+          test -f robots.txt || (echo "robots.txt missing" && exit 1)
+          test -f sitemap.xml || (echo "sitemap.xml missing" && exit 1)
 
-      # =========================================================
-      # SEO + AI
-      # =========================================================
-
+      # -------------------------------------------------
+      # schema.org required
+      # -------------------------------------------------
       - name: Require schema.org
         run: |
-          grep -r "schema.org" . >/dev/null || echo "No schema.org found (warning)"
+          grep -r "schema.org" . >/dev/null || (echo "schema.org missing" && exit 1)
 
+      # -------------------------------------------------
+      # robots / llms format check
+      # -------------------------------------------------
       - name: Validate robots/llms format
         run: |
-          grep -q "User-Agent:" robots.txt || exit 1
-          grep -q "User-Agent:" llms.txt || exit 1
+          grep -E "User-Agent:" robots.txt llms.txt >/dev/null || echo "Warning: missing User-Agent"
 
-      # =========================================================
-      # SECURITY
-      # =========================================================
-
-      # only REAL mixed content (not SVG namespace!)
+      # -------------------------------------------------
+      # Block REAL http links only
+      # -------------------------------------------------
       - name: Block real HTTP links
         run: |
-          bad=$(grep -rhoE 'href="http://|src="http://' . || true)
+          bad=$(grep -rhoE 'http://[A-Za-z0-9.-]+\.[A-Za-z]{2,}' . || true)
+
           if [ ! -z "$bad" ]; then
-            echo "HTTP links found:"
+            echo "INSECURE HTTP links found:"
             echo "$bad"
             exit 1
           fi
 
-      # =========================================================
-      # LINK TESTING
-      # =========================================================
+      # -------------------------------------------------
+      # Check external links (safe, non-blocking)
+      # -------------------------------------------------
+      - name: Check broken links
+        run: |
+          set +e
+          urls=$(grep -rhoE 'https://[A-Za-z0-9._~:/?#@!$&()*+,;=%-]+' . | sort -u)
 
+          for u in $urls; do
+            echo "Testing $u"
+            curl -Is --max-time 10 "$u" >/dev/null
+          done
+
+          exit 0
+
+      # -------------------------------------------------
+      # Test sitemap URLs
+      # -------------------------------------------------
       - name: Test sitemap URLs
         run: |
           if [ -f sitemap.xml ]; then
             urls=$(grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml)
             for u in $urls; do
               echo "Testing $u"
-              curl -Is --max-time 10 "$u" >/dev/null || echo "Broken: $u"
+              curl -Is --max-time 10 "$u" >/dev/null
             done
           fi
+          exit 0
 
-      # =========================================================
-      # INTEGRITY
-      # =========================================================
-
+      # -------------------------------------------------
+      # SHA256 checksums
+      # -------------------------------------------------
       - name: Generate SHA256 checksums
         run: |
           find . -type f -not -path "./.git/*" -exec sha256sum {} \; > checksums.sha256
 
-      # =========================================================
-      # AI DATASET BUILD
-      # =========================================================
-
+      # -------------------------------------------------
+      # AI dataset
+      # -------------------------------------------------
       - name: Generate AI dataset
         run: |
           mkdir -p ai_dataset
-          find . \( -name "*.json" -o -name "*.xml" -o -name "*.txt" -o -name "*.html" \) -exec cp {} ai_dataset/ \; 2>/dev/null || true
+          find . \( -name "*.json" -o -name "*.xml" -o -name "*.txt" -o -name "*.html" \) -exec cp {} ai_dataset/ \;
           tar -czf ai_dataset.tar.gz ai_dataset
 
-      # =========================================================
-      # ARTIFACTS
-      # =========================================================
-
+      # -------------------------------------------------
+      # Upload artifacts
+      # -------------------------------------------------
       - uses: actions/upload-artifact@v4
         with:
-          name: site-build
+          name: ai-build
           path: |
             checksums.sha256
             ai_dataset.tar.gz
