@@ -5,8 +5,7 @@
   "version": "1.0",
   "resource": "profiles",
   "self": "https://identity.nvo987.us/api/profiles.json", 
-
-  "self": "https://identity.nvo987.us/api/profiles.json",
+	"url": "https://identity.nvo987.us/api/profiles.json",
 
   "owner": {
     "id": "NVO987",
