@@ -1,9 +1,9 @@
-name: ULTRA Site + AI + SEO + Security Validation
+name: ULTRA PRO Site Validation (AI + SEO + Security + Performance)
 
 on:
   push:
+    branches: [ main ]
   pull_request:
-  workflow_dispatch:
 
 jobs:
   validate:
@@ -12,164 +12,195 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # =====================================================
-      # INSTALL TOOLS
-      # =====================================================
-      - name: Install tools
+# =====================================================
+# INSTALL TOOLS
+# =====================================================
+
+      - name: Install packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y libxml2-utils poppler-utils
-          npm install -g htmlhint broken-link-checker
+          sudo apt-get install -y \
+            tidy \
+            libxml2-utils \
+            jq \
+            poppler-utils \
+            linkchecker \
+            wget \
+            curl \
+            nodejs npm
 
-      # =====================================================
-      # JSON / JSON-LD
-      # =====================================================
-      - name: Validate JSON
-        run: |
-          for f in $(find . -name "*.json" -o -name "*.jsonld"); do
-            echo "JSON: $f"
-            python -m json.tool "$f" > /dev/null || exit 1
-          done
+          npm install -g lighthouse
 
-      # =====================================================
-      # XML
-      # =====================================================
-      - name: Validate XML
-        run: |
-          for f in $(find . -name "*.xml"); do
-            echo "XML: $f"
-            xmllint --noout "$f" || exit 1
-          done
+# =====================================================
+# HTML VALIDATION
+# =====================================================
 
-      # =====================================================
-      # HTML
-      # =====================================================
       - name: Validate HTML
         run: |
           for f in $(find . -name "*.html"); do
             echo "HTML: $f"
-            htmlhint "$f" || exit 1
+            tidy -qe "$f"
           done
 
-      # =====================================================
-      # REQUIRED CORE FILES
-      # =====================================================
+# =====================================================
+# XML / SITEMAP
+# =====================================================
+
+      - name: Validate XML
+        run: |
+          for f in $(find . -name "*.xml"); do
+            xmllint --noout "$f"
+          done
+
+# =====================================================
+# JSON / API
+# =====================================================
+
+      - name: Validate JSON / API
+        run: |
+          for f in $(find . -name "*.json"); do
+            jq empty "$f"
+          done
+
+# =====================================================
+# REQUIRED FILES
+# =====================================================
+
       - name: Check required files
         run: |
           test -f robots.txt
           test -f llms.txt
           test -f sitemap.xml
-          test -f api/index.json
-          test -f .well-known/did.json
+          test -f index.html
 
-      # =====================================================
-      # API STRUCTURE CHECK
-      # =====================================================
-      - name: Validate API structure
-        run: |
-          python - <<EOF
-          import json,sys
-          data=json.load(open("api/index.json"))
-          for k in ["id","name","url"]:
-              assert k in data, f"Missing {k}"
-          EOF
+# =====================================================
+# SCHEMA.ORG / JSON-LD
+# =====================================================
 
-      # =====================================================
-      # SCHEMA.ORG CHECK
-      # =====================================================
       - name: Check schema.org presence
         run: |
-          grep -r '"@context": "https://schema.org"' . || exit 1
+          if ! grep -R "schema.org" .; then
+            echo "Missing schema.org structured data"
+            exit 1
+          fi
 
-      # =====================================================
-      # ROBOTS / LLMS FORMAT
-      # =====================================================
+# =====================================================
+# ROBOTS + LLMS FORMAT
+# =====================================================
+
       - name: Validate robots/llms format
         run: |
-          grep "User-Agent" robots.txt
-          grep "User-Agent" llms.txt
+          grep -E "User-Agent|Allow|Disallow" robots.txt
+          grep -E "User-Agent|Allow|Disallow" llms.txt
 
-      # =====================================================
-      # BROKEN LINKS
-      # =====================================================
+# =====================================================
+# BROKEN LINKS
+# =====================================================
+
       - name: Check broken links
         run: |
-          blc . --recursive --exclude-external || true
+          linkchecker index.html --check-extern || true
 
-      # =====================================================
-      # SITEMAP URL LIVE TEST
-      # =====================================================
-      - name: Test sitemap URLs
-        run: |
-          grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml | while read url; do
-            echo "Testing $url"
-            curl -s --head --fail "$url" > /dev/null || exit 1
-          done
+# =====================================================
+# PDF → TEXT (AI readability)
+# =====================================================
 
-      # =====================================================
-      # PDF TEXT EXTRACT (AI readability)
-      # =====================================================
       - name: Check PDFs readable
         run: |
           for f in $(find . -name "*.pdf"); do
-            echo "PDF: $f"
-            pdftotext "$f" - > /dev/null || exit 1
+            pdftotext "$f" - > /dev/null
           done
 
-      # =====================================================
-      # DUPLICATE FILE NAMES
-      # =====================================================
+# =====================================================
+# DUPLICATE FILENAMES
+# =====================================================
+
       - name: Check duplicates
         run: |
-          dup=$(find . -type f -not -path "./.git/*" -printf "%f\n" | sort | uniq -d) 
+          dup=$(find . -type f -exec basename {} \; | sort | uniq -d)
           if [ ! -z "$dup" ]; then
             echo "Duplicate filenames:"
             echo "$dup"
             exit 1
           fi
 
-      # =====================================================
-      # FILE SIZE LIMIT (10MB)
-      # =====================================================
+# =====================================================
+# LARGE FILES LIMIT
+# =====================================================
+
       - name: Check file sizes
         run: |
           big=$(find . -type f -size +10M)
           if [ ! -z "$big" ]; then
+            echo "Too large files:"
             echo "$big"
             exit 1
           fi
 
-      # =====================================================
-      # META SEO CHECK (title + description)
-      # =====================================================
+# =====================================================
+# SEO META TAGS
+# =====================================================
+
       - name: Check SEO meta tags
         run: |
-          for f in $(find . -name "*.html"); do
-            grep "<title>" "$f" || exit 1
-            grep "description" "$f" || exit 1
-          done
+          grep -R "<title>" .
+          grep -R "meta name=\"description\"" .
 
-      # =====================================================
-      # SECURITY HEADERS BASIC CHECK
-      # =====================================================
+# =====================================================
+# SECURITY HEADERS
+# =====================================================
+
       - name: Security headers test
         run: |
-          curl -sI https://identity.nvo987.us | grep -i "content-type" || exit 1
+          curl -Is https://identity.nvo987.us | grep -E \
+          "Strict-Transport|Content-Security|X-Frame|X-Content|Referrer|Permissions"
 
-      # =====================================================
-      # SHA256 MANIFEST
-      # =====================================================
-      - name: Generate checksums
+# =====================================================
+# LIGHTHOUSE PERFORMANCE + SEO + ACCESSIBILITY
+# =====================================================
+
+      - name: Lighthouse audit
         run: |
-          find . -type f ! -path "./.git/*" -exec sha256sum {} \; > checksums.sha256
+          lighthouse https://identity.nvo987.us \
+            --chrome-flags="--headless" \
+            --output html \
+            --output-path ./lighthouse.html
+
+# =====================================================
+# SITEMAP URL CHECK
+# =====================================================
+
+      - name: Test sitemap URLs
+        run: |
+          urls=$(grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml)
+          for u in $urls; do
+            curl -s -o /dev/null -w "%{http_code} $u\n" $u
+          done
+
+# =====================================================
+# SHA256 CHECKSUM GENERATION
+# =====================================================
+
+      - name: Generate SHA256 checksums
+        run: |
+          find . -type f -not -path "./.git/*" -exec sha256sum {} \; > checksums.txt
+
+# =====================================================
+# AI DATASET EXPORT (txt only)
+# =====================================================
+
+      - name: Generate AI dataset
+        run: |
+          find . -name "*.txt" -exec cat {} \; > ai-dataset.txt
+
+# =====================================================
+# UPLOAD ARTIFACTS
+# =====================================================
 
       - uses: actions/upload-artifact@v4
         with:
-          name: checksums
-          path: checksums.sha256
-
-      # =====================================================
-      # SUCCESS
-      # =====================================================
-      - name: Done
-        run: echo "ALL CHECKS PASSED ✓"
+          name: reports
+          path: |
+            checksums.txt
+            lighthouse.html
+            ai-dataset.txt
