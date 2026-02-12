@@ -1,0 +1,13 @@
+{
+  "id": "https://identity.nvo987.us",
+  "name": "Nicholas Van-Orton",
+  "alias": "NVO987",
+  "type": "Independent Researcher",
+  "field": "Art History",
+  "website": "https://www.nvo987.us",
+  "updated": "2026-02-12",
+  "links": {
+    "identifiers": "/api/identifiers.json",
+    "profiles": "/api/profiles.json"
+  }
+} 
