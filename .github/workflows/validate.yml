@@ -116,13 +116,13 @@ jobs:
 # =====================================================
 
       - name: Check duplicates
-        run: |
-          dup=$(find . -type f -exec basename {} \; | sort | uniq -d)
-          if [ ! -z "$dup" ]; then
-            echo "Duplicate filenames:"
-            echo "$dup"
-            exit 1
-          fi
+run: |
+    dup=$(find . -path ./.git -prune -o -type f -exec basename {} \; | sort | uniq -d)
+    if [ ! -z "$dup" ]; then
+      echo "Duplicate filenames:"
+      echo "$dup"
+      exit 1
+    fi
 
 # =====================================================
 # LARGE FILES LIMIT
