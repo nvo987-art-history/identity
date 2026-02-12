@@ -11,7 +11,7 @@ It serves as a central index connecting:
 - SSRN papers
 
 ## Website
-https://identity.nvo987.us
+https://www.nvo987.us
 
 ## Purpose
 
