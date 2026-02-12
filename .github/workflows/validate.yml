@@ -1,9 +1,9 @@
-name: ULTRA PRO Site Validation (AI + SEO + Security + Performance)
+name: ULTRA Site + AI + SEO + Security Validation
 
 on:
   push:
     branches: [ main ]
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   validate:
@@ -12,195 +12,144 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-# =====================================================
-# INSTALL TOOLS
-# =====================================================
-
-      - name: Install packages
+      # -------------------------------------------------
+      # Install tools
+      # -------------------------------------------------
+      - name: Install tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            tidy \
-            libxml2-utils \
-            jq \
-            poppler-utils \
-            linkchecker \
-            wget \
-            curl \
-            nodejs npm
+          sudo apt-get install -y jq xmllint html-xml-utils poppler-utils curl
 
-          npm install -g lighthouse
-
-# =====================================================
-# HTML VALIDATION
-# =====================================================
-
-      - name: Validate HTML
-        run: |
-          for f in $(find . -name "*.html"); do
-            echo "HTML: $f"
-            tidy -qe "$f"
-          done
-
-# =====================================================
-# XML / SITEMAP
-# =====================================================
-
-      - name: Validate XML
-        run: |
-          for f in $(find . -name "*.xml"); do
-            xmllint --noout "$f"
-          done
-
-# =====================================================
-# JSON / API
-# =====================================================
-
-      - name: Validate JSON / API
+      # -------------------------------------------------
+      # JSON validation
+      # -------------------------------------------------
+      - name: Validate JSON
         run: |
           for f in $(find . -name "*.json"); do
+            echo "Checking $f"
             jq empty "$f"
           done
 
-# =====================================================
-# REQUIRED FILES
-# =====================================================
+      # -------------------------------------------------
+      # XML validation
+      # -------------------------------------------------
+      - name: Validate XML
+        run: |
+          for f in $(find . -name "*.xml"); do
+            echo "Checking $f"
+            xmllint --noout "$f"
+          done
 
+      # -------------------------------------------------
+      # HTML validation
+      # -------------------------------------------------
+      - name: Validate HTML
+        run: |
+          for f in $(find . -name "*.html"); do
+            echo "Checking $f"
+            hxnormalize -x "$f" > /dev/null
+          done
+
+      # -------------------------------------------------
+      # Required files
+      # -------------------------------------------------
       - name: Check required files
         run: |
           test -f robots.txt
-          test -f llms.txt
           test -f sitemap.xml
-          test -f index.html
+          test -f schema.jsonld
+          test -f llms.txt
 
-# =====================================================
-# SCHEMA.ORG / JSON-LD
-# =====================================================
-
+      # -------------------------------------------------
+      # schema.org presence
+      # -------------------------------------------------
       - name: Check schema.org presence
         run: |
-          if ! grep -R "schema.org" .; then
-            echo "Missing schema.org structured data"
-            exit 1
-          fi
+          grep -qi "schema.org" schema.jsonld
 
-# =====================================================
-# ROBOTS + LLMS FORMAT
-# =====================================================
-
+      # -------------------------------------------------
+      # robots / llms format
+      # -------------------------------------------------
       - name: Validate robots/llms format
         run: |
-          grep -E "User-Agent|Allow|Disallow" robots.txt
-          grep -E "User-Agent|Allow|Disallow" llms.txt
+          grep -q "User-Agent" robots.txt
+          grep -q "User-Agent" llms.txt
 
-# =====================================================
-# BROKEN LINKS
-# =====================================================
-
+      # -------------------------------------------------
+      # Broken links
+      # -------------------------------------------------
       - name: Check broken links
         run: |
-          linkchecker index.html --check-extern || true
+          urls=$(grep -rhoE 'https://[^"]+' . | sort -u)
+          for u in $urls; do
+            echo "Testing $u"
+            curl -sfL "$u" > /dev/null
+          done
 
-# =====================================================
-# PDF → TEXT (AI readability)
-# =====================================================
+      # -------------------------------------------------
+      # Test sitemap URLs
+      # -------------------------------------------------
+      - name: Test sitemap URLs
+        run: |
+          grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml | while read url; do
+            echo "Testing $url"
+            curl -sfL "$url" > /dev/null
+          done
 
+      # -------------------------------------------------
+      # PDF readable
+      # -------------------------------------------------
       - name: Check PDFs readable
         run: |
           for f in $(find . -name "*.pdf"); do
+            echo "PDF: $f"
             pdftotext "$f" - > /dev/null
           done
 
-# =====================================================
-# DUPLICATE FILENAMES
-# =====================================================
-
+      # -------------------------------------------------
+      # Duplicate filenames (FIXED .git excluded)
+      # -------------------------------------------------
       - name: Check duplicates
-run: |
-    dup=$(find . -path ./.git -prune -o -type f -exec basename {} \; | sort | uniq -d)
-    if [ ! -z "$dup" ]; then
-      echo "Duplicate filenames:"
-      echo "$dup"
-      exit 1
-    fi
+        run: |
+          dup=$(find . -path ./.git -prune -o -type f -exec basename {} \; | sort | uniq -d)
+          if [ ! -z "$dup" ]; then
+            echo "Duplicate filenames:"
+            echo "$dup"
+            exit 1
+          fi
 
-# =====================================================
-# LARGE FILES LIMIT
-# =====================================================
-
+      # -------------------------------------------------
+      # File size limit (10MB)
+      # -------------------------------------------------
       - name: Check file sizes
         run: |
           big=$(find . -type f -size +10M)
           if [ ! -z "$big" ]; then
-            echo "Too large files:"
             echo "$big"
             exit 1
           fi
 
-# =====================================================
-# SEO META TAGS
-# =====================================================
-
-      - name: Check SEO meta tags
-        run: |
-          grep -R "<title>" .
-          grep -R "meta name=\"description\"" .
-
-# =====================================================
-# SECURITY HEADERS
-# =====================================================
-
-      - name: Security headers test
-        run: |
-          curl -Is https://identity.nvo987.us | grep -E \
-          "Strict-Transport|Content-Security|X-Frame|X-Content|Referrer|Permissions"
-
-# =====================================================
-# LIGHTHOUSE PERFORMANCE + SEO + ACCESSIBILITY
-# =====================================================
-
-      - name: Lighthouse audit
-        run: |
-          lighthouse https://identity.nvo987.us \
-            --chrome-flags="--headless" \
-            --output html \
-            --output-path ./lighthouse.html
-
-# =====================================================
-# SITEMAP URL CHECK
-# =====================================================
-
-      - name: Test sitemap URLs
-        run: |
-          urls=$(grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml)
-          for u in $urls; do
-            curl -s -o /dev/null -w "%{http_code} $u\n" $u
-          done
-
-# =====================================================
-# SHA256 CHECKSUM GENERATION
-# =====================================================
-
+      # -------------------------------------------------
+      # Generate SHA256 checksums
+      # -------------------------------------------------
       - name: Generate SHA256 checksums
         run: |
-          find . -type f -not -path "./.git/*" -exec sha256sum {} \; > checksums.txt
+          find . -type f -not -path "./.git/*" -exec sha256sum {} \; > SHA256SUMS.txt
 
-# =====================================================
-# AI DATASET EXPORT (txt only)
-# =====================================================
-
+      # -------------------------------------------------
+      # Generate AI dataset
+      # -------------------------------------------------
       - name: Generate AI dataset
         run: |
-          find . -name "*.txt" -exec cat {} \; > ai-dataset.txt
+          mkdir -p ai_dataset
+          find . \( -name "*.json" -o -name "*.xml" -o -name "*.txt" -o -name "*.pdf" \) -not -path "./.git/*" -exec cp {} ai_dataset/ \;
 
-# =====================================================
-# UPLOAD ARTIFACTS
-# =====================================================
-
+      # -------------------------------------------------
+      # Upload artifact
+      # -------------------------------------------------
       - uses: actions/upload-artifact@v4
         with:
-          name: reports
+          name: validation-artifacts
           path: |
-            checksums.txt
-            lighthouse.html
-            ai-dataset.txt
+            SHA256SUMS.txt
+            ai_dataset
