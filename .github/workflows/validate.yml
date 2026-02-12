@@ -121,7 +121,7 @@ jobs:
       # =====================================================
       - name: Check duplicates
         run: |
-          dup=$(find . -type f -printf "%f\n" | sort | uniq -d)
+          dup=$(find . -type f -not -path "./.git/*" -printf "%f\n" | sort | uniq -d) 
           if [ ! -z "$dup" ]; then
             echo "Duplicate filenames:"
             echo "$dup"
