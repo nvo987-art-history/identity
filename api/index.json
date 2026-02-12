@@ -3,7 +3,10 @@
   "name": "API Index",
   "api": "index",
   "version": "1.0",
+
   "self": "https://identity.nvo987.us/api/index.json",
+  "url": "https://identity.nvo987.us/api/index.json",
+
   "resources": {
     "identity": "https://identity.nvo987.us/api/identity.json",
     "identifiers": "https://identity.nvo987.us/api/identifiers.json",
