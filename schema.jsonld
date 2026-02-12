@@ -12,7 +12,6 @@
       "description": "Independent researcher and artist working at the intersection of visual theory, color studies, and algorithmic culture.",
 
       "url": "https://identity.nvo987.us",
-
       "image": "https://identity.nvo987.us/avatar.jpg",
 
       "email": [
@@ -69,41 +68,40 @@
         "https://www.facebook.com/nvo987/",
         "https://bsky.app/profile/nvo987.bsky.social",
         "https://www.reddit.com/user/Grand_Service448/",
-		"https://hcommons.org/members/nicholasvanorton/",
-		"https://about.me/nvo987",
-		"https://gravatar.com/0730nicholas".
-		"https://www.zotero.org/groups/6397230/visual_theory_in_the_age_of_algorithms",
-		"https://nvo987.substack.com/",
-		"https://www.linkedin.com/in/nvo987/"
-		
+        "https://hcommons.org/members/nicholasvanorton/",
+        "https://about.me/nvo987",
+        "https://gravatar.com/0730nicholas",
+        "https://www.zotero.org/groups/6397230/visual_theory_in_the_age_of_algorithms",
+        "https://nvo987.substack.com/",
+        "https://www.linkedin.com/in/nvo987/"
       ],
 
       "knowsAbout": [
         "visual theory",
         "color theory",
         "color studies",
-		"nvo987",
+        "nvo987",
         "aesthetics",
         "algorithmic culture",
         "digital humanities",
-		"Sonia Delaunay",
-        "generative systems", 
-		"art history",
-		"visual culture",
-		"media theory",
-		"computational aesthetics",
-		"generative art",
-		"algorithmic art",
-		"data visualization",
-		"digital art",
-		"human-computer interaction",
-		"knowledge representation",
-		"semantic web",
-		"linked open data",
-		"research methods",
-		"interdisciplinary research",
-		"experimental publishing",
-		"open science" 
+        "Sonia Delaunay",
+        "generative systems",
+        "art history",
+        "visual culture",
+        "media theory",
+        "computational aesthetics",
+        "generative art",
+        "algorithmic art",
+        "data visualization",
+        "digital art",
+        "human-computer interaction",
+        "knowledge representation",
+        "semantic web",
+        "linked open data",
+        "research methods",
+        "interdisciplinary research",
+        "experimental publishing",
+        "open science"
       ]
     },
 
@@ -122,9 +120,9 @@
       "@id": "https://identity.nvo987.us/#organization",
       "name": "Art History NVO987",
       "url": [
-		"https://identity.nvo987.us",
-		"https://nvo987.us"
-	] 
+        "https://identity.nvo987.us",
+        "https://nvo987.us"
+      ]
     },
 
     {
@@ -134,9 +132,9 @@
       "name": "Color as a Generative Principle in the Work",
 
       "url": [
-	"https://doi.org/10.5281/zenodo.18009245",
-	"https://nvo987.substack.com/p/nvo987-research-projects"
-] 
+        "https://doi.org/10.5281/zenodo.18009245",
+        "https://nvo987.substack.com/p/nvo987-research-projects"
+      ],
 
       "identifier": {
         "@type": "PropertyValue",
