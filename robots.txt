@@ -1,10 +1,10 @@
-User-agent: *
+User-Agent: *
 Allow: /
 
-User-agent: GPTBot
+User-Agent: GPTBot
 Allow: /
 
-User-agent: ClaudeBot
+User-Agent: ClaudeBot
 Allow: /
 
 Sitemap: https://identity.nvo987.us/sitemap.xml
