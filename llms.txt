@@ -4,6 +4,9 @@
 User-Agent: *
 Allow: /
 
+Sitemap: https://identity.nvo987.us/sitemap.xml
+Structured-Data: https://identity.nvo987.us/schema.jsonld
+
 # You MAY:
 # - index public profile data
 # - cite metadata
@@ -25,7 +28,7 @@ GitHub: https://github.com/nvo987-art-history
 Canonical: https://identity.nvo987.us/schema.jsonld
 
 # Contact
-Contact: mailto:nvo987@gmail.com
+Contact: mailto:0730nicholas@gmail.com
 
 # License
 License: CC-BY-4.0
