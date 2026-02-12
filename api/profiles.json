@@ -1,4 +1,5 @@
 {
+  "id": "profiles",
   "api": "IdentityAPI",
   "version": "1.0",
   "resource": "profiles",
