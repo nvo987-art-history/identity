@@ -8,122 +8,99 @@
   box-sizing: border-box;
 }
 
-
 /* =========================
-   ALAP OLDAL
+   BODY
 ========================= */
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-
-  background: #6b3f2a;   /* barna háttér */
+  background: #6b3f2a;   /* barna */
   color: #ffffff;
-
   line-height: 1.6;
 }
 
-
 /* =========================
-   HERO / BANNER
+   BANNER (EGYSZERŰ!)
 ========================= */
 
 .hero {
-  position: relative;
+  height: 280px;              /* FIX méret (nem nő túl nagyra) */
 
-  height: 60vh;          /* nagy banner */
-  min-height: 420px;     /* mobilon se legyen kicsi */
-
-  background-image: url("banner.jpg"); /* IDE a képed neve */
+  background-image: url("banner.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-align: center;
-
-  overflow: hidden;      /* megakadályozza a barna ráfolyást */
 }
 
-
-/* sötét overlay az olvashatóság miatt */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-
+/* NINCS overlay → kép tiszta */
 
 /* szöveg */
 .hero-overlay {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  color: white;
+  background: rgba(0,0,0,0.45);   /* csak a szöveg mögött sötét */
+  padding: 20px 30px;
+  border-radius: 12px;
 }
 
+/* cím */
 .hero h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
 }
 
+/* alcím */
 .hero p {
-  font-size: 18px;
+  font-size: 1.05rem;
   opacity: 0.95;
 }
 
-
 /* =========================
-   TARTALOM RÉSZ
+   MAIN
 ========================= */
 
 main {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 20px;
+  margin: auto;
+  padding: 45px 20px;
 }
 
+/* szekció */
 section {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
+/* cím */
 h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
 }
 
-
-/* =========================
-   LISTÁK
-========================= */
-
+/* lista */
 ul {
   list-style: none;
 }
 
 li {
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
-
 /* =========================
-   LINKEK (nem sárga!)
+   LINKEK
 ========================= */
 
 a {
-  color: #f1e3d3;          /* világos bézs */
+  color: #ffe6d5;   /* krém */
   text-decoration: none;
-  transition: 0.2s;
 }
 
 a:hover {
-  color: #ffffff;
+  color: white;
   text-decoration: underline;
 }
-
 
 /* =========================
    MOBIL
@@ -131,12 +108,16 @@ a:hover {
 
 @media (max-width: 600px) {
 
+  .hero {
+    height: 200px;
+  }
+
   .hero h1 {
-    font-size: 32px;
+    font-size: 1.6rem;
   }
 
   .hero p {
-    font-size: 16px;
+    font-size: 0.95rem;
   }
 
 }
