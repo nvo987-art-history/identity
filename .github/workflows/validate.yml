@@ -1,1 +1,120 @@
+name: STRICT-SITE-VALIDATION
 
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # =====================
+      # Checkout
+      # =====================
+      - uses: actions/checkout@v4
+
+      # =====================
+      # Install tools
+      # =====================
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tidy jq libxml2-utils curl
+          npm install -g broken-link-checker lighthouse
+
+      # =====================
+      # FAIL FAST
+      # =====================
+      - name: Enable strict bash
+        run: echo "set -euo pipefail" >> $BASH_ENV
+
+      # =====================
+      # HTML VALIDATION (ERROR = FAIL)
+      # =====================
+      - name: Validate HTML
+        run: |
+          find . -name "*.html" -exec tidy -qe {} \;
+
+      # =====================
+      # JSON VALIDATION
+      # =====================
+      - name: Validate JSON
+        run: |
+          for f in $(find . -name "*.json"); do
+            echo "Checking $f"
+            jq empty "$f"
+          done
+
+      # =====================
+      # XML VALIDATION
+      # =====================
+      - name: Validate XML
+        run: |
+          for f in $(find . -name "*.xml"); do
+            echo "Checking $f"
+            xmllint --noout "$f"
+          done
+
+      # =====================
+      # REQUIRED FILES (must exist)
+      # =====================
+      - name: Required files
+        run: |
+          test -f robots.txt
+          test -f sitemap.xml
+
+      # =====================
+      # HTTP LINKS (FAIL ON 404)
+      # =====================
+      - name: Broken links check
+        run: |
+          blc identity/index.html -ro
+
+      # =====================
+      # LIVE SITE MUST RESPOND 200
+      # =====================
+      - name: Test homepage status
+        run: |
+          curl -f -I https://identity.nv0987.us
+
+      # =====================
+      # SITEMAP URLS MUST WORK
+      # =====================
+      - name: Test sitemap URLs
+        run: |
+          urls=$(grep -oP '(?<=<loc>).*?(?=</loc>)' sitemap.xml)
+          for u in $urls; do
+            echo "Testing $u"
+            curl -f -I "$u"
+          done
+
+      # =====================
+      # LIGHTHOUSE SEO SCORE
+      # =====================
+      - name: Lighthouse audit
+        run: |
+          lighthouse https://identity.nv0987.us \
+            --quiet \
+            --chrome-flags="--headless" \
+            --output=json \
+            --output-path=./lighthouse.json
+
+      # =====================
+      # CHECKSUMS
+      # =====================
+      - name: Generate checksums
+        run: |
+          find . -type f -exec sha256sum {} \; > checksums.sha256
+
+      # =====================
+      # ARTIFACTS
+      # =====================
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: |
+            lighthouse.json
+            checksums.sha256 
