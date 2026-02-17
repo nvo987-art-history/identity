@@ -24,8 +24,7 @@ body {
 ========================= */
 
 .hero {
-  height: 280px;              /* FIX méret (nem nő túl nagyra) */
-
+  height: 280px;
   background-image: url("banner.jpg");
   background-size: cover;
   background-position: center;
@@ -33,26 +32,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
 }
 
-/* NINCS overlay → kép tiszta */
-
-/* szöveg */
 .hero-overlay {
-  background: rgba(0,0,0,0.45);   /* csak a szöveg mögött sötét */
+  background: rgba(0,0,0,0.45);
   padding: 20px 30px;
   border-radius: 12px;
 }
 
-/* cím */
 .hero h1 {
   font-size: 2.2rem;
   margin-bottom: 8px;
 }
 
-/* alcím */
 .hero p {
   font-size: 1.05rem;
   opacity: 0.95;
@@ -73,13 +66,40 @@ section {
   margin-bottom: 50px;
 }
 
-/* cím */
+/* =========================
+   SZÖVEG – EZ A LÉNYEG
+========================= */
+
+/* bekezdések */
+p {
+  line-height: 1.55;          /* feszesebb, olvashatóbb */
+  margin-bottom: 1.1em;      /* TÉNYLEGES bekezdésköz */
+}
+
+/* utolsó bekezdés ne hagyjon extra lukat */
+section p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   CÍMEK
+========================= */
+
 h2 {
   font-size: 1.6rem;
   margin-bottom: 16px;
 }
 
-/* lista */
+h3 {
+  font-size: 1.15rem;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+/* =========================
+   LISTÁK
+========================= */
+
 ul {
   list-style: none;
 }
@@ -93,7 +113,7 @@ li {
 ========================= */
 
 a {
-  color: #ffe6d5;   /* krém */
+  color: #ffe6d5;
   text-decoration: none;
 }
 
@@ -120,6 +140,9 @@ a:hover {
     font-size: 0.95rem;
   }
 
+  p {
+    line-height: 1.5;   /* mobilon még kicsit feszesebb */
+  }
 }
 
 /* =========================
