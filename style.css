@@ -9,36 +9,22 @@
 }
 
 /* =========================
-   ROOT / BASELINE
-========================= */
-
-html {
-  font-size: 16px; /* stabil alap, nem bízunk browserre */
-}
-
-/* =========================
    BODY
 ========================= */
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: #6b3f2a;   /* barna */
+  background: #6b3f2a;
   color: #ffffff;
-
-  font-size: 17px;       /* 🔑 EZ OLDJA MEG A KICSISÉGET */
-  line-height: 1.65;
-
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  line-height: 1.6;
 }
 
 /* =========================
-   BANNER / HERO
-   (mindig van, csak a kép változik)
+   HERO / BANNER
 ========================= */
 
 .hero {
-  height: 300px;
+  height: 320px;
   background-image: url("banner.jpg");
   background-size: cover;
   background-position: center;
@@ -57,36 +43,41 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.3rem;
-  font-weight: 600;
+  font-size: 2.4rem;
   margin-bottom: 6px;
 }
 
 .hero p {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   opacity: 0.95;
 }
 
 /* =========================
-   MAIN LAYOUT
+   MAIN CONTENT
+   (EZ VOLT A HIBA FORRÁSA)
 ========================= */
 
 main {
   max-width: 920px;
-  margin: auto;
-  padding: 32px 22px 48px; /* fent kisebb */
-} 
+  margin: 0 auto;
+  padding: 28px 22px 56px;   /* FELÜL KICSIBB */
+}
+
+/* első szekció ne „ússzon le” */
+main section:first-child {
+  margin-top: 0;
+}
 
 /* =========================
    SECTIONS
 ========================= */
 
 section {
-  margin-bottom: 56px;
+  margin-bottom: 52px;
 }
 
 /* =========================
-   TEXT – KUTATÁSI OLVASHATÓSÁG
+   TEXT
 ========================= */
 
 p {
@@ -102,17 +93,20 @@ section p:last-child {
    HEADINGS
 ========================= */
 
+h1 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
 h2 {
   font-size: 1.65rem;
-  font-weight: 600;
   margin-bottom: 18px;
 }
 
 h3 {
   font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 1.8em;
-  margin-bottom: 0.7em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
 }
 
 /* =========================
@@ -121,7 +115,6 @@ h3 {
 
 ul {
   list-style: none;
-  padding-left: 0;
 }
 
 li {
@@ -143,21 +136,17 @@ a:hover {
 }
 
 /* =========================
-   MOBILE (OLVASHATÓBB, NEM KISEBB!)
+   MOBILE
 ========================= */
 
 @media (max-width: 600px) {
-
-  body {
-    font-size: 18px; /* 🔑 mobilon nagyobb */
-  }
 
   .hero {
     height: 220px;
   }
 
   .hero h1 {
-    font-size: 1.75rem;
+    font-size: 1.7rem;
   }
 
   .hero p {
@@ -165,7 +154,11 @@ a:hover {
   }
 
   main {
-    padding: 40px 18px;
+    padding: 24px 18px 48px;
+  }
+
+  p {
+    line-height: 1.55;
   }
 }
 
@@ -175,7 +168,7 @@ a:hover {
 
 footer {
   text-align: center;
-  margin-top: 3.5rem;
-  font-size: 0.9rem;
+  margin-top: 3rem;
   opacity: 0.85;
+  font-size: 0.95rem;
 }
