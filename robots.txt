@@ -1,10 +1,8 @@
-User-Agent: *
-Allow: /
+# robots.txt — NVO987 Identity Domain
+# Human- and machine-readable identity metadata
+# Designed for long-term reference and archival access
 
-User-Agent: GPTBot
-Allow: /
-
-User-Agent: ClaudeBot
+User-agent: *
 Allow: /
 
 Sitemap: https://identity.nvo987.us/sitemap.xml
