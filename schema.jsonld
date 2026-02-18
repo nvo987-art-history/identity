@@ -119,8 +119,8 @@
       "@type": "Organization",
       "@id": "https://identity.nvo987.us/#organization",
       "name": "Art History NVO987",
-      "url": [
-        "https://identity.nvo987.us",
+      "url": "https://identity.nvo987.us",
+      "sameAs": [
         "https://nvo987.us"
       ]
     },
