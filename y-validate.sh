@@ -1,20 +1,41 @@
 #!/usr/bin/env bash
-
 set -e
+
+# ========================
+# CONFIG
+# ========================
+
+EXPECTED_DOMAIN="identity.nvo987.us"
+WATCH_MODE=false
+
+if [[ "$1" == "--watch" ]]; then
+  WATCH_MODE=true
+fi
 
 RED="\033[0;31m"
 GREEN="\033[0;32m"
 YELLOW="\033[1;33m"
 NC="\033[0m"
 
-echo -e "${YELLOW}=== NVO987 Identity Validator (identity.nvo987.us) ===${NC}"
+echo -e "${YELLOW}=== NVO987 Identity Validator (${EXPECTED_DOMAIN}) ===${NC}"
+
+# ========================
+# DEPENDENCY CHECK (WATCH)
+# ========================
+
+if $WATCH_MODE; then
+  if ! command -v inotifywait >/dev/null 2>&1; then
+    echo -e "${RED}✗ inotify-tools not installed.${NC}"
+    echo "Install: sudo apt install inotify-tools"
+    exit 1
+  fi
+fi
+
+# ========================
+# VALIDATORS
+# ========================
 
 ERRORS=0
-EXPECTED_DOMAIN="identity.nvo987.us"
-
-# ========================
-# BASIC VALIDATORS (EREDTI)
-# ========================
 
 validate_json() {
   local file="$1"
@@ -69,7 +90,7 @@ validate_txt() {
 }
 
 # ========================
-# IDENTITY-SPECIFIKUS
+# IDENTITY JSON CHECK
 # ========================
 
 validate_identity_json() {
@@ -79,19 +100,19 @@ validate_identity_json() {
   domain=$(jq -r '.domain // empty' "$file" 2>/dev/null)
   canonical=$(jq -r '.canonical // empty' "$file" 2>/dev/null)
 
-  if [ -n "$domain" ] && [ "$domain" != "$EXPECTED_DOMAIN" ]; then
+  if [ -n "$domain" ] && [ "$domain" != "https://${EXPECTED_DOMAIN}" ]; then
     echo -e "${RED}✗ Domain mismatch:${NC} $file ($domain)"
     ERRORS=$((ERRORS+1))
   fi
 
-  if [ -n "$canonical" ] && [[ "$canonical" != https://$EXPECTED_DOMAIN* ]]; then
+  if [ -n "$canonical" ] && [[ "$canonical" != https://${EXPECTED_DOMAIN}* ]]; then
     echo -e "${RED}✗ Canonical mismatch:${NC} $file ($canonical)"
     ERRORS=$((ERRORS+1))
   fi
 }
 
 # ========================
-# .well-known KÖTELEZŐ
+# .well-known CHECK
 # ========================
 
 check_well_known() {
@@ -115,28 +136,20 @@ check_well_known() {
 }
 
 # ========================
-# API MAPPÁK ELLENŐRZÉSE
+# API CHECK
 # ========================
 
 check_api() {
-  if [ -d "api" ] || ls api*.json >/dev/null 2>&1; then
+  if [ -d "api" ]; then
     echo
-    echo "API detected – validating API files..."
+    echo "API directory detected – validating API files..."
 
-    find api -type f 2>/dev/null | while read -r api_file; do
+    find api -type f | while read -r api_file; do
       case "$api_file" in
-        *.json)
-          validate_json "$api_file"
-          ;;
-        *.ndjson)
-          validate_ndjson "$api_file"
-          ;;
-        *.xml)
-          validate_xml "$api_file"
-          ;;
-        *.txt)
-          validate_txt "$api_file"
-          ;;
+        *.json)   validate_json "$api_file" ;;
+        *.ndjson) validate_ndjson "$api_file" ;;
+        *.xml)    validate_xml "$api_file" ;;
+        *.txt)    validate_txt "$api_file" ;;
       esac
     done
   else
@@ -146,43 +159,52 @@ check_api() {
 }
 
 # ========================
-# SCAN
+# MAIN VALIDATION RUN
 # ========================
 
-echo "Scanning identity files..."
+run_validation() {
+  ERRORS=0
 
-while IFS= read -r file; do
-  case "$file" in
-    *.json)
-      validate_json "$file"
-      validate_identity_json "$file"
-      ;;
-    *.ndjson)
-      validate_ndjson "$file"
-      ;;
-    *.xml)
-      validate_xml "$file"
-      ;;
-    *.html)
-      validate_html "$file"
-      ;;
-    *.txt)
-      validate_txt "$file"
-      ;;
-  esac
-done < <(find . -type f ! -path "./.git/*" ! -path "./api/*")
+  echo
+  echo -e "${YELLOW}--- Running validation ---${NC}"
 
-check_well_known
-check_api
+  while IFS= read -r file; do
+    case "$file" in
+      *.json)
+        validate_json "$file"
+        validate_identity_json "$file"
+        ;;
+      *.ndjson) validate_ndjson "$file" ;;
+      *.xml)    validate_xml "$file" ;;
+      *.html)   validate_html "$file" ;;
+      *.txt)    validate_txt "$file" ;;
+    esac
+  done < <(find . -type f ! -path "./.git/*" ! -path "./api/*")
+
+  check_well_known
+  check_api
+
+  echo
+  if [ "$ERRORS" -gt 0 ]; then
+    echo -e "${RED}✗ Validation failed: $ERRORS error(s).${NC}"
+  else
+    echo -e "${GREEN}✓ identity.nvo987.us fully validated.${NC}"
+  fi
+}
 
 # ========================
-# RESULT
+# RUN / WATCH
 # ========================
 
-echo
-if [ "$ERRORS" -gt 0 ]; then
-  echo -e "${RED}✗ Validation failed: $ERRORS error(s) found.${NC}"
-  exit 1
+if $WATCH_MODE; then
+  echo
+  echo -e "${YELLOW}Watching for file changes... (Ctrl+C to stop)${NC}"
+  run_validation
+  inotifywait -m -r -e modify,create,delete . --exclude '\.git' |
+  while read -r _; do
+    clear
+    run_validation
+  done
 else
-  echo -e "${GREEN}✓ identity.nvo987.us fully validated (including API).${NC}"
+  run_validation
 fi
