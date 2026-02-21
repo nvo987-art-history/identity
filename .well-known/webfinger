@@ -1,17 +1,27 @@
 {
-  "subject": "https://identity.nvo987.us/",
+  "subject": "did:web:identity.nvo987.us",
+
   "links": [
+
     {
-      "rel": "http://schema.org/sameAs",
+      "rel": "self",
+      "href": "did:web:identity.nvo987.us"
+    },
+
+    {
+      "rel": "https://schema.org/sameAs",
       "href": "https://orcid.org/0009-0007-4628-1871"
     },
+
     {
-      "rel": "http://schema.org/sameAs",
+      "rel": "https://schema.org/sameAs",
       "href": "https://isni.org/isni/0000000529640885"
     },
+
     {
-      "rel": "http://schema.org/sameAs",
+      "rel": "https://schema.org/sameAs",
       "href": "https://www.wikidata.org/wiki/Q137675227"
     }
+
   ]
 }
