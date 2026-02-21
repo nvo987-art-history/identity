@@ -10,7 +10,7 @@ Alias: NVO987
 Domain: https://identity.nvo987.us
 
 # Canonical Identity Document
-Canonical: https://identity.nvo987.us/schema.jsonld
+Canonical: https://identity.nvo987.us/machine/schema.jsonld
 
 # Persistent Identifiers
 ORCID: https://orcid.org/0009-0007-4628-1871
@@ -18,7 +18,7 @@ ISNI: https://isni.org/isni/0000000529640885
 Wikidata: https://www.wikidata.org/wiki/Q137675227
 
 # Structured Data
-Structured-Data: https://identity.nvo987.us/schema.jsonld
+Structured-Data: https://identity.nvo987.us/machine/schema.jsonld
 Sitemap: https://identity.nvo987.us/sitemap.xml
 
 # Contact
