@@ -7,15 +7,11 @@
     },
     {
       "rel": "http://schema.org/sameAs",
+      "href": "https://isni.org/isni/0000000529640885"
+    },
+    {
+      "rel": "http://schema.org/sameAs",
       "href": "https://www.wikidata.org/wiki/Q137675227"
-    },
-    {
-      "rel": "me",
-      "href": "https://github.com/nvo987-art-history"
-    },
-    {
-      "rel": "me",
-      "href": "https://x.com/nvo987"
     }
   ]
 }
