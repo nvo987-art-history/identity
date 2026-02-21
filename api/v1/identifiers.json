@@ -1,0 +1,58 @@
+{
+  "id": "identifiers",
+  "type": "Person",
+  "name": "Nicholas Van-Orton",
+
+  "api": {
+    "name": "IdentityAPI",
+    "version": "v1",
+    "style": "static-json",
+    "entrypoint": "/api/v1/index.json"
+  },
+
+  "resource": "identifiers",
+
+  "self": "https://identity.nvo987.us/api/v1/identifiers.json",
+
+  "owner": {
+    "did": "did:web:identity.nvo987.us",
+    "alias": "NVO987",
+    "domain": "identity.nvo987.us"
+  },
+
+  "persistent": {
+    "orcid": {
+      "id": "0009-0007-4628-1871",
+      "url": "https://orcid.org/0009-0007-4628-1871"
+    },
+    "isni": {
+      "id": "0000000529640885",
+      "url": "https://isni.org/isni/0000000529640885"
+    },
+    "wikidata": {
+      "id": "Q137675227",
+      "url": "https://www.wikidata.org/wiki/Q137675227"
+    }
+  },
+
+  "scholarly": {
+    "webOfScience": {
+      "id": "PDY-1682-2025",
+      "url": "https://www.webofscience.com/wos/author/record/PDY-1682-2025"
+    },
+    "googleScholar": {
+      "id": "iRM-GNQAAAAJ",
+      "url": "https://scholar.google.com/citations?user=iRM-GNQAAAAJ"
+    }
+  },
+
+  "machine": {
+    "vc": "/machine/vc.jsonld",
+    "vc_sha256": "/machine/vc.jsonld.sha256"
+  },
+
+  "meta": {
+    "updated": "2026-02-21T22:58:00Z",
+    "status": "active"
+  }
+}
