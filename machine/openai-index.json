@@ -1,0 +1,24 @@
+{
+  "site": "https://identity.nvo987.us",
+  "type": "IdentityAuthority",
+  "version": "1.0",
+
+  "identity": {
+    "name": "Nicholas Van-Orton",
+    "alias": "NVO987",
+    "canonical": "https://identity.nvo987.us/schema.jsonld"
+  },
+
+  "discovery": {
+    "schema": "/schema.jsonld",
+    "sitemap": "/sitemap.xml",
+    "feeds": ["/feed.xml"],
+    "api": "/api/identity.json"
+  },
+
+  "identifiers": {
+    "orcid": "https://orcid.org/0009-0007-4628-1871",
+    "isni": "https://isni.org/isni/0000000529640885",
+    "wikidata": "https://www.wikidata.org/wiki/Q137675227"
+  }
+}
