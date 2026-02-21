@@ -1,7 +1,0 @@
-{
-  "site": "https://identity.nvo987.us",
-  "schema": "/schema.jsonld",
-  "sitemap": "/sitemap.xml",
-  "feeds": ["/feed.xml"],
-  "priority": ["schema.jsonld", "feed.xml"]
-}
