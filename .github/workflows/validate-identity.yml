@@ -1,0 +1,93 @@
+name: Identity Strict Validator
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq tidy libxml2-utils
+
+      - name: Validate JSON files
+        run: |
+          set -e
+          find . -type f -name "*.json" ! -path "./.git/*" | while read f; do
+            jq empty "$f"
+          done
+
+      - name: Validate NDJSON files
+        run: |
+          set -e
+          find . -type f -name "*.ndjson" ! -path "./.git/*" | while read f; do
+            while read line; do
+              echo "$line" | jq empty
+            done < "$f"
+          done
+
+      - name: Validate XML files
+        run: |
+          set -e
+          find . -type f -name "*.xml" ! -path "./.git/*" | while read f; do
+            xmllint --noout "$f"
+          done
+
+      - name: Validate HTML files (strict)
+        run: |
+          set -e
+          find . -type f -name "*.html" ! -path "./.git/*" | while read f; do
+            tidy -errors -q "$f"
+          done
+
+      - name: Check empty files
+        run: |
+          set -e
+          find . -type f ! -path "./.git/*" | while read f; do
+            if [ ! -s "$f" ]; then
+              echo "Empty file: $f"
+              exit 1
+            fi
+          done
+
+      - name: Check required API files
+        run: |
+          set -e
+          test -f api/v1/index.json
+          test -f api/v1/identity.json
+          test -f api/v1/identifiers.json
+          test -f api/v1/profiles.json
+          test -f api/v1/status.json
+
+      - name: Check machine files
+        run: |
+          set -e
+          test -f machine/vc.jsonld
+          test -f machine/vc.jsonld.sha256
+
+      - name: Validate SHA256 integrity
+        run: |
+          set -e
+          EXPECTED=$(tr -d ' \n' < machine/vc.jsonld.sha256)
+          ACTUAL=$(sha256sum machine/vc.jsonld | cut -d ' ' -f1)
+          if [ "$EXPECTED" != "$ACTUAL" ]; then
+            echo "SHA256 mismatch"
+            exit 1
+          fi
+
+      - name: Check .well-known files (optional)
+        run: |
+          set -e
+          [ -f .well-known/did.json ] || true
+          [ -f .well-known/assetlinks.json ] || true
+          [ -f .well-known/openid-configuration ] || true
+
+      - name: Final status
+        run: echo "Identity validation passed"
