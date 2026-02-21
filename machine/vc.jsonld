@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://schema.org"
+  ],
+  "id": "https://identity.nvo987.us/machine/vc.jsonld",
+  "type": ["VerifiableCredential", "PersonCredential"],
+  "issuer": "did:web:identity.nvo987.us",
+  "validFrom": "2026-01-01T00:00:00Z",
+  "credentialSubject": {
+    "id": "did:web:identity.nvo987.us",
+    "type": "Person",
+    "name": "Nicholas Van Orton",
+    "url": "https://identity.nvo987.us",
+    "email": [
+      "mailto:0730nicholas@gmail.com",
+      "mailto:nvo@nvo987.us"
+    ],
+    "telephone": "+36702674440",
+    "affiliation": {
+      "type": "Organization",
+      "name": "Art History NVO987",
+      "url": "https://identity.nvo987.us"
+    },
+    "sameAs": [
+      "https://orcid.org/0009-0007-4628-1871",
+      "https://www.wikidata.org/wiki/Q137675227",
+      "https://isni.org/isni/0000000529640885",
+      "https://www.webofscience.com/wos/author/record/PDY-1682-2025",
+      "https://t.me/nvo987",
+      "https://independent.academia.edu/VanOrton",
+      "https://hu.pinterest.com/arthistorynvo987/",
+      "https://www.youtube.com/@nvo987-art-history",
+      "https://www.tiktok.com/@nvo987",
+      "https://www.threads.com/@nvo987",
+      "https://www.snapchat.com/@art-nvo987",
+      "https://pixelfed.social/nvo987",
+      "https://mastodon.social/@nvo987",
+      "https://www.instagram.com/nvo987/",
+      "https://www.facebook.com/nvo987/",
+      "https://bluesky.nvo987.us",
+      "https://www.reddit.com/user/Grand_Service448/"
+    ]
+  }
+}
