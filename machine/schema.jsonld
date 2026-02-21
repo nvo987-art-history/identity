@@ -1,0 +1,163 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "Person",
+      "@id": "https://identity.nvo987.us/#person",
+
+      "name": "Nicholas Van-Orton",
+      "alternateName": "NVO987",
+      "jobTitle": "Independent Researcher",
+      "description": "Independent researcher and artist working at the intersection of visual theory, color studies, and algorithmic culture.",
+
+      "url": "https://identity.nvo987.us",
+      "image": "https://identity.nvo987.us/avatar.jpg",
+
+      "email": "mailto:nvo@nvo987.us",
+
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "primary",
+        "email": "mailto:0730nicholas@gmail.com"
+      },
+
+      "telephone": "+36702674440",
+
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressCountry": "FR"
+      },
+
+      "affiliation": {
+        "@id": "https://identity.nvo987.us/#organization"
+      },
+
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ORCID",
+          "value": "0009-0007-4628-1871",
+          "url": "https://orcid.org/0009-0007-4628-1871"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ISNI",
+          "value": "0000000529640885",
+          "url": "https://isni.org/isni/0000000529640885"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "OpenAlex",
+          "value": "A5120949417",
+          "url": "https://openalex.org/A5120949417"
+        }
+      ],
+
+      "sameAs": [
+        "https://orcid.org/0009-0007-4628-1871",
+        "https://isni.org/isni/0000000529640885",
+        "https://openalex.org/A5120949417",
+        "https://www.wikidata.org/wiki/Q137675227",
+        "https://github.com/nvo987-art-history",
+        "https://w3id.org/nvo987",
+        "https://scholar.google.com/citations?user=iRM-GNQAAAAJ",
+        "https://www.webofscience.com/wos/author/record/PDY-1682-2025",
+        "https://t.me/nvo987",
+        "https://independent.academia.edu/VanOrton",
+        "https://hu.pinterest.com/arthistorynvo987/",
+        "https://www.youtube.com/@nvo987-art-history",
+        "https://www.tiktok.com/@nvo987",
+        "https://www.threads.com/@nvo987",
+        "https://www.snapchat.com/@art-nvo987",
+        "https://pixelfed.social/nvo987",
+        "https://mastodon.social/@nvo987",
+        "https://www.instagram.com/nvo987/",
+        "https://www.facebook.com/nvo987/",
+        "https://bluesky.nvo987.us/",
+        "https://www.reddit.com/user/Grand_Service448/",
+        "https://hcommons.org/members/nicholasvanorton/",
+        "https://about.me/nvo987",
+        "https://gravatar.com/0730nicholas",
+        "https://www.zotero.org/groups/6397230/visual_theory_in_the_age_of_algorithms",
+        "https://nvo987.substack.com/",
+        "https://www.linkedin.com/in/nvo987/"
+      ],
+
+      "knowsAbout": [
+        "visual theory",
+        "color theory",
+        "color studies",
+        "aesthetics",
+        "algorithmic culture",
+        "digital humanities",
+        "generative systems",
+        "art history",
+        "visual culture",
+        "media theory",
+        "computational aesthetics",
+        "generative art",
+        "algorithmic art",
+        "data visualization",
+        "digital art",
+        "human-computer interaction",
+        "knowledge representation",
+        "semantic web",
+        "linked open data",
+        "research methods",
+        "interdisciplinary research",
+        "experimental publishing",
+        "open science"
+      ]
+    },
+
+    {
+      "@type": "Organization",
+      "@id": "https://identity.nvo987.us/#organization",
+      "name": "Art History NVO987",
+      "url": "https://identity.nvo987.us",
+      "sameAs": [
+        "https://nvo987.us"
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://identity.nvo987.us/#website",
+      "url": "https://identity.nvo987.us",
+      "name": "NVO987 | Research Identity",
+      "publisher": {
+        "@id": "https://identity.nvo987.us/#person"
+      }
+    },
+
+    {
+      "@type": "ResearchProject",
+      "@id": "https://identity.nvo987.us/#project",
+
+      "name": "Color as a Generative Principle in Contemporary Visual Systems",
+
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.18009245",
+        "url": "https://doi.org/10.5281/zenodo.18009245"
+      },
+
+      "url": [
+        "https://doi.org/10.5281/zenodo.18009245",
+        "https://nvo987.substack.com/p/nvo987-research-projects"
+      ],
+
+      "creator": {
+        "@id": "https://identity.nvo987.us/#person"
+      },
+
+      "publisher": {
+        "@id": "https://identity.nvo987.us/#organization"
+      }
+    }
+
+  ]
+}
