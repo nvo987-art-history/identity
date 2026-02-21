@@ -1,0 +1,32 @@
+{
+  "service": "NVO987 Identity API",
+  "domain": "identity.nvo987.us",
+  "apiVersion": "v1",
+  "status": "operational",
+  "environment": "production",
+  "timestamp": "2026-02-21T22:50:00Z",
+
+  "did": "did:web:identity.nvo987.us",
+
+  "endpoints": {
+    "index": "/api/v1/index.json",
+    "identity": "/api/v1/identity.json",
+    "identifiers": "/api/v1/identifiers.json",
+    "profiles": "/api/v1/profiles.json",
+    "resolve": "/api/v1/resolve.json",
+    "status": "/api/v1/status.json"
+  },
+
+  "integrity": {
+    "machineLayer": "/machine/",
+    "verifiableCredential": "/machine/vc.jsonld",
+    "checksums": "/machine/checksums.json"
+  },
+
+  "spec": {
+    "didMethod": "did:web",
+    "vcFormat": "JSON-LD",
+    "apiStyle": "static-json",
+    "versioning": "path-based"
+  }
+}
