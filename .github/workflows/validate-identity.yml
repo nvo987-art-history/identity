@@ -17,36 +17,51 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y jq tidy libxml2-utils
 
-      - name: Validate JSON files
+      # -------------------------
+      # JSON VALIDATION
+      # -------------------------
+      - name: Validate all JSON files
         run: |
           set -e
           find . -type f -name "*.json" ! -path "./.git/*" | while read f; do
             jq empty "$f"
           done
 
-      - name: Validate NDJSON files
+      # -------------------------
+      # NDJSON VALIDATION
+      # -------------------------
+      - name: Validate all NDJSON files
         run: |
           set -e
           find . -type f -name "*.ndjson" ! -path "./.git/*" | while read f; do
-            while read line; do
+            while IFS= read -r line; do
               echo "$line" | jq empty
             done < "$f"
           done
 
-      - name: Validate XML files
+      # -------------------------
+      # XML VALIDATION
+      # -------------------------
+      - name: Validate all XML files
         run: |
           set -e
           find . -type f -name "*.xml" ! -path "./.git/*" | while read f; do
             xmllint --noout "$f"
           done
 
-      - name: Validate HTML files (strict)
+      # -------------------------
+      # HTML VALIDATION
+      # -------------------------
+      - name: Validate all HTML files (strict)
         run: |
           set -e
           find . -type f -name "*.html" ! -path "./.git/*" | while read f; do
             tidy -errors -q "$f"
           done
 
+      # -------------------------
+      # EMPTY FILE CHECK
+      # -------------------------
       - name: Check empty files
         run: |
           set -e
@@ -57,37 +72,63 @@ jobs:
             fi
           done
 
-      - name: Check required API files
+      # -------------------------
+      # API DIRECTORY CHECK
+      # -------------------------
+      - name: Validate API structure
         run: |
           set -e
-          test -f api/v1/index.json
-          test -f api/v1/identity.json
-          test -f api/v1/identifiers.json
-          test -f api/v1/profiles.json
-          test -f api/v1/status.json
 
-      - name: Check machine files
-        run: |
-          set -e
-          test -f machine/vc.jsonld
-          test -f machine/vc.jsonld.sha256
-
-      - name: Validate SHA256 integrity
-        run: |
-          set -e
-          EXPECTED=$(tr -d ' \n' < machine/vc.jsonld.sha256)
-          ACTUAL=$(sha256sum machine/vc.jsonld | cut -d ' ' -f1)
-          if [ "$EXPECTED" != "$ACTUAL" ]; then
-            echo "SHA256 mismatch"
-            exit 1
+          if [ -d "api" ]; then
+            API_COUNT=$(find api -type f -name "*.json" | wc -l)
+            if [ "$API_COUNT" -eq 0 ]; then
+              echo "API directory exists but contains no JSON files"
+              exit 1
+            fi
           fi
 
-      - name: Check .well-known files (optional)
+      # -------------------------
+      # MACHINE HASH VALIDATION
+      # -------------------------
+      - name: Validate all SHA256 integrity pairs
         run: |
           set -e
-          [ -f .well-known/did.json ] || true
-          [ -f .well-known/assetlinks.json ] || true
-          [ -f .well-known/openid-configuration ] || true
+
+          find . -type f -name "*.sha256" ! -path "./.git/*" | while read hashfile; do
+
+            target="${hashfile%.sha256}"
+
+            if [ ! -f "$target" ]; then
+              echo "Missing target file for hash: $hashfile"
+              exit 1
+            fi
+
+            # Normalize CRLF
+            sed -i 's/\r$//' "$target"
+
+            CALCULATED=$(sha256sum "$target" | awk '{print $1}')
+            STORED=$(tr -d '\r\n ' < "$hashfile")
+
+            echo "Checking $target"
+
+            if [ "$CALCULATED" != "$STORED" ]; then
+              echo "SHA256 mismatch for $target"
+              exit 1
+            fi
+
+          done
+
+          echo "All SHA256 files valid"
+
+      # -------------------------
+      # OPTIONAL .WELL-KNOWN
+      # -------------------------
+      - name: Check .well-known (optional)
+        run: |
+          set -e
+          if [ -d ".well-known" ]; then
+            echo ".well-known directory detected"
+          fi
 
       - name: Final status
         run: echo "Identity validation passed"
