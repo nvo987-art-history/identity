@@ -1,0 +1,38 @@
+{
+  "id": "index",
+  "type": "ApiIndex",
+
+  "api": {
+    "name": "IdentityAPI",
+    "version": "v1",
+    "style": "static-json",
+    "base": "https://identity.nvo987.us/api/v1/"
+  },
+
+  "self": "https://identity.nvo987.us/api/v1/index.json",
+  "url": "https://identity.nvo987.us/api/v1/index.json",
+
+  "owner": {
+    "alias": "NVO987",
+    "name": "Nicholas Van-Orton",
+    "did": "did:web:identity.nvo987.us",
+    "domain": "identity.nvo987.us"
+  },
+
+  "resources": {
+    "identity": "/api/v1/identity.json",
+    "identifiers": "/api/v1/identifiers.json",
+    "profiles": "/api/v1/profiles.json",
+    "status": "/api/v1/status.json"
+  },
+
+  "machine": {
+    "vc": "/machine/vc.jsonld",
+    "vc_sha256": "/machine/vc.jsonld.sha256"
+  },
+
+  "meta": {
+    "updated": "2026-02-21T23:18:00Z",
+    "status": "operational"
+  }
+}
