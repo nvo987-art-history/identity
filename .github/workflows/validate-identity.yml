@@ -2,6 +2,11 @@ name: Identity Strict Validator
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -103,7 +108,6 @@ jobs:
               exit 1
             fi
 
-            # Normalize CRLF
             sed -i 's/\r$//' "$target"
 
             CALCULATED=$(sha256sum "$target" | awk '{print $1}')
@@ -119,16 +123,6 @@ jobs:
           done
 
           echo "All SHA256 files valid"
-
-      # -------------------------
-      # OPTIONAL .WELL-KNOWN
-      # -------------------------
-      - name: Check .well-known (optional)
-        run: |
-          set -e
-          if [ -d ".well-known" ]; then
-            echo ".well-known directory detected"
-          fi
 
       - name: Final status
         run: echo "Identity validation passed"
