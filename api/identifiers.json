@@ -1,16 +1,16 @@
 {
   "id": "identifiers",
-  "name": "Identifiers",
+  "type": "Person",
+  "name": "Nicholas Van-Orton",
   "api": "IdentityAPI",
   "version": "1.0",
   "resource": "identifiers",
 
   "self": "https://identity.nvo987.us/api/identifiers.json",
-  "url": "https://identity.nvo987.us/api/identifiers.json",
 
   "owner": {
-    "id": "NVO987",
-    "name": "Nicholas Van-Orton"
+    "did": "did:web:identity.nvo987.us",
+    "alias": "NVO987"
   },
 
   "persistent": {
@@ -34,9 +34,8 @@
   },
 
   "local": {
-    "alias": "NVO987",
     "domain": "identity.nvo987.us"
   },
 
-  "updated": "2026-02-12"
+  "updated": "2026-02-21"
 }
