@@ -1,0 +1,35 @@
+{
+  "id": "https://identity.nvo987.us",
+  "type": "Person",
+
+  "name": "Nicholas Van-Orton",
+  "alias": "NVO987",
+
+  "role": "Independent Researcher",
+  "field": "Art History",
+
+  "website": "https://www.nvo987.us",
+
+  "did": "did:web:identity.nvo987.us",
+
+  "api": {
+    "name": "IdentityAPI",
+    "version": "v1",
+    "entrypoint": "/api/v1/index.json"
+  },
+
+  "self": "https://identity.nvo987.us/api/v1/identity.json",
+  "url": "https://identity.nvo987.us/api/v1/identity.json",
+
+  "links": {
+    "identifiers": "/api/v1/identifiers.json",
+    "profiles": "/api/v1/profiles.json",
+    "status": "/api/v1/status.json"
+  },
+
+  "meta": {
+    "updated": "2026-02-21T23:05:00Z",
+    "status": "active",
+    "environment": "production"
+  }
+}
