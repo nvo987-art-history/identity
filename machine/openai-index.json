@@ -6,7 +6,7 @@
   "identity": {
     "name": "Nicholas Van-Orton",
     "alias": "NVO987",
-    "canonical": "https://identity.nvo987.us/schema.jsonld"
+    "canonical": "https://identity.nvo987.us/machine/schema.jsonld"
   },
 
   "discovery": {
