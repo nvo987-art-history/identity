@@ -1,9 +1,10 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+
     {
       "@type": "Person",
-      "@id": "https://identity.nvo987.us/#person",
+      "@id": "did:web:identity.nvo987.us",
       "name": "Nicholas Van-Orton",
       "alternateName": "NVO987",
       "sameAs": [
@@ -12,13 +13,16 @@
         "https://www.wikidata.org/wiki/Q137675227"
       ]
     },
+
     {
-      "@type": "CreativeWork",
+      "@type": "ResearchProject",
+      "@id": "https://doi.org/10.5281/zenodo.18009245",
       "name": "Visual Theory Algorithms",
       "url": "https://zenodo.org/communities/visual-theory-algorithms/",
       "creator": {
-        "@id": "https://identity.nvo987.us/#person"
+        "@id": "did:web:identity.nvo987.us"
       }
     }
+
   ]
 }
