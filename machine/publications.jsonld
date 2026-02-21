@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://identity.nvo987.us/#person",
+      "name": "Nicholas Van-Orton",
+      "alternateName": "NVO987",
+      "sameAs": [
+        "https://orcid.org/0009-0007-4628-1871",
+        "https://isni.org/isni/0000000529640885",
+        "https://www.wikidata.org/wiki/Q137675227"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Visual Theory Algorithms",
+      "url": "https://zenodo.org/communities/visual-theory-algorithms/",
+      "creator": {
+        "@id": "https://identity.nvo987.us/#person"
+      }
+    }
+  ]
+}
