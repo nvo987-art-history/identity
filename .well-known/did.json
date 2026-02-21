@@ -1,6 +1,13 @@
 {
-  "@context": ["https://www.w3.org/ns/did/v1"],
+  "@context": [
+    "https://www.w3.org/ns/did/v1"
+  ],
   "id": "did:web:identity.nvo987.us",
+  "alsoKnownAs": [
+    "https://www.wikidata.org/wiki/Q137675227",
+    "https://isni.org/isni/0000000529640885",
+    "https://orcid.org/0009-0007-4628-1871"
+  ],
   "service": [
     {
       "id": "#site",
