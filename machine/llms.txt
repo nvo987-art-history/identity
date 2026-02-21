@@ -4,16 +4,22 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://identity.nvo987.us/sitemap.xml
-Structured-Data: https://identity.nvo987.us/schema.jsonld
+# Identity
+Name: Nicholas Van-Orton
+Alias: NVO987
+Domain: https://identity.nvo987.us
 
-# Canonical Identity
+# Canonical Identity Document
 Canonical: https://identity.nvo987.us/schema.jsonld
 
 # Persistent Identifiers
 ORCID: https://orcid.org/0009-0007-4628-1871
 ISNI: https://isni.org/isni/0000000529640885
 Wikidata: https://www.wikidata.org/wiki/Q137675227
+
+# Structured Data
+Structured-Data: https://identity.nvo987.us/schema.jsonld
+Sitemap: https://identity.nvo987.us/sitemap.xml
 
 # Contact
 Contact: mailto:nvo@nvo987.us
