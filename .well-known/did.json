@@ -1,6 +1,8 @@
 {
-  "@context": "https://www.w3.org/ns/did/v1",
-
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/ed25519-2020/v1"
+  ],
   "id": "did:web:identity.nvo987.us",
 
   "alsoKnownAs": [
@@ -9,11 +11,24 @@
     "https://www.wikidata.org/wiki/Q137675227"
   ],
 
-  "service": [
-    {
-      "id": "did:web:identity.nvo987.us#site",
-      "type": "LinkedDomains",
-      "serviceEndpoint": "https://identity.nvo987.us"
-    }
-  ]
+  "verificationMethod": [{
+    "id": "did:web:identity.nvo987.us#key-1",
+    "type": "Ed25519VerificationKey2020",
+    "controller": "did:web:identity.nvo987.us",
+    "publicKeyMultibase": "z6MksZJpHn2R3eH8sYp6YF6UVxZ4WRzE7vDz3jACzmvVsQtK"
+  }],
+
+  "authentication": [
+    "did:web:identity.nvo987.us#key-1"
+  ],
+
+  "assertionMethod": [
+    "did:web:identity.nvo987.us#key-1"
+  ],
+
+  "service": [{
+    "id": "did:web:identity.nvo987.us#site",
+    "type": "LinkedDomains",
+    "serviceEndpoint": "https://identity.nvo987.us"
+  }]
 }
