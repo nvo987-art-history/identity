@@ -1,4 +1,4 @@
-name: Identity Strict Validator
+name: Identity Full Root Validator
 
 on:
   push:
@@ -7,81 +7,81 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   validate:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository (FULL DEPTH)
+      # -------------------------
+      # FULL CHECKOUT
+      # -------------------------
+      - name: Checkout FULL repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Show repository structure (debug)
+      # -------------------------
+      # DEBUG – SHOW FULL TREE
+      # -------------------------
+      - name: Show full repository tree
         run: |
           echo "Workspace: $GITHUB_WORKSPACE"
           echo "Total files:"
           find "$GITHUB_WORKSPACE" -type f | wc -l
-          echo "Top level structure:"
-          ls -la "$GITHUB_WORKSPACE"
+          echo "---- FULL TREE ----"
+          ls -R "$GITHUB_WORKSPACE"
 
-      - name: Install validation tools
+      # -------------------------
+      # INSTALL TOOLS
+      # -------------------------
+      - name: Install tools
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
 
-      ########################################
-      # JSON VALIDATION
-      ########################################
-      - name: Validate ALL JSON files
+      # -------------------------
+      # VALIDATE ALL JSON + JSONLD (FULL ROOT)
+      # -------------------------
+      - name: Validate ALL JSON / JSONLD
         run: |
           set -e
-          echo "Validating JSON files..."
-          find "$GITHUB_WORKSPACE" -type f -name "*.json" ! -path "*/.git/*" | while read file; do
-            echo "Checking $file"
-            jq empty "$file"
-          done
+          find "$GITHUB_WORKSPACE" -type f \( -name "*.json" -o -name "*.jsonld" \) ! -path "*/.git/*" -print0 \
+          | while IFS= read -r -d '' file; do
+              echo "Checking $file"
+              jq empty "$file"
+            done
           echo "JSON validation complete."
 
-      ########################################
-      # JSON-LD VALIDATION
-      ########################################
-      - name: Validate ALL JSON-LD files
+      # -------------------------
+      # VALIDATE ALL HTML (FULL ROOT)
+      # -------------------------
+      - name: Validate ALL HTML
         run: |
           set -e
-          echo "Validating JSON-LD files..."
-          find "$GITHUB_WORKSPACE" -type f -name "*.jsonld" ! -path "*/.git/*" | while read file; do
-            echo "Checking $file"
-            jq empty "$file"
-          done
-          echo "JSON-LD validation complete."
-
-      ########################################
-      # HTML BASIC STRUCTURE CHECK
-      ########################################
-      - name: Validate ALL HTML files (basic structure)
-        run: |
-          set -e
-          echo "Validating HTML files..."
-          find "$GITHUB_WORKSPACE" -type f -name "*.html" ! -path "*/.git/*" | while read file; do
-            echo "Checking $file"
-            grep -q "<html" "$file"
-            grep -q "</html>" "$file"
-          done
+          find "$GITHUB_WORKSPACE" -type f -name "*.html" ! -path "*/.git/*" -print0 \
+          | while IFS= read -r -d '' file; do
+              echo "Checking $file"
+              grep -q "<html" "$file"
+              grep -q "</html>" "$file"
+            done
           echo "HTML validation complete."
 
-      ########################################
-      # SHA256 Integrity Check (optional)
-      ########################################
-      - name: Generate SHA256 for all files
+      # -------------------------
+      # CHECK EMPTY FILES (FULL ROOT)
+      # -------------------------
+      - name: Fail if any empty file exists
         run: |
-          echo "Generating SHA256 for all files..."
-          find "$GITHUB_WORKSPACE" -type f ! -path "*/.git/*" -exec sha256sum {} \; > sha256-manifest.txt
-          echo "SHA256 manifest created."
+          set -e
+          find "$GITHUB_WORKSPACE" -type f ! -path "*/.git/*" -print0 \
+          | while IFS= read -r -d '' file; do
+              if [ ! -s "$file" ]; then
+                echo "Empty file detected: $file"
+                exit 1
+              fi
+            done
+          echo "No empty files detected."
 
-      - name: Upload SHA256 manifest
-        uses: actions/upload-artifact@v4
-        with:
-          name: sha256-manifest
-          path: sha256-manifest.txt
+      - name: Final status
+        run: echo "FULL ROOT VALIDATION PASSED"
