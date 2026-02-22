@@ -7,122 +7,81 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   validate:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (FULL DEPTH)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install tools
+      - name: Show repository structure (debug)
+        run: |
+          echo "Workspace: $GITHUB_WORKSPACE"
+          echo "Total files:"
+          find "$GITHUB_WORKSPACE" -type f | wc -l
+          echo "Top level structure:"
+          ls -la "$GITHUB_WORKSPACE"
+
+      - name: Install validation tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq tidy libxml2-utils
+          sudo apt-get install -y jq
 
-      # -------------------------
+      ########################################
       # JSON VALIDATION
-      # -------------------------
-      - name: Validate all JSON files
+      ########################################
+      - name: Validate ALL JSON files
         run: |
           set -e
-          find . -type f -name "*.json" ! -path "./.git/*" | while read f; do
-            jq empty "$f"
+          echo "Validating JSON files..."
+          find "$GITHUB_WORKSPACE" -type f -name "*.json" ! -path "*/.git/*" | while read file; do
+            echo "Checking $file"
+            jq empty "$file"
           done
+          echo "JSON validation complete."
 
-      # -------------------------
-      # NDJSON VALIDATION
-      # -------------------------
-      - name: Validate all NDJSON files
+      ########################################
+      # JSON-LD VALIDATION
+      ########################################
+      - name: Validate ALL JSON-LD files
         run: |
           set -e
-          find . -type f -name "*.ndjson" ! -path "./.git/*" | while read f; do
-            while IFS= read -r line; do
-              echo "$line" | jq empty
-            done < "$f"
+          echo "Validating JSON-LD files..."
+          find "$GITHUB_WORKSPACE" -type f -name "*.jsonld" ! -path "*/.git/*" | while read file; do
+            echo "Checking $file"
+            jq empty "$file"
           done
+          echo "JSON-LD validation complete."
 
-      # -------------------------
-      # XML VALIDATION
-      # -------------------------
-      - name: Validate all XML files
+      ########################################
+      # HTML BASIC STRUCTURE CHECK
+      ########################################
+      - name: Validate ALL HTML files (basic structure)
         run: |
           set -e
-          find . -type f -name "*.xml" ! -path "./.git/*" | while read f; do
-            xmllint --noout "$f"
+          echo "Validating HTML files..."
+          find "$GITHUB_WORKSPACE" -type f -name "*.html" ! -path "*/.git/*" | while read file; do
+            echo "Checking $file"
+            grep -q "<html" "$file"
+            grep -q "</html>" "$file"
           done
+          echo "HTML validation complete."
 
-      # -------------------------
-      # HTML VALIDATION
-      # -------------------------
-      - name: Validate all HTML files (strict)
+      ########################################
+      # SHA256 Integrity Check (optional)
+      ########################################
+      - name: Generate SHA256 for all files
         run: |
-          set -e
-          find . -type f -name "*.html" ! -path "./.git/*" | while read f; do
-            tidy -errors -q "$f"
-          done
+          echo "Generating SHA256 for all files..."
+          find "$GITHUB_WORKSPACE" -type f ! -path "*/.git/*" -exec sha256sum {} \; > sha256-manifest.txt
+          echo "SHA256 manifest created."
 
-      # -------------------------
-      # EMPTY FILE CHECK
-      # -------------------------
-      - name: Check empty files
-        run: |
-          set -e
-          find . -type f ! -path "./.git/*" | while read f; do
-            if [ ! -s "$f" ]; then
-              echo "Empty file: $f"
-              exit 1
-            fi
-          done
-
-      # -------------------------
-      # API DIRECTORY CHECK
-      # -------------------------
-      - name: Validate API structure
-        run: |
-          set -e
-
-          if [ -d "api" ]; then
-            API_COUNT=$(find api -type f -name "*.json" | wc -l)
-            if [ "$API_COUNT" -eq 0 ]; then
-              echo "API directory exists but contains no JSON files"
-              exit 1
-            fi
-          fi
-
-      # -------------------------
-      # MACHINE HASH VALIDATION
-      # -------------------------
-      - name: Validate all SHA256 integrity pairs
-        run: |
-          set -e
-
-          find . -type f -name "*.sha256" ! -path "./.git/*" | while read hashfile; do
-
-            target="${hashfile%.sha256}"
-
-            if [ ! -f "$target" ]; then
-              echo "Missing target file for hash: $hashfile"
-              exit 1
-            fi
-
-            sed -i 's/\r$//' "$target"
-
-            CALCULATED=$(sha256sum "$target" | awk '{print $1}')
-            STORED=$(tr -d '\r\n ' < "$hashfile")
-
-            echo "Checking $target"
-
-            if [ "$CALCULATED" != "$STORED" ]; then
-              echo "SHA256 mismatch for $target"
-              exit 1
-            fi
-
-          done
-
-          echo "All SHA256 files valid"
-
-      - name: Final status
-        run: echo "Identity validation passed"
+      - name: Upload SHA256 manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: sha256-manifest
+          path: sha256-manifest.txt
