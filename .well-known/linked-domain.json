@@ -1,0 +1,6 @@
+{
+  "@context": "https://identity.foundation/.well-known/contexts/linked-domain/v1",
+  "linked_domains": [
+    "https://identity.nvo987.us"
+  ]
+}
