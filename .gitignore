@@ -1,1 +1,9 @@
+# Private keys
 *.pem
+did-private.pem
+
+# Node
+node_modules/
+
+# Logs
+*.log
