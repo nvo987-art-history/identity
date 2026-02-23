@@ -1,1 +1,15 @@
 #
+# Private keys
+*.pem
+*.key
+private-key.json
+*.p8
+
+# Environment
+.env
+
+# Node
+node_modules/
+
+# Logs
+*.log
