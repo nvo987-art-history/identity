@@ -3,13 +3,16 @@
     "https://www.w3.org/ns/did/v1",
     "https://w3id.org/security/suites/ed25519-2020/v1"
   ],
+
   "id": "did:web:identity.nvo987.us",
 
   "alsoKnownAs": [
     "https://orcid.org/0009-0007-4628-1871",
-    "https://www.wikidata.org/wiki/Q137675227",
     "https://isni.org/isni/0000000529640885",
-    "https://nvo987.us"
+    "https://www.wikidata.org/wiki/Q137675227",
+    "https://nvo987.us",
+    "https://mastodon.social/@nvo987",
+    "https://bluesky.nvo987.us"
   ],
 
   "verificationMethod": [
@@ -33,7 +36,12 @@
     {
       "id": "did:web:identity.nvo987.us#profile",
       "type": "ProfileService",
-      "serviceEndpoint": "https://identity.nvo987.us/profile.json"
+      "serviceEndpoint": "https://identity.nvo987.us/machine/schema.jsonld"
+    },
+    {
+      "id": "did:web:identity.nvo987.us#vc",
+      "type": "VerifiableCredentialService",
+      "serviceEndpoint": "https://identity.nvo987.us/machine/vc.jsonld"
     }
   ]
-} 
+}
