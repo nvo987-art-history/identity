@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+
+  "@id": "https://identity.nvo987.us/machine/research.jsonld",
+
+  "@graph": [
+
+    {
+      "@type": "ResearchProject",
+      "@id": "https://identity.nvo987.us/research/color-generative-principle",
+
+      "name": "Color as a Generative Principle in Contemporary Visual Systems",
+
+      "description": "Research exploring color as an operational and generative principle in algorithmic visual systems.",
+
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.18009245",
+        "url": "https://doi.org/10.5281/zenodo.18009245"
+      },
+
+      "url": [
+        "https://doi.org/10.5281/zenodo.18009245",
+        "https://zenodo.org/communities/visual-theory-algorithms/"
+      ],
+
+      "creator": {
+        "@id": "did:web:identity.nvo987.us"
+      },
+
+      "publisher": {
+        "@id": "https://identity.nvo987.us/#organization"
+      },
+
+      "inLanguage": "en",
+      "datePublished": "2025"
+    }
+
+  ]
+}
