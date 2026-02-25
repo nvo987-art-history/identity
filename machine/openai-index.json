@@ -1,16 +1,20 @@
 {
   "site": "https://identity.nvo987.us",
   "type": "IdentityAuthority",
-  "version": "1.0",
+  "version": "1.1",
 
   "identity": {
     "name": "Nicholas Van-Orton",
     "alias": "NVO987",
-    "canonical": "https://identity.nvo987.us/machine/schema.jsonld"
+    "canonical": "https://identity.nvo987.us/machine/schema.jsonld",
+    "did": "did:web:identity.nvo987.us"
   },
 
   "discovery": {
     "schema": "/schema.jsonld",
+    "did": "/.well-known/did.json",
+    "publications": "/machine/publications.jsonld",
+    "research": "/research/color-generative-principle",
     "sitemap": "/sitemap.xml",
     "feeds": ["/feed.xml"],
     "api": "/api/identity.json"
