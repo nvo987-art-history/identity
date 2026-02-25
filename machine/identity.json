@@ -1,0 +1,31 @@
+{
+  "id": "https://identity.nvo987.us/.well-known/identity.json",
+  "type": "IdentityAuthority",
+
+  "authority": {
+    "site": "https://identity.nvo987.us",
+    "did": "did:web:identity.nvo987.us",
+    "canonicalGraph": "https://identity.nvo987.us/machine/schema.jsonld"
+  },
+
+  "services": {
+    "did": "https://identity.nvo987.us/.well-known/did.json",
+    "schema": "https://identity.nvo987.us/machine/schema.jsonld",
+    "publications": "https://identity.nvo987.us/machine/publications.jsonld",
+    "vc": "https://identity.nvo987.us/machine/vc.jsonld",
+    "sitemap": "https://identity.nvo987.us/sitemap.xml"
+  },
+
+  "domains": {
+    "knowledge": "https://knowledge.nvo987.us"
+  },
+
+  "identifiers": {
+    "orcid": "https://orcid.org/0009-0007-4628-1871",
+    "isni": "https://isni.org/isni/0000000529640885",
+    "wikidata": "https://www.wikidata.org/wiki/Q137675227"
+  },
+
+  "version": "1.0",
+  "lastUpdated": "2026-02-25"
+}
