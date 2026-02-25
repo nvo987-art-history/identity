@@ -6,11 +6,7 @@
 
   "id": "https://identity.nvo987.us/machine/vc.jsonld",
 
-  "type": [
-    "VerifiableCredential"
-  ],
-
-  "name": "NVO987 Identity Credential",
+  "type": ["VerifiableCredential"],
 
   "issuer": {
     "id": "did:web:identity.nvo987.us"
@@ -19,7 +15,7 @@
   "validFrom": "2026-01-01T00:00:00Z",
 
   "credentialSubject": {
-    "id": "did:web:identity.nvo987.us",
+    "id": "https://identity.nvo987.us/#person",
 
     "type": "Person",
 
@@ -28,25 +24,8 @@
 
     "url": "https://identity.nvo987.us",
 
-    "email": [
-      "mailto:nvo@nvo987.us"
-    ],
-
-    "affiliation": {
-      "id": "https://identity.nvo987.us/#organization",
-      "type": "Organization",
-      "name": "Art History NVO987",
-      "url": "https://identity.nvo987.us"
-    },
-
     "sameAs": [
-      "https://orcid.org/0009-0007-4628-1871",
-      "https://isni.org/isni/0000000529640885",
-      "https://www.wikidata.org/wiki/Q137675227",
-      "https://mastodon.social/@nvo987",
-      "https://bluesky.nvo987.us",
-      "https://nvo987.substack.com/",
-      "https://www.linkedin.com/in/nvo987/"
+      "did:web:identity.nvo987.us"
     ]
   }
 }
