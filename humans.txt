@@ -7,10 +7,14 @@
 /* TEAM */
 
 Name: Nicholas Van-Orton
+Alias: NVO987
 Title: Independent Researcher
 Location: Paris, France
 Email: 0730nicholas@gmail.com
 Email: nvo@nvo987.us
+
+DID: did:web:identity.nvo987.us
+DID Document: https://identity.nvo987.us/.well-known/did.json
 
 ORCID: https://orcid.org/0009-0007-4628-1871
 ISNI: https://isni.org/isni/0000000529640885
@@ -19,6 +23,7 @@ Wikidata: https://www.wikidata.org/wiki/Q137675227
 
 Website: https://nvo987.us
 Identity: https://identity.nvo987.us
+Knowledge: https://knowledge.nvo987.us
 
 GitHub: https://github.com/nvo987-art-history
 Twitter/X: https://x.com/nvo987
@@ -30,13 +35,13 @@ RSS: https://nvo987.substack.com/feed
 
 Nicholas Van-Orton is an independent researcher and artist working
 at the intersection of visual theory, color studies, and algorithmic culture.
-The site functions as a scholarly identity hub and research infrastructure
-aggregating persistent identifiers, academic profiles, and open knowledge systems.
+The site functions as a scholarly identity hub and decentralized research infrastructure
+aggregating persistent identifiers, linked data, and verifiable credentials.
 
 
 /* SITE */
 
-Standards: HTML5, Schema.org JSON-LD, OpenGraph, RSS, rel=me, Canonical, Sitemap
+Standards: HTML5, Schema.org JSON-LD, DID Core, OpenGraph, RSS, rel=me, Canonical, Sitemap
 Stack: Hand-coded static site
 Hosting: GitHub Pages
 Domain: identity.nvo987.us
@@ -50,4 +55,4 @@ ORCID
 OpenAlex
 Crossref
 Wikidata
-Open Web community 
+Open Web community
