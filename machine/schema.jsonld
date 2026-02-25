@@ -1,5 +1,8 @@
 {
   "@context": "https://schema.org",
+
+  "@id": "https://identity.nvo987.us/machine/schema.jsonld",
+
   "@graph": [
 
     {
@@ -16,25 +19,12 @@
 
       "email": "mailto:nvo@nvo987.us",
 
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "primary",
-        "email": "mailto:0730nicholas@gmail.com"
-      },
-
-      "telephone": "+36702674440",
-
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Paris",
-        "addressCountry": "FR"
-      },
-
-      "affiliation": {
-        "@id": "https://identity.nvo987.us/#organization"
-      },
-
       "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "DID",
+          "value": "did:web:identity.nvo987.us"
+        },
         {
           "@type": "PropertyValue",
           "propertyID": "ORCID",
@@ -56,6 +46,7 @@
       ],
 
       "sameAs": [
+        "did:web:identity.nvo987.us",
         "https://orcid.org/0009-0007-4628-1871",
         "https://isni.org/isni/0000000529640885",
         "https://openalex.org/A5120949417",
@@ -64,23 +55,8 @@
         "https://w3id.org/nvo987",
         "https://scholar.google.com/citations?user=iRM-GNQAAAAJ",
         "https://www.webofscience.com/wos/author/record/PDY-1682-2025",
-        "https://t.me/nvo987",
-        "https://independent.academia.edu/VanOrton",
-        "https://hu.pinterest.com/arthistorynvo987/",
-        "https://www.youtube.com/@nvo987-art-history",
-        "https://www.tiktok.com/@nvo987",
-        "https://www.threads.com/@nvo987",
-        "https://www.snapchat.com/@art-nvo987",
-        "https://pixelfed.social/nvo987",
         "https://mastodon.social/@nvo987",
-        "https://www.instagram.com/nvo987/",
-        "https://www.facebook.com/nvo987/",
         "https://bluesky.nvo987.us/",
-        "https://www.reddit.com/user/Grand_Service448/",
-        "https://hcommons.org/members/nicholasvanorton/",
-        "https://about.me/nvo987",
-        "https://gravatar.com/0730nicholas",
-        "https://www.zotero.org/groups/6397230/visual_theory_in_the_age_of_algorithms",
         "https://nvo987.substack.com/",
         "https://www.linkedin.com/in/nvo987/"
       ],
@@ -89,7 +65,6 @@
         "visual theory",
         "color theory",
         "color studies",
-        "nvo987",
         "aesthetics",
         "algorithmic culture",
         "digital humanities",
@@ -99,18 +74,14 @@
         "media theory",
         "computational aesthetics",
         "generative art",
-        "algorithmic art",
-        "data visualization",
-        "digital art",
-        "human-computer interaction",
-        "knowledge representation",
         "semantic web",
         "linked open data",
-        "research methods",
-        "interdisciplinary research",
-        "experimental publishing",
         "open science"
-      ]
+      ],
+
+      "affiliation": {
+        "@id": "https://identity.nvo987.us/#organization"
+      }
     },
 
     {
@@ -160,5 +131,8 @@
       }
     }
 
-  ]
+  ],
+
+  "version": "1.1",
+  "dateModified": "2026-02-25"
 }
