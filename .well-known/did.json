@@ -12,7 +12,10 @@
     "https://www.wikidata.org/wiki/Q137675227",
     "https://nvo987.us",
     "https://mastodon.social/@nvo987",
-    "https://bluesky.nvo987.us"
+    "https://bluesky.nvo987.us",
+    "https://identity.nvo987.us",
+    "https://identity.nvo987.us/research/color-generative-principle",
+    "https://knowledge.nvo987.us"
   ],
 
   "verificationMethod": [
@@ -35,13 +38,23 @@
   "service": [
     {
       "id": "did:web:identity.nvo987.us#profile",
-      "type": "ProfileService",
+      "type": "LinkedData",
       "serviceEndpoint": "https://identity.nvo987.us/machine/schema.jsonld"
     },
     {
+      "id": "did:web:identity.nvo987.us#publications",
+      "type": "LinkedData",
+      "serviceEndpoint": "https://identity.nvo987.us/machine/publications.jsonld"
+    },
+    {
       "id": "did:web:identity.nvo987.us#vc",
-      "type": "VerifiableCredentialService",
+      "type": "LinkedData",
       "serviceEndpoint": "https://identity.nvo987.us/machine/vc.jsonld"
+    },
+    {
+      "id": "did:web:identity.nvo987.us#knowledge",
+      "type": "LinkedDomains",
+      "serviceEndpoint": "https://knowledge.nvo987.us"
     }
   ]
 }
