@@ -11,7 +11,7 @@
   },
 
   "discovery": {
-    "schema": "/schema.jsonld",
+    "schema": "/machine/schema.jsonld",
     "did": "/.well-known/did.json",
     "publications": "/machine/publications.jsonld",
     "research": "/research/color-generative-principle",
