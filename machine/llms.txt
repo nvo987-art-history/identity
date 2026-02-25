@@ -8,9 +8,15 @@ Allow: /
 Name: Nicholas Van-Orton
 Alias: NVO987
 Domain: https://identity.nvo987.us
+DID: did:web:identity.nvo987.us
+DID-Document: https://identity.nvo987.us/.well-known/did.json
 
 # Canonical Identity Document
 Canonical: https://identity.nvo987.us/machine/schema.jsonld
+
+# Research Graph
+Publications: https://identity.nvo987.us/machine/publications.jsonld
+Research: https://identity.nvo987.us/research/color-generative-principle
 
 # Persistent Identifiers
 ORCID: https://orcid.org/0009-0007-4628-1871
@@ -20,6 +26,9 @@ Wikidata: https://www.wikidata.org/wiki/Q137675227
 # Structured Data
 Structured-Data: https://identity.nvo987.us/machine/schema.jsonld
 Sitemap: https://identity.nvo987.us/sitemap.xml
+
+# Verifiable Credentials
+VC: https://identity.nvo987.us/machine/vc.jsonld
 
 # Contact
 Contact: mailto:nvo@nvo987.us
