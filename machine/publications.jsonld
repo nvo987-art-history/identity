@@ -1,28 +1,36 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
 
-    {
-      "@type": "Person",
-      "@id": "did:web:identity.nvo987.us",
-      "name": "Nicholas Van-Orton",
-      "alternateName": "NVO987",
-      "sameAs": [
-        "https://orcid.org/0009-0007-4628-1871",
-        "https://isni.org/isni/0000000529640885",
-        "https://www.wikidata.org/wiki/Q137675227"
-      ]
-    },
+  "@id": "https://identity.nvo987.us/machine/publications.jsonld",
+
+  "@graph": [
 
     {
       "@type": "ResearchProject",
       "@id": "https://doi.org/10.5281/zenodo.18009245",
+
       "name": "Visual Theory Algorithms",
-      "url": "https://zenodo.org/communities/visual-theory-algorithms/",
+
+      "url": [
+        "https://doi.org/10.5281/zenodo.18009245",
+        "https://zenodo.org/communities/visual-theory-algorithms/"
+      ],
+
       "creator": {
-        "@id": "did:web:identity.nvo987.us"
-      }
+        "@id": "https://identity.nvo987.us/#person"
+      },
+
+      "publisher": {
+        "@type": "Organization",
+        "name": "Zenodo",
+        "url": "https://zenodo.org"
+      },
+
+      "inLanguage": "en"
     }
 
-  ]
+  ],
+
+  "version": "1.0",
+  "dateModified": "2026-02-25"
 }
