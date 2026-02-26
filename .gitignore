@@ -1,8 +1,6 @@
-#
 # Private keys
 *.pem
 *.key
-private-key.json
 *.p8
 
 # Environment
@@ -12,4 +10,4 @@ private-key.json
 node_modules/
 
 # Logs
-*.log
+*.log 
