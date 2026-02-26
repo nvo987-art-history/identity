@@ -26,7 +26,7 @@
     "deploymentLayer": {
       "hashAlgorithm": "SHA-256",
       "hashStorage": "individual-files",
-      "location": "/ROOT-SHA256SUM/"
+      "location": "/ROOT-SHA256SUM"
     }
   },
 
