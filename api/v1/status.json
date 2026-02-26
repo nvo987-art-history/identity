@@ -18,9 +18,16 @@
   },
 
   "integrity": {
-    "machineLayer": "/machine/",
-    "verifiableCredential": "/machine/vc.jsonld",
-    "checksums": "/machine/checksums.json"
+    "identityLayer": {
+      "didMethod": "did:web",
+      "verifiableCredential": "/machine/vc.jsonld",
+      "vcFormat": "JSON-LD"
+    },
+    "deploymentLayer": {
+      "hashAlgorithm": "SHA-256",
+      "hashStorage": "individual-files",
+      "location": "/ROOT-SHA256SUM/"
+    }
   },
 
   "spec": {
