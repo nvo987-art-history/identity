@@ -48,7 +48,7 @@
 
   "machine": {
     "vc": "/machine/vc.jsonld",
-    "vc_sha256": "/machine/vc.jsonld.sha256"
+    "vc_sha256": "/ROOT-SHA256SUM/vc.jsonld.sha256"
   },
 
   "meta": {
