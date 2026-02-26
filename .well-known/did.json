@@ -1,7 +1,8 @@
 {
   "@context": [
     "https://www.w3.org/ns/did/v1",
-    "https://w3id.org/security/suites/ed25519-2020/v1"
+    "https://w3id.org/security/suites/ed25519-2020/v1",
+    "https://identity.foundation/.well-known/did-configuration/v1"
   ],
 
   "id": "did:web:identity.nvo987.us",
@@ -35,6 +36,14 @@
     "did:web:identity.nvo987.us#owner"
   ],
 
+  "capabilityDelegation": [
+    "did:web:identity.nvo987.us#owner"
+  ],
+
+  "capabilityInvocation": [
+    "did:web:identity.nvo987.us#owner"
+  ],
+
   "service": [
     {
       "id": "did:web:identity.nvo987.us#profile",
@@ -55,6 +64,11 @@
       "id": "did:web:identity.nvo987.us#knowledge",
       "type": "LinkedDomains",
       "serviceEndpoint": "https://knowledge.nvo987.us"
+    },
+    {
+      "id": "did:web:identity.nvo987.us#proof",
+      "type": "LinkedDomains",
+      "serviceEndpoint": "https://identity.nvo987.us/proof.json"
     }
   ]
 }
