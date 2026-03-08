@@ -1,12 +1,12 @@
 {
   "issuer": "did:web:identity.nvo987.us",
   "statement": "This DID controls this domain.",
-  "issuedAt": "2026-03-08T22:05:37.822Z",
+  "issuedAt": "2026-03-08T22:29:41.534Z",
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-03-08T22:05:37.858Z",
-    "verificationMethod": "did:web:identity.nvo987.us#key-1",
+    "created": "2026-03-08T22:29:41.557Z",
+    "verificationMethod": "did:web:identity.nvo987.us#owner",
     "proofPurpose": "assertionMethod",
-    "signature": "xppouAJXeAAgxlHAV3MiFRLfP860ZIl3mfk4YPFOOKtlhxCWb1KvmmpEhVaPQD9pCyGatp1bH2Pj2Ds9hjJWAg=="
+    "proofValue": "3iYZjp9qtMANSzUnupl36jSxuJs2Zrw7bjr70E7+qcfmh7YSPkB+H4BsAckazMP3CuGluCWLZXsjJ5PB2fAsDQ=="
   }
 }
