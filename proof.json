@@ -5,7 +5,7 @@
   "proof": {
     "type": "Ed25519Signature2020",
     "created": "2026-02-26T01:24:58.228Z",
-    "verificationMethod": "did:web:identity.nvo987.us#key-1",
+    "verificationMethod": "did:web:identity.nvo987.us#owner",
     "proofPurpose": "assertionMethod",
     "signature": "ZKYuAimHqlkYSRzl5fDej/PU+PXxTe1z69pB94VR+mMWwzzv0qe/ru/a9p9ADvOnU4vwPoq+/LhPPklqBbReAQ=="
   }
