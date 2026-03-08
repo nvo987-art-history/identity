@@ -12,6 +12,7 @@ It serves as a central index connecting:
 
 ## Website
 https://www.nvo987.us
+https://www.nvo987.fr
 
 ## Purpose
 
