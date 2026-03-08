@@ -1,3 +1,4 @@
+
 {
   "@context": [
     "https://www.w3.org/ns/did/v1",
@@ -5,10 +6,7 @@
     "https://identity.foundation/.well-known/did-configuration/v1"
   ],
   "id": "did:web:identity.nvo987.us",
-  "controller": [
-    "did:web:identity.nvo987.us",
-    "https://www.nvo987.fr"
-  ],
+  "controller": "did:web:identity.nvo987.us",
   "versionId": "1",
   "updated": "2026-03-08T17:00:00Z",
   "alsoKnownAs": [
@@ -74,4 +72,4 @@
       "serviceEndpoint": "https://identity.nvo987.us/proof.json"
     }
   ]
-}
+}}
