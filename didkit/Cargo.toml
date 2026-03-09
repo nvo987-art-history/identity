@@ -1,0 +1,11 @@
+[workspace]
+members = ["cli", "lib", "lib/cbindings", "lib/web"]
+
+default-members = ["cli", "lib", "lib/cbindings"]
+
+# $ cargo release
+[workspace.metadata.release]
+sign-tag = true
+tag-prefix = "{{crate_name}}/"
+tag-message = "Release {{crate_name}} version {{version}}."
+pre-release-commit-message = "Release"

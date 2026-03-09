@@ -1,0 +1,65 @@
+[package]
+name = "didkit"
+version = "0.6.0"
+authors = ["Spruce Systems, Inc."]
+edition = "2018"
+description = "Library for Verifiable Credentials and Decentralized Identifiers."
+license = "Apache-2.0"
+homepage = "https://spruceid.dev/docs/didkit/"
+repository = "https://github.com/spruceid/didkit/"
+documentation = "https://docs.rs/didkit/"
+keywords = ["ssi", "did"]
+readme = "README.md"
+
+include = [
+  "/src",
+  "/README.md",
+  "/LICENSE"
+]
+
+[features]
+default = ["w3c", "ed25519", "rsa", "ripemd-160", "eip", "tezos"]
+
+w3c = ["ssi/w3c", "secp256r1", "secp256k1"]
+secp256k1 = ["ssi/secp256k1", "did-method-key/secp256k1"]
+secp256r1 = ["ssi/secp256r1", "did-method-key/secp256r1"]
+secp384r1 = ["ssi/secp384r1", "did-method-key/secp384r1"]
+ed25519 = ["ssi/ed25519"]
+rsa = ["ssi/rsa"]
+ripemd-160 = ["ssi/ripemd-160"]
+
+aleo = ["ssi/aleo"]
+eip = ["ssi/eip"]
+tezos = ["ssi/tezos"]
+solana = ["ssi/solana"]
+
+http-did = ["ssi/http-did"]
+
+ring = ["ssi/ring"]
+
+[dependencies]
+ssi = { version = "0.7.0", default-features = false }
+did-method-key = { version = "0.2.0", default-features = false }
+did-tz = "0.2.0"
+did-ethr = { version = "0.2", default-features = false }
+did-pkh = "0.2"
+did-web = { version = "0.2.0", default-features = false }
+did-webkey = { version = "0.2", default-features = false }
+did-onion = { version = "0.2.0", default-features = false }
+did-ion = { version = "0.2.0", default-features = false }
+did-jwk = { version = "^0.1.0", default-features = false }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# TODO feature-gate JNI, or extract it in another crate like we do for Python (and probably WASM as well)
+jni = "0.17"
+lazy_static = "1.4"
+thiserror = "1.0"
+base64 = "0.12"
+sshkeys = "0.3"
+bytes = "1.0"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+tokio = { version = "1.0", features = ["rt-multi-thread"] }
+
+[lib]
+crate-type = ["lib", "staticlib", "cdylib"]
