@@ -2,17 +2,19 @@
   "@context": [
     "https://www.w3.org/ns/did/v1"
   ],
-  "id": "did:web:identity.nvo987.us",
 
+  "id": "did:web:identity.nvo987.us",
   "issuer": "did:web:identity.nvo987.us",
 
-  "statement": "This DID controls the domains nvo987.us, identity.nvo987.us and related services.",
+  "statement": "This DID controls the domains nvo987.us, nvo987.fr and related services.",
 
   "alsoKnownAs": [
     "https://nvo987.us",
     "https://identity.nvo987.us",
     "https://lab.nvo987.us",
-    "https://bsky.app/profile/nvo987.us"
+    "https://www.nvo987.fr",
+    "https://bsky.app/profile/nvo987.us",
+    "https://mastodon.social/@nvo987"
   ],
 
   "service": [
@@ -20,6 +22,11 @@
       "id": "#bsky",
       "type": "BlueskyProfile",
       "serviceEndpoint": "https://bsky.app/profile/nvo987.us"
+    },
+    {
+      "id": "#mastodon",
+      "type": "MastodonProfile",
+      "serviceEndpoint": "https://mastodon.social/@nvo987"
     },
     {
       "id": "#identity",
@@ -37,4 +44,4 @@
     "proofPurpose": "assertionMethod",
     "proofValue": ""
   }
-} 
+}
