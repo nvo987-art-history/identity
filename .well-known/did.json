@@ -73,6 +73,11 @@
       "id": "did:web:identity.nvo987.us#lab",
       "type": "LinkedDomains",
       "serviceEndpoint": "https://lab.nvo987.us"
+    },
+    {
+      "id": "did:web:identity.nvo987.us#issuer",
+      "type": "VerifiableCredentialIssuer",
+      "serviceEndpoint": "https://identity.nvo987.us/issuer.json"
     }
   ]
 }
