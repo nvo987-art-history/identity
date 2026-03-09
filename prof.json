@@ -1,34 +1,12 @@
 {
-  "@context": [
-    "https://www.w3.org/ns/credentials/v2"
-  ],
-  "id": "https://identity.nvo987.us/prof.json",
-  "type": [
-    "VerifiableCredential",
-    "ProfileCredential",
-    "DomainControlCredential"
-  ],
   "issuer": "did:web:identity.nvo987.us",
-  "issuanceDate": "2026-03-08T22:29:41Z",
-  "credentialSubject": {
-    "id": "did:web:identity.nvo987.us",
-    "domain": "identity.nvo987.us",
-    "homepage": "https://nvo987.us",
-    "alsoKnownAs": [
-      "https://nvo987.us",
-      "https://www.nvo987.fr",
-      "https://bsky.app/profile/nvo987.us",
-      "https://mastodon.social/@nvo987",
-      "https://orcid.org/0009-0007-4628-1871",
-      "https://www.wikidata.org/wiki/Q137675227"
-    ],
-    "statement": "This DID controls this domain and represents the public identity of nvo987."
-  },
+  "statement": "This DID controls this domain.",
+  "issuedAt": "2026-03-09T01:18:09.428Z",
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-03-08T22:29:41Z",
+    "created": "2026-03-09T01:18:09.462Z",
     "verificationMethod": "did:web:identity.nvo987.us#owner",
     "proofPurpose": "assertionMethod",
-    "proofValue": "REPLACE_WITH_NEW_SIGNATURE"
+    "proofValue": "CVyVPHMdSFh3oPflZwyxluChgatrsFXJQVjwDY8VqOF+fmbosU/GUG6kKwiu+W+PRCgBSICPV0A2wspp0NZWBQ=="
   }
 }
