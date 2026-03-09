@@ -1,4 +1,6 @@
-{
+({
   "@context": "https://identity.foundation/.well-known/did-configuration/v1",
-  "linked_dids": []
+  "linked_dids": [
+    "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkaWQ6d2ViOmlkZW50aXR5Lm52bzk4Ny51cyIsInN1YiI6ImRpZDp3ZWI6aWRlbnRpdHkubnZvOTg3LnVzIiwibmJmIjoxNzQxNDg3MDAwLCJleHAiOjE4OTM5NjMwMDAsInZjIjp7IkBjb250ZXh0IjpbImh0dHBzOi8vd3d3LnczLm9yZy8yMDE4L2NyZWRlbnRpYWxzL3YxIl0sInR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiLCJSZXNlYXJjaGVyQ3JlZGVudGlhbCJdLCJjcmVkZW50aWFsU3ViamVjdCI6eyJpZCI6ImRpZDp3ZWI6aWRlbnRpdHkubnZvOTg3LnVzIn19fQ.GENERATED_SIGNATURE"
+  ]
 }

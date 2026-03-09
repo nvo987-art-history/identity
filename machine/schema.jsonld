@@ -1,24 +1,17 @@
 {
   "@context": "https://schema.org",
-
   "@id": "https://identity.nvo987.us/machine/schema.jsonld",
-
   "@graph": [
-
     {
       "@type": "Person",
       "@id": "https://identity.nvo987.us/#person",
-
       "name": "Nicholas Van-Orton",
       "alternateName": "NVO987",
       "jobTitle": "Independent Researcher",
       "description": "Independent researcher and artist working at the intersection of visual theory, color studies, and algorithmic culture.",
-
       "url": "https://identity.nvo987.us",
       "image": "https://identity.nvo987.us/avatar.jpg",
-
       "email": "mailto:nvo@nvo987.us",
-
       "identifier": [
         {
           "@type": "PropertyValue",
@@ -44,7 +37,6 @@
           "url": "https://openalex.org/A5120949417"
         }
       ],
-
       "sameAs": [
         "did:web:identity.nvo987.us",
         "https://orcid.org/0009-0007-4628-1871",
@@ -60,7 +52,6 @@
         "https://nvo987.substack.com/",
         "https://www.linkedin.com/in/nvo987/"
       ],
-
       "knowsAbout": [
         "visual theory",
         "color theory",
@@ -79,12 +70,10 @@
         "linked open data",
         "open science"
       ],
-
       "affiliation": {
         "@id": "https://identity.nvo987.us/#organization"
       }
     },
-
     {
       "@type": "Organization",
       "@id": "https://identity.nvo987.us/#organization",
@@ -94,7 +83,6 @@
         "https://nvo987.us"
       ]
     },
-
     {
       "@type": "WebSite",
       "@id": "https://identity.nvo987.us/#website",
@@ -104,36 +92,36 @@
         "@id": "https://identity.nvo987.us/#person"
       }
     },
-
     {
       "@type": "ResearchProject",
       "@id": "https://identity.nvo987.us/#project",
-
       "name": "Color as a Generative Principle in Contemporary Visual Systems",
-
       "identifier": {
         "@type": "PropertyValue",
         "propertyID": "DOI",
         "value": "10.5281/zenodo.18009245",
         "url": "https://doi.org/10.5281/zenodo.18009245"
       },
-
       "url": [
         "https://doi.org/10.5281/zenodo.18009245",
         "https://nvo987.substack.com/p/nvo987-research-projects"
       ],
-
       "creator": {
         "@id": "https://identity.nvo987.us/#person"
       },
-
       "publisher": {
         "@id": "https://identity.nvo987.us/#organization"
       }
     }
-
   ],
-
   "version": "1.1",
-  "dateModified": "2026-02-25"
+  "dateModified": "2026-02-25",
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-03-09T02:23:17.841Z",
+    "verificationMethod": "did:web:identity.nvo987.us#owner",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "wfxGBgmAZifcO8UuGx+/v1G57i0dU7hR7Sc3DFBXW2Sx7JtwxfCSVX047+6SaZGUbi1UbLV/4wsBq7QHVaCbDQ==",
+    "sha256": "1a04ae9524fdb9aeb92367d59c5b0f85a0c51de07b7caae69b79485a0d7beeee"
+  }
 }
