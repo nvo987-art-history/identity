@@ -1,12 +1,40 @@
 {
+  "@context": [
+    "https://www.w3.org/ns/did/v1"
+  ],
+  "id": "did:web:identity.nvo987.us",
+
   "issuer": "did:web:identity.nvo987.us",
-  "statement": "This DID controls this domain.",
-  "issuedAt": "2026-03-09T01:18:09.428Z",
+
+  "statement": "This DID controls the domains nvo987.us, identity.nvo987.us and related services.",
+
+  "alsoKnownAs": [
+    "https://nvo987.us",
+    "https://identity.nvo987.us",
+    "https://lab.nvo987.us",
+    "https://bsky.app/profile/nvo987.us"
+  ],
+
+  "service": [
+    {
+      "id": "#bsky",
+      "type": "BlueskyProfile",
+      "serviceEndpoint": "https://bsky.app/profile/nvo987.us"
+    },
+    {
+      "id": "#identity",
+      "type": "IdentityService",
+      "serviceEndpoint": "https://identity.nvo987.us"
+    }
+  ],
+
+  "issuedAt": "2026-03-08T22:29:41Z",
+
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-03-09T01:18:09.462Z",
+    "created": "2026-03-08T22:29:41Z",
     "verificationMethod": "did:web:identity.nvo987.us#owner",
     "proofPurpose": "assertionMethod",
-    "proofValue": "CVyVPHMdSFh3oPflZwyxluChgatrsFXJQVjwDY8VqOF+fmbosU/GUG6kKwiu+W+PRCgBSICPV0A2wspp0NZWBQ=="
+    "proofValue": ""
   }
-}
+} 
