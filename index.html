@@ -1,565 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPZS0FSKW3"></script>
-	<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SPZS0FSKW3');
-</script>
-
-<!-- ========================================================= -->
-<!-- Clarity tracking code for https://identity.nvo987.us/ -->
-<script>
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "viauawpma1");
-</script>
-<!-- CORE -->
-<!-- ========================================================= -->
-
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="content-language" content="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>NVO987 | Nicholas Van-Orton | Decentralized Identity Node</title>
+<title>nvo987 Identity Node</title>
 
-<meta name="description" content="Independent researcher working on visual theory, color systems, algorithmic culture and computational aesthetics.">
-<meta name="author" content="Nicholas Van-Orton">
-<meta name="keywords" content="visual theory, nvo987, color studies, art history, digital humanities, nvo987, research identity">
-<meta name="citation_author" content="Nicholas Van-Orton">
-<meta name="citation_title" content="Research Identity">
-<meta name="citation_public_url" content="https://identity.nvo987.us/">
-<meta name="citation_related_url" content="https://knowledge.nvo987.us/"> 
-<meta name="yandex-verification" content="5d04ee3335696b00">
-<meta name="related_knowledge_domain" content="https://knowledge.nvo987.us/"> 
+<meta name="description" content="Identity root node for decentralized identifier did:web:identity.nvo987.us linking domains nvo987.us, nvo987.fr, knowledge.nvo987.us and lab.nvo987.us">
 
-<link rel="canonical" href="https://identity.nvo987.us">
-<link rel="related" href="https://knowledge.nvo987.us/"> 
-<link rel="stylesheet" href="style.css">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-config" content="/browserconfig.xml">
-<link rel="alternate"
-      type="application/rss+xml"
-      title="NVO987 Substack Feed"
-      href="https://nvo987.substack.com/feed.xml"> 
-
+<meta name="author" content="nvo987">
+<meta name="robots" content="index, follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="format-detection" content="telephone=no,email=no,address=no">
+
+<meta name="theme-color" content="#6b3f2a">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#000000">
 
-<!-- ========================================================= -->
-<!-- LANGUAGE -->
-<!-- ========================================================= -->
+<link rel="canonical" href="https://identity.nvo987.us/">
 
-<link rel="alternate" hreflang="en" href="https://identity.nvo987.us/">
-<link rel="alternate" hreflang="x-default" href="https://identity.nvo987.us/">
-<link rel="alternate" type="application/json" href="/machine/openai-index.json" title="OpenAI Discovery Index">
-	
-<link rel="alternate" type="application/json" href="/api/v1/index.json" title="Identity API – Index">
-<link rel="alternate" type="application/json" href="/api/v1/identity.json" title="Identity API – Identity">
-<link rel="alternate" type="application/json" href="/api/v1/identifiers.json" title="Identity API – Identifiers">
-<link rel="alternate" type="application/json" href="/api/v1/profiles.json" title="Identity API – Profiles">
-<link rel="alternate" type="application/json" href="/api/v1/status.json" title="Identity API – Status">
+<link rel="stylesheet" href="style.css">
 
-<!-- ========================================================= -->
-<!-- SEARCH / CRAWLERS -->
-<!-- ========================================================= -->
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="favicon.ico">
 
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<meta name="googlebot" content="index,follow">
-<meta name="bingbot" content="index,follow">
-<meta name="duckduckbot" content="index,follow">
-<meta name="slurp" content="index,follow">
+<!-- DID -->
 
-<!-- ===================================================== -->
-<!-- OPEN GRAPH / SOCIAL -->
-<!-- ===================================================== -->
+<link rel="did" href="did:web:identity.nvo987.us">
 
-<meta property="og:type" content="profile">
-<meta property="og:title" content="NV0987 | Nicholas Van-Orton">
-<meta property="og:description" content="Independent researcher – visual theory, color systems, nvo987, algorithmic culture">
-<meta property="og:url" content="https://identity.nvo987.us/">
-<meta property="og:site_name" content="NV0987 Identity Hub">
-<meta property="og:locale" content="en_US">
+<link rel="alternate" type="application/json" href="https://identity.nvo987.us/.well-known/did.json">
 
-<meta property="og:image" content="https://identity.nvo987.us/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/jpeg">
+<!-- MACHINE ENDPOINTS -->
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NV0987 | Nicholas Van-Orton">
-<meta name="twitter:description" content="Independent researcher – visual theory, color systems, algorithmic culture">
-<meta name="twitter:image" content="https://identity.nvo987.us/og-image.jpg">
-<meta name="twitter:url" content="https://identity.nvo987.us/">
-<meta name="twitter:creator" content="@nvo987">
-<meta name="twitter:site" content="@nvo987">
+<link rel="alternate" type="application/ld+json" href="https://identity.nvo987.us/machine/schema.jsonld">
+<link rel="alternate" type="application/ld+json" href="https://identity.nvo987.us/machine/publications.jsonld">
+<link rel="alternate" type="application/ld+json" href="https://identity.nvo987.us/machine/vc.jsonld">
 
-<meta name="p:domain_verify" content="3d62a38ce8c1d0f5a3e7d0cf0c0025a8">
+<!-- DOMAIN FEDERATION -->
 
-<link rel="robots" href="/robots.txt">
-<link rel="author" href="https://identity.nvo987.us/humans.txt">
-<link rel="describedby" type="application/ld+json" href="https://identity.nvo987.us/machine/schema.jsonld">
-<link rel="alternate" type="application/atom+xml" title="NV0987 Research Feed" href="/feed.xml">
-<link rel="alternate" type="application/did+json" href="https://identity.nvo987.us/.well-known/did.json">
+<link rel="alternate" href="https://nvo987.us">
+<link rel="alternate" href="https://nvo987.fr">
+<link rel="alternate" href="https://knowledge.nvo987.us">
+<link rel="alternate" href="https://lab.nvo987.us">
 
-<!-- ========================================================= -->
-<!-- RSS / FEEDS -->
-<!-- ========================================================= -->
+<link rel="me" href="https://nvo987.us">
+<link rel="me" href="https://nvo987.fr">
+<link rel="me" href="https://knowledge.nvo987.us">
+<link rel="me" href="https://lab.nvo987.us">
 
-<link rel="alternate" type="application/rss+xml" title="NVO987 RSS" href="https://nvo987.substack.com/feed">
+<!-- SOCIAL IDENTITY -->
 
-<!-- ========================================================= -->
-<!-- PERFORMANCE -->
-<!-- ========================================================= -->
+<link rel="me" href="https://mastodon.social/@nvo987">
+<link rel="me" href="https://bsky.app/profile/nvo987.us">
 
-<link rel="preconnect" href="https://orcid.org" crossorigin>
-<link rel="preconnect" href="https://github.com" crossorigin>
-<link rel="preload" href="https://identity.nvo987.us/og-image.jpg" as="image"> 
-<link rel="preload" href="/site.webmanifest" as="fetch" crossorigin>
-<link rel="dns-prefetch" href="https://orcid.org">
-
-<!-- ========================================================= -->
-<!-- IDENTITY LINKS -->
-<!-- ========================================================= -->
+<!-- SCHOLARLY IDENTIFIERS -->
 
 <link rel="me" href="https://orcid.org/0009-0007-4628-1871">
-<link rel="me" href="https://github.com/nvo987-art-history">
-<link rel="me" href="https://openalex.org/A5120949417">
 <link rel="me" href="https://isni.org/isni/0000000529640885">
-<link rel="me" href="https://w3id.org/nvo987">
-<link rel="me" href="https://scholar.google.com/citations?user=iRM-GNQAAAAJ">
 <link rel="me" href="https://www.wikidata.org/wiki/Q137675227">
-<link rel="me" href="https://mastodon.social/@nvo987">
-<link rel="me" href="https://pixelfed.social/nvo987">
-<link rel="me" href="https://www.threads.com/@nvo987">
 
+<!-- OPEN GRAPH -->
 
-<!-- ========================= -->
-<!-- ICONS / FAVICONS / PWA -->
-<!-- ========================= -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="nvo987 Identity Node">
+<meta property="og:description" content="Decentralized identity root did:web:identity.nvo987.us">
+<meta property="og:url" content="https://identity.nvo987.us">
+<meta property="og:site_name" content="nvo987 identity">
+<meta property="og:image" content="https://identity.nvo987.us/banner.jpg">
 
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
+<!-- TWITTER -->
 
-<meta name="theme-color" content="#000000">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="nvo987 Identity Node">
+<meta name="twitter:description" content="Decentralized identity root did:web:identity.nvo987.us">
+<meta name="twitter:image" content="https://identity.nvo987.us/banner.jpg">
 
-<!-- ========================================================= -->
-<!-- SCHEMA.ORG -->
-<!-- ========================================================= -->
+<!-- IDENTITY GRAPH -->
+
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+"@context":"https://schema.org",
+"@graph":[
 
-    {
-      "@type": "Person",
-      "@id": "https://identity.nvo987.us/#person",
+{
+"@type":"Person",
+"@id":"https://identity.nvo987.us/#person",
+"name":"nvo987",
+"identifier":"did:web:identity.nvo987.us",
+"url":"https://identity.nvo987.us",
+"sameAs":[
+"https://mastodon.social/@nvo987",
+"https://bsky.app/profile/nvo987.us",
+"https://orcid.org/0009-0007-4628-1871",
+"https://isni.org/isni/0000000529640885",
+"https://www.wikidata.org/wiki/Q137675227"
+]
+},
 
-      "name": "Nicholas Van-Orton",
-      "alternateName": "NVO987",
-      "jobTitle": "Independent Researcher",
+{
+"@type":"WebSite",
+"@id":"https://identity.nvo987.us/#identity",
+"url":"https://identity.nvo987.us",
+"name":"Identity Node"
+},
 
-      "url": "https://identity.nvo987.us/",
-      "image": "https://identity.nvo987.us/og-image.jpg",
+{
+"@type":"WebSite",
+"@id":"https://nvo987.us/#site",
+"url":"https://nvo987.us",
+"name":"Primary Domain"
+},
 
-      "description": "Independent researcher and artist working at the intersection of visual theory, color studies and algorithmic culture.",
+{
+"@type":"WebSite",
+"@id":"https://nvo987.fr/#site",
+"url":"https://nvo987.fr",
+"name":"Organization Domain"
+},
 
-      "email": [
-        "mailto:nvo@nvo987.us",
-        "mailto:contact@nvo987.fr"
-      ],
+{
+"@type":"WebSite",
+"@id":"https://knowledge.nvo987.us/#site",
+"url":"https://knowledge.nvo987.us",
+"name":"Knowledge Network"
+},
 
-      "telephone": "+36 70 267 4440",
+{
+"@type":"WebSite",
+"@id":"https://lab.nvo987.us/#site",
+"url":"https://lab.nvo987.us",
+"name":"Research Lab"
+},
 
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Paris",
-        "addressCountry": "France"
-      },
+{
+"@type":"DigitalDocument",
+"@id":"https://identity.nvo987.us/.well-known/did.json",
+"name":"DID Document"
+},
 
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "propertyID": "DID",
-          "value": "did:web:identity.nvo987.us",
-          "url": "https://identity.nvo987.us/.well-known/did.json"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "ORCID",
-          "value": "0009-0007-4628-1871",
-          "url": "https://orcid.org/0009-0007-4628-1871"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "ISNI",
-          "value": "0000000529640885",
-          "url": "https://isni.org/isni/0000000529640885"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "OpenAlex",
-          "value": "A5120949417",
-          "url": "https://openalex.org/A5120949417"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "W3ID",
-          "value": "nvo987",
-          "url": "https://w3id.org/nvo987"
-        }
-      ],
+{
+"@type":"Dataset",
+"@id":"https://identity.nvo987.us/machine/schema.jsonld"
+},
 
-      "sameAs": [
-        "did:web:identity.nvo987.us",
-        "https://orcid.org/0009-0007-4628-1871",
-        "https://github.com/nvo987-art-history",
-        "https://nvo987.substack.com/",
-        "https://www.linkedin.com/in/nvo987/",
-        "https://x.com/nvo987",
-        "https://scholar.google.com/citations?user=iRM-GNQAAAAJ",
-        "https://www.researchgate.net/profile/Nicholas-Van-Orton",
-        "https://hcommons.org/members/nicholasvanorton/",
-        "https://osf.io/t8bek/",
-        "https://cv.hal.science/van-orton-nicholas",
-        "https://www.wikidata.org/wiki/Q137675227"
-      ],
+{
+"@type":"Dataset",
+"@id":"https://identity.nvo987.us/machine/publications.jsonld"
+},
 
-      "knowsAbout": [
-        "visual theory",
-        "color systems",
-        "algorithmic aesthetics",
-        "art history",
-		"NVO987",
-        "digital humanities",
-        "computational art",
-        "research infrastructures"
-      ],
+{
+"@type":"Dataset",
+"@id":"https://identity.nvo987.us/machine/vc.jsonld"
+},
 
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Independent Research"
-      }
-    },
+{
+"@type":"CreativeWork",
+"@id":"https://identity.nvo987.us/research/color-generative-principle",
+"name":"Color Generative Principle"
+},
 
-    {
-      "@type": "WebSite",
-      "@id": "https://identity.nvo987.us/#website",
-      "url": "https://identity.nvo987.us/",
-      "name": "NVO987 Research Identity",
-      "publisher": {
-        "@id": "https://identity.nvo987.us/#person"
-      }
-    },
+{
+"@type":"Organization",
+"@id":"https://nvo987.fr/#organization",
+"name":"nvo987",
+"url":"https://nvo987.fr"
+}
 
-    {
-      "@type": "ProfilePage",
-      "@id": "https://identity.nvo987.us/#profile",
-      "url": "https://identity.nvo987.us/",
-      "name": "Nicholas Van-Orton — Research Identity",
-      "isPartOf": {
-        "@id": "https://identity.nvo987.us/#website"
-      },
-      "mainEntity": {
-        "@id": "https://identity.nvo987.us/#person"
-      }
-    }
-
-  ]
+]
 }
 </script>
+<!-- EXTENDED IDENTITY GRAPH -->
 
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@graph":[
 
+{
+"@type":"WebPage",
+"@id":"https://identity.nvo987.us/#homepage",
+"isPartOf":{"@id":"https://identity.nvo987.us/#identity"},
+"about":{"@id":"https://identity.nvo987.us/#person"}
+},
+
+{
+"@type":"DataCatalog",
+"@id":"https://identity.nvo987.us/#machine-catalog",
+"name":"Identity Machine Data",
+"creator":{"@id":"https://identity.nvo987.us/#person"},
+"dataset":[
+{"@id":"https://identity.nvo987.us/machine/schema.jsonld"},
+{"@id":"https://identity.nvo987.us/machine/publications.jsonld"},
+{"@id":"https://identity.nvo987.us/machine/vc.jsonld"}
+]
+},
+
+{
+"@type":"ProfilePage",
+"@id":"https://mastodon.social/@nvo987",
+"mainEntity":{"@id":"https://identity.nvo987.us/#person"}
+},
+
+{
+"@type":"ProfilePage",
+"@id":"https://bsky.app/profile/nvo987.us",
+"mainEntity":{"@id":"https://identity.nvo987.us/#person"}
+},
+
+{
+"@type":"CreativeWork",
+"@id":"https://identity.nvo987.us/research/color-generative-principle",
+"creator":{"@id":"https://identity.nvo987.us/#person"},
+"isPartOf":{"@id":"https://identity.nvo987.us/#identity"}
+},
+
+{
+"@type":"ResearchProject",
+"@id":"https://lab.nvo987.us/#projects",
+"name":"Research Projects",
+"isPartOf":{"@id":"https://lab.nvo987.us/#site"},
+"creator":{"@id":"https://identity.nvo987.us/#person"}
+},
+
+{
+"@type":"Dataset",
+"@id":"https://knowledge.nvo987.us/#dataset",
+"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
+},
+
+{
+"@type":"Dataset",
+"@id":"https://lab.nvo987.us/#dataset",
+"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://knowledge.nvo987.us/articles",
+"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://knowledge.nvo987.us/archive",
+"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://knowledge.nvo987.us/ontology",
+"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://knowledge.nvo987.us/data",
+"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://knowledge.nvo987.us/graph",
+"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://lab.nvo987.us/experiments",
+"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://lab.nvo987.us/models",
+"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://lab.nvo987.us/prototypes",
+"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://lab.nvo987.us/data",
+"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://lab.nvo987.us/tools",
+"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
+},
+
+{
+"@type":"CreativeWork",
+"@id":"https://identity.nvo987.us/publications",
+"creator":{"@id":"https://identity.nvo987.us/#person"}
+},
+
+{
+"@type":"CreativeWork",
+"@id":"https://identity.nvo987.us/articles",
+"creator":{"@id":"https://identity.nvo987.us/#person"}
+},
+
+{
+"@type":"CreativeWork",
+"@id":"https://identity.nvo987.us/datasets",
+"creator":{"@id":"https://identity.nvo987.us/#person"}
+},
+
+{
+"@type":"CreativeWork",
+"@id":"https://identity.nvo987.us/research",
+"creator":{"@id":"https://identity.nvo987.us/#person"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://identity.nvo987.us/contact",
+"isPartOf":{"@id":"https://identity.nvo987.us/#identity"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://identity.nvo987.us/about",
+"isPartOf":{"@id":"https://identity.nvo987.us/#identity"}
+},
+
+{
+"@type":"WebPage",
+"@id":"https://identity.nvo987.us/identity",
+"isPartOf":{"@id":"https://identity.nvo987.us/#identity"}
+}
+
+]
+}
+</script>
 </head>
-
-<!-- ========================================================= -->
-<!-- BODY -->
-<!-- ========================================================= -->
 
 <body>
 
-<section class="hero">
-  <div class="hero-overlay">
-    <h1>Nicholas Van-Orton</h1>
-    <p>NVO987 — Decentralized Identity Node</p>
-  </div>
-</section>
+<header class="hero">
+<div class="hero-overlay">
+<h1>nvo987 Identity</h1>
+<p>Decentralized identity root</p>
+</div>
+</header>
 
 <main>
 
 <section>
-  <h2>Biography</h2>
-  <p>
-    As an independent researcher and practitioner, I work at the intersection of visual theory, color studies, and algorithmic culture. The central focus of my work is to examine how contemporary computational and networked systems reshape the conditions of vision, imagery, and visual knowledge, and to develop coherent theoretical frameworks capable of interpreting these transformations.
-  </p>
-  <p>
-    My research is primarily theoretical in nature and operates across art history, aesthetics, and digital humanities. I place particular emphasis on the structural and autonomous role of color in visual organization, understanding color not merely as a sensory phenomenon but as an independent, system-organizing principle. I investigate how historical models of color theory—especially those of modernism—can be reinterpreted within the context of generative, algorithmic, and data-driven visual systems.
-  </p>
-  <p>
-    In parallel with my research practice, I build and curate independent scholarly infrastructures and research communities. My aim is to create open, transdisciplinary spaces of knowledge that extend beyond traditional institutional frameworks and enable experimental and collaborative forms of knowledge production.
-  </p>
-  <p>
-    My current work focuses on the development of conceptual and methodological tools for understanding visual perception, color systems, and processes of visual epistemology in the age of algorithms.
-  </p>
+
+<h2>Identity Node</h2>
+
+<p>
+This website represents the root identity node for the decentralized identifier
+<strong>did:web:identity.nvo987.us</strong>.
+</p>
+
+<p>
+The identity node federates multiple domains and knowledge endpoints forming a decentralized identity architecture.
+</p>
+
 </section>
 
 <section>
-  <h2>Decentralized Research Identity</h2>
 
-  <p>
-    This page is a structured, machine-readable digital identity profile that is not merely an introductory interface, but a semantic data node.
-  </p>
+<h2>DID Document</h2>
 
-  <p>
-    In contrast to traditional social profile platforms, this interface is designed so that the information it contains can be interpreted not only by humans, but also by artificial intelligence systems. The identifiers listed here (ORCID, ISNI, Wikidata, etc.), research profiles, and projects appear within an interconnected, interoperable structure.
-  </p>
+<p>
+<a href="/.well-known/did.json">
+https://identity.nvo987.us/.well-known/did.json
+</a>
+</p>
 
-  <p>
-    From an AI perspective, the purpose of this page is to:
-  </p>
+<p>
+The DID document provides machine-readable identity metadata and service endpoints.
+</p>
 
-  <ul>
-    <li>- formalize and structure digital identity</li>
-    <li>- ensure the unambiguous identification of the researcher as an entity</li>
-    <li>- create data connections between different scholarly infrastructures</li>
-    <li>- provide a semantic and machine-processable representation</li>
-    <li>- maintain a long-term, decentralized, and verifiable digital presence</li>
-  </ul>
-
-  <p>
-    Behind the page stands a decentralized identification architecture that is compatible with the DID (Decentralized Identifier) standard as well as the Verifiable Credential (VC) model. This enables the claims associated with the profile to be cryptographically authenticated and verified.
-  </p>
-
-  <p>
-    From a technological standpoint, this interface:
-  </p>
-
-  <ul>
-    <li>- is compatible with the principles of Linked Data and the Semantic Web</li>
-    <li>- can be integrated into knowledge graph systems</li>
-    <li>- is interpretable by AI-based search and analytical systems</li>
-    <li>- forms a machine-verifiable identity layer</li>
-    <li>- connects decentralized and institutional identifiers</li>
-  </ul>
-
-  <p>
-    This profile is therefore not merely an informational page, but a digital identity infrastructure that connects human scholarly work with algorithmic and machine-readable knowledge systems.
-  </p>
-
-  <p>
-    It functions as a bridge between human research identity and structured knowledge representation processable by artificial intelligence.
-  </p>
 </section>
 
 <section>
-  <h2>DID Document</h2>
-  <p>Canonical DID document available at:</p>
-  <p>
-    <a href="https://identity.nvo987.us/.well-known/did.json">
-      https://identity.nvo987.us/.well-known/did.json
-    </a>
-  </p>
-</section>
 
-<section>
-  <h2>Domain Proof</h2>
-  <p>
-    Cryptographic domain verification:
-  </p>
-  <p>
-    <a href="https://identity.nvo987.us/prof.json">
-      https://identity.nvo987.us/prof.json
-    </a>
-  </p>
-</section>
+<h2>Associated Domains</h2>
 
-	<section>
-  <h2>Domain Linkage (DID Configuration)</h2>
-  <p>
-    Domain-to-DID cryptographic linkage document available at:
-  </p>
-  <p>
-    <a href="https://identity.nvo987.us/.well-known/did-configuration.json">
-      https://identity.nvo987.us/.well-known/did-configuration.json
-    </a>
-  </p>
-	</section>
-
-	<section>
-  <h2>Verifiable Research Credential</h2>
-  <p>
-This domain hosts a cryptographically signed W3C Verifiable Credential
-representing the research identity associated with the DID
-<code>did:web:identity.nvo987.us</code>.
-  </p>
-
-  <p>
-    Machine-readable descriptor:
-    <br>
-    <a href="https://identity.nvo987.us/.well-known/researcher-credential.json">
-      https://identity.nvo987.us/.well-known/researcher-credential.json
-    </a>
-  </p>
-
-  <p>
-    Signed credential (JWT format):
-    <br>
-    <a href="https://identity.nvo987.us/credentials/researcher-v1.jwt">
-      https://identity.nvo987.us/credentials/researcher-v1.jwt
-    </a>
-  </p>
-
-  <p>
-    This credential can be independently verified using the public key
-    declared in the DID document.
-  </p>
-	</section> 
-	
-<section>
-<h2>Researcher Identifiers</h2>
 <ul>
-<li><a href="https://orcid.org/0009-0007-4628-1871">ORCID</a></li>
-<li><a href="https://isni.org/isni/0000000529640885">ISNI</a></li>
-<li><a href="https://openalex.org/A5120949417">OpenAlex</a></li>
-<li><a href="https://www.wikidata.org/wiki/Q137675227">Wikidata</a></li>
-<li><a href="https://lab.nvo987.us/">NVO987 | Research Lab</a></li>
-<li><a href="https://knowledge.nvo987.us">Machine-Readable Knowledge Domain</a></li> 
-<li><a href="https://www.linkedin.com/in/nvo987/">LinkedIn</a></li>
+
+<li>
+<a href="https://nvo987.us">nvo987.us</a>
+</li>
+
+<li>
+<a href="https://nvo987.fr">nvo987.fr</a>
+</li>
+
+<li>
+<a href="https://knowledge.nvo987.us">knowledge.nvo987.us</a>
+</li>
+
+<li>
+<a href="https://lab.nvo987.us">lab.nvo987.us</a>
+</li>
+
 </ul>
+
 </section>
 
 <section>
-<h2>Research Profiles</h2>
+
+<h2>Machine Endpoints</h2>
+
 <ul>
-<li><a href="https://scholar.google.com/citations?user=iRM-GNQAAAAJ">Google Scholar</a></li>
-<li><a href="https://osf.io/user/t8bek">OSF</a></li>
-<li><a href="https://hcommons.org/members/nicholasvanorton/">Humanities Commons</a></li>
-<li><a href="https://www.lens.org/lens/profile/nicholas-van-orton">Lens.org</a></li>
-<li><a href="https://cv.hal.science/van-orton-nicholas">HAL</a></li>
-<li><a href="https://independent.academia.edu/VanOrton">Academia.edu</a></li>
-<li><a href="https://www.researchgate.net/profile/Nicholas-Van-Orton">ResearchGate</a></li>
-<li><a href="https://www.webofscience.com/wos/author/record/PDY-1682-2025">Web of Science</a></li>
+
+<li>
+<a href="https://identity.nvo987.us/machine/schema.jsonld">
+schema.jsonld
+</a>
+</li>
+
+<li>
+<a href="https://identity.nvo987.us/machine/publications.jsonld">
+publications.jsonld
+</a>
+</li>
+
+<li>
+<a href="https://identity.nvo987.us/machine/vc.jsonld">
+vc.jsonld
+</a>
+</li>
+
 </ul>
+
 </section>
 
 <section>
-<h2>Projects</h2>
+
+<h2>Scholarly Identifiers</h2>
+
 <ul>
-<li><a href="https://github.com/nvo987-art-history">GitHub</a></li>
-<li><a href="https://nvo987.substack.com/">Art | History</a></li>
-<li><a rel="me" href="https://pixelfed.social/nvo987">Pixelfed</a></li>
-<li><a href="https://bsky.app/profile/nvo987.us">Bluesky</a></li>
+
+<li>
+<a href="https://orcid.org/0009-0007-4628-1871">
+ORCID
+</a>
+</li>
+
+<li>
+<a href="https://isni.org/isni/0000000529640885">
+ISNI
+</a>
+</li>
+
+<li>
+<a href="https://www.wikidata.org/wiki/Q137675227">
+Wikidata
+</a>
+</li>
+
 </ul>
-</section>
 
-<section>
-<h2>Community</h2>
-<ul>
-<li><a href="https://github.com/nvo987-art-history">Visual Theory in the Age of Algorithms (Github Community)</a></li>
-<li><a href="https://www.zotero.org/groups/6397230/visual_theory_in_the_age_of_algorithms">Visual Theory in the Age of Algorithms (Zotero Community)</a></li>
-<li><a href="https://hcommons.org/groups/visual-theory-in-the-age-of-algorithms/">Visual Theory in the Age of Algorithms (Humanities Commons Community)</a></li>
-<li><a href="https://works.hcommons.org/collections/sonia-delaunay-modern-visual-systems/about">Sonia Delaunay and Modern Visual Systems</a></li>
-<li><a href="https://zenodo.org/communities/visual-theory-algorithms/">Visual Theory in the Age of Algorithms (Zenodo Community)</a></li>
-</ul>
-</section>
-
-<section>
-  <h2>Legal</h2>
-
-  <h3>Privacy Policy</h3>
-<p>
-This website serves as a personal and professional research identity profile presenting the work, projects, and scholarly activities of Nicholas Van-Orton as an independent researcher. The site does not offer user accounts, registration systems, or interactive submission forms, and visitors are not required to actively provide personal data in order to access its content.
-</p>
-<p>
-During normal operation, the website may process limited technical information that is automatically transmitted by the user’s browser and device. This may include IP address, browser type, operating system, device characteristics, approximate geographic location, referring pages, and time of access. Such data is processed exclusively for purposes of ensuring the technical functionality, security, performance, and analytical understanding of website usage.
-</p>
-<p>
-The website makes use of third-party analytics and diagnostic services, including web analytics and session analysis tools, in order to better understand aggregate usage patterns, improve usability, and ensure the stability and integrity of the site. These services may employ cookies or similar technologies and may process anonymized or pseudonymized usage data. The collected information is not used to identify individual visitors, is not combined with offline data sources, and is not employed for advertising, marketing, or commercial profiling purposes.
-</p>
-<p>
-Where external service providers are involved, data processing may occur on infrastructure operated outside the European Union, in accordance with the respective providers’ privacy frameworks and data protection policies. The website operator does not control the internal data retention policies of these services and encourages users to consult the relevant third-party privacy documentation for further details.
-</p>
-<p>
-Cookies used by this website are limited to those necessary for analytics, performance measurement, and technical operation. Visitors may manage or disable cookies at any time through their browser settings. Disabling cookies may affect the accuracy of aggregated usage statistics but will not prevent access to the website’s content.
-</p>
-<p>
-This website is intended for informational, academic, and research-related purposes only. No personal data is knowingly collected from visitors beyond what is technically necessary for the operation and evaluation of the site. The guiding principle of the site is data minimization, transparency, and respect for the privacy of its users.
-</p>
-
-  <h3>Cookie Settings</h3>
-<p>
-This website may use cookies and similar technologies for analytics, performance measurement, and technical diagnostics. These cookies help to understand aggregate usage patterns and improve the stability and usability of the site. No cookies are used for advertising or commercial profiling purposes.
-</p>
-<p>
-Users may manage or disable cookies at any time through their browser settings. Disabling cookies may limit the accuracy of aggregated analytics data but will not restrict access to the website’s content.
-</p>
-
-  <h3>Terms of Use</h3>
-  <p>
-    This website serves research, academic, and professional presentation purposes. Viewing, quoting, and referencing the content is permitted in academic or educational contexts with appropriate attribution, while commercial or unauthorized reuse is not allowed. The purpose of the site is the open sharing of information and ideas and the encouragement of professional dialogue.
-  </p>
-</section>
-
-<section>
-  <h2>Contact</h2>
-  <p>
-    Email: <a href="mailto:nvo@nvo987.us">nvo@nvo987.us</a>
-  </p>
 </section>
 
 </main>
 
 <footer>
-<p>© 2026 Nicholas Van-Orton — NVO987</p>
+
+<p>
+© nvo987
+</p>
+
+<p>
+Decentralized identity node for the DID
+<strong>did:web:identity.nvo987.us</strong>
+</p>
+
 </footer>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(() => console.log('SW registered'))
-      .catch(err => console.error('SW failed:', err));
-  });
-}
-</script>
-<!-- ================================================== -->
-<!-- MICROFORMATS / h-card (machine-readable identity) -->
-<!-- ================================================== -->
 
-<div class="h-card" style="display:none;">
-
-  <span class="p-name">Nicholas Van-Orton</span>
-
-  <a class="u-url u-uid" href="https://identity.nvo987.us"></a>
-
-  <img class="u-photo" src="/avatar.jpg" alt="">
-
-  <span class="p-role">Independent Researcher</span>
-  <span class="p-note">Art history research identity hub</span>
-
-  <a class="u-url" href="https://orcid.org/0009-0007-4628-1871"></a>
-  <a class="u-url" href="https://github.com/nvo987-art-history"></a>
-  <a class="u-url" href="https://openalex.org/A5120949417"></a>
-  <a class="u-url" href="https://isni.org/isni/0000000529640885"></a>
-  <a class="u-url" href="https://w3id.org/nvo987"></a>
-  <a class="u-url" href="https://scholar.google.com/citations?user=iRM-GNQAAAAJ"></a>
-  <a class="u-url" href="https://www.wikidata.org/wiki/Q137675227"></a>
-
-  
-</div>
 </body>
-  </html>
+
+</html>
