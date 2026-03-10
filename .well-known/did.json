@@ -20,7 +20,7 @@
 "id":"did:web:identity.nvo987.us#identity-key",
 "type":"Ed25519VerificationKey2020",
 "controller":"did:web:identity.nvo987.us",
-"publicKeyUrl":"https://identity.nvo987.us/keys/identity-public.pem"
+"publicKeyUrl":"4oPA6rSpQynoXVQkmJyyMT3vXkXjYTSgpZzLz5uKXE5Y"
 }
 ],
 
