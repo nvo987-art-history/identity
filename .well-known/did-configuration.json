@@ -1,6 +1,0 @@
-{
-  "@context": "https://identity.foundation/.well-known/did-configuration/v1",
-  "linked_dids": [
-    "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkaWQ6d2ViOmlkZW50aXR5Lm52bzk4Ny51cyIsInN1YiI6ImRpZDp3ZWI6aWRlbnRpdHkubnZvOTg3LnVzIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eS5udm85ODcudXMiLCJuYmYiOjE3MDAwMDAwMDB9.signature"
-  ]
-}
