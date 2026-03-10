@@ -8,7 +8,7 @@
 <meta http-equiv="content-language" content="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>nvo987 Identity Node</title>
+<title>NVO987 | Identity Node</title>
 
 <meta name="description" content="Identity root node for decentralized identifier did:web:identity.nvo987.us linking domains nvo987.us, nvo987.fr, knowledge.nvo987.us and lab.nvo987.us">
 
@@ -70,12 +70,26 @@
 <meta property="og:site_name" content="nvo987 identity">
 <meta property="og:image" content="https://identity.nvo987.us/banner.jpg">
 
-<!-- TWITTER -->
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="nvo987 Identity Node">
 <meta name="twitter:description" content="Decentralized identity root did:web:identity.nvo987.us">
 <meta name="twitter:image" content="https://identity.nvo987.us/banner.jpg">
+
+
+<!-- AI / API / MACHINE EXTENSION -->
+
+<link rel="alternate" type="application/ld+json" href="https://identity.nvo987.us/machine/ai.jsonld">
+<link rel="alternate" type="application/ld+json" href="https://identity.nvo987.us/machine/agents.jsonld">
+<link rel="alternate" type="application/ld+json" href="https://identity.nvo987.us/machine/graph.jsonld">
+
+<link rel="service" href="https://identity.nvo987.us/api">
+<link rel="service" href="https://identity.nvo987.us/api/research">
+<link rel="service" href="https://identity.nvo987.us/api/knowledge">
+
+<link rel="agent" href="https://identity.nvo987.us/ai/research-agent">
+<link rel="agent" href="https://identity.nvo987.us/ai/knowledge-agent">
+<link rel="agent" href="https://identity.nvo987.us/ai/sync-agent">
+
 
 <!-- IDENTITY GRAPH -->
 
@@ -84,15 +98,145 @@
 "@context":"https://schema.org",
 "@graph":[
 
-{
-"@type":"Person",
-"@id":"https://identity.nvo987.us/#person",
-"name":"nvo987",
-"identifier":"did:web:identity.nvo987.us",
+{ "@type":"Organization",
+"@id":"https://identity.nvo987.us/#organization",
+"name":"NVO987 Identity Network",
 "url":"https://identity.nvo987.us",
+"identifier":"did:web:identity.nvo987.us",
+"subOrganization":[{"@id":"https://nvo987.fr/#organization"}],
+"brand":{"@id":"https://identity.nvo987.us/#brand"},
+"founder":{"@id":"https://identity.nvo987.us/#nicholas"}
+},
+
+{ "@type":"Brand",
+"@id":"https://identity.nvo987.us/#brand",
+"name":"NVO987",
+"url":"https://nvo987.us"
+},
+
+{ "@type":"Person",
+"@id":"https://identity.nvo987.us/#nicholas",
+"name":"Nicholas Van-Orton",
 "sameAs":[
-"https://mastodon.social/@nvo987",
-"https://bsky.app/profile/nvo987.us",
+"https://orcid.org/0009-0007-4628-1871",
+"https://isni.org/isni/0000000529640885",
+"https://www.wikidata.org/wiki/Q137675227"
+]
+},
+
+{ "@type":"Organization",
+"@id":"https://nvo987.fr/#organization",
+"name":"NVO987 Association",
+"url":"https://nvo987.fr"
+},
+
+{ "@type":"WebSite",
+"@id":"https://identity.nvo987.us/#site",
+"url":"https://identity.nvo987.us",
+"name":"Identity Node",
+"publisher":{"@id":"https://identity.nvo987.us/#organization"}
+},
+
+{ "@type":"WebSite",
+"@id":"https://nvo987.us/#site",
+"url":"https://nvo987.us",
+"name":"Primary Domain"
+},
+
+{ "@type":"WebSite",
+"@id":"https://knowledge.nvo987.us/#site",
+"url":"https://knowledge.nvo987.us",
+"name":"Knowledge Network"
+},
+
+{ "@type":"WebSite",
+"@id":"https://lab.nvo987.us/#site",
+"url":"https://lab.nvo987.us",
+"name":"Research Lab"
+},
+
+{ "@type":"DigitalDocument",
+"@id":"https://identity.nvo987.us/.well-known/did.json",
+"name":"DID Document"
+},
+
+{ "@type":"Dataset",
+"@id":"https://identity.nvo987.us/machine/schema.jsonld"
+},
+
+{ "@type":"Dataset",
+"@id":"https://identity.nvo987.us/machine/publications.jsonld"
+},
+
+{ "@type":"Dataset",
+"@id":"https://identity.nvo987.us/machine/vc.jsonld"
+},
+
+{ "@type":"CreativeWork",
+"@id":"https://identity.nvo987.us/research/color-generative-principle",
+"name":"Color Generative Principle",
+"author":{"@id":"https://identity.nvo987.us/#nicholas"}
+},
+
+{ "@type":"SoftwareAgent",
+"@id":"https://identity.nvo987.us/ai/research-agent",
+"name":"Research AI Agent"
+},
+
+{ "@type":"SoftwareAgent",
+"@id":"https://identity.nvo987.us/ai/knowledge-agent",
+"name":"Knowledge Graph Agent"
+},
+
+{ "@type":"SoftwareAgent",
+"@id":"https://identity.nvo987.us/ai/sync-agent",
+"name":"Identity Sync Agent"
+},
+
+{ "@type":"WebAPI",
+"@id":"https://identity.nvo987.us/api",
+"name":"Identity API",
+"provider":{"@id":"https://identity.nvo987.us/#organization"}
+},
+
+{ "@type":"ResearchProject",
+"@id":"https://identity.nvo987.us/#research-program",
+"name":"NVO987 Research Program",
+"parentOrganization":{"@id":"https://identity.nvo987.us/#organization"}
+},
+
+{ "@type":"ScholarlyArticle",
+"@id":"https://identity.nvo987.us/research/color-generative-principle#paper",
+"name":"Color Generative Principle Paper",
+"author":{"@id":"https://identity.nvo987.us/#nicholas"}
+},
+
+{ "@type":"DatasetCatalog",
+"@id":"https://knowledge.nvo987.us/#catalog",
+"name":"NVO987 Knowledge Dataset Catalog",
+"publisher":{"@id":"https://identity.nvo987.us/#organization"}
+},
+
+{ "@type":"DefinedTerm",
+"@id":"https://knowledge.nvo987.us/#concept-color-principle",
+"name":"Color Generative Principle"
+},
+
+{ "@type":"SoftwareApplication",
+"@id":"https://identity.nvo987.us/#ai-system",
+"name":"NVO987 Autonomous Knowledge System",
+"creator":{"@id":"https://identity.nvo987.us/#organization"}
+},
+
+{ "@type":"SoftwareAgent",
+"@id":"https://identity.nvo987.us/ai/graph-agent",
+"name":"Knowledge Graph Builder Agent"
+},
+
+{
+"@type":"Thing",
+"@id":"https://identity.nvo987.us/#identity-links",
+"sameAs":[
 "https://orcid.org/0009-0007-4628-1871",
 "https://isni.org/isni/0000000529640885",
 "https://www.wikidata.org/wiki/Q137675227"
@@ -100,388 +244,33 @@
 },
 
 {
-"@type":"WebSite",
-"@id":"https://identity.nvo987.us/#identity",
+"@type":"ProfilePage",
+"@id":"https://identity.nvo987.us/#profile",
 "url":"https://identity.nvo987.us",
-"name":"Identity Node"
+"about":{"@id":"https://identity.nvo987.us/#organization"}
 },
 
 {
-"@type":"WebSite",
-"@id":"https://nvo987.us/#site",
-"url":"https://nvo987.us",
-"name":"Primary Domain"
-},
-
-{
-"@type":"WebSite",
-"@id":"https://nvo987.fr/#site",
-"url":"https://nvo987.fr",
-"name":"Organization Domain"
-},
-
-{
-"@type":"WebSite",
-"@id":"https://knowledge.nvo987.us/#site",
-"url":"https://knowledge.nvo987.us",
-"name":"Knowledge Network"
-},
-
-{
-"@type":"WebSite",
-"@id":"https://lab.nvo987.us/#site",
-"url":"https://lab.nvo987.us",
-"name":"Research Lab"
-},
-
-{
-"@type":"DigitalDocument",
-"@id":"https://identity.nvo987.us/.well-known/did.json",
-"name":"DID Document"
-},
-
-{
-"@type":"Dataset",
-"@id":"https://identity.nvo987.us/machine/schema.jsonld"
-},
-
-{
-"@type":"Dataset",
-"@id":"https://identity.nvo987.us/machine/publications.jsonld"
-},
-
-{
-"@type":"Dataset",
-"@id":"https://identity.nvo987.us/machine/vc.jsonld"
-},
-
-{
-"@type":"CreativeWork",
-"@id":"https://identity.nvo987.us/research/color-generative-principle",
-"name":"Color Generative Principle"
-},
-
-{
-"@type":"Organization",
-"@id":"https://nvo987.fr/#organization",
-"name":"nvo987",
-"url":"https://nvo987.fr"
-}
-
-]
-}
-</script>
-<!-- EXTENDED IDENTITY GRAPH -->
-
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@graph":[
-
-{
-"@type":"WebPage",
-"@id":"https://identity.nvo987.us/#homepage",
-"isPartOf":{"@id":"https://identity.nvo987.us/#identity"},
-"about":{"@id":"https://identity.nvo987.us/#person"}
-},
-
-{
-"@type":"DataCatalog",
-"@id":"https://identity.nvo987.us/#machine-catalog",
-"name":"Identity Machine Data",
-"creator":{"@id":"https://identity.nvo987.us/#person"},
-"dataset":[
-{"@id":"https://identity.nvo987.us/machine/schema.jsonld"},
-{"@id":"https://identity.nvo987.us/machine/publications.jsonld"},
-{"@id":"https://identity.nvo987.us/machine/vc.jsonld"}
-]
-},
-
-{
-"@type":"ProfilePage",
-"@id":"https://mastodon.social/@nvo987",
-"mainEntity":{"@id":"https://identity.nvo987.us/#person"}
-},
-
-{
-"@type":"ProfilePage",
-"@id":"https://bsky.app/profile/nvo987.us",
-"mainEntity":{"@id":"https://identity.nvo987.us/#person"}
-},
-
-{
-"@type":"CreativeWork",
-"@id":"https://identity.nvo987.us/research/color-generative-principle",
-"creator":{"@id":"https://identity.nvo987.us/#person"},
-"isPartOf":{"@id":"https://identity.nvo987.us/#identity"}
-},
-
-{
-"@type":"ResearchProject",
+"@type":"Project",
 "@id":"https://lab.nvo987.us/#projects",
-"name":"Research Projects",
-"isPartOf":{"@id":"https://lab.nvo987.us/#site"},
-"creator":{"@id":"https://identity.nvo987.us/#person"}
+"name":"NVO987 Research Projects",
+"sponsor":{"@id":"https://identity.nvo987.us/#organization"}
 },
 
 {
 "@type":"Dataset",
-"@id":"https://knowledge.nvo987.us/#dataset",
-"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
+"@id":"https://knowledge.nvo987.us/#knowledge-graph",
+"name":"NVO987 Knowledge Graph",
+"creator":{"@id":"https://identity.nvo987.us/#organization"}
 },
 
 {
-"@type":"Dataset",
-"@id":"https://lab.nvo987.us/#dataset",
-"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://knowledge.nvo987.us/articles",
-"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://knowledge.nvo987.us/archive",
-"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://knowledge.nvo987.us/ontology",
-"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://knowledge.nvo987.us/data",
-"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://knowledge.nvo987.us/graph",
-"isPartOf":{"@id":"https://knowledge.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://lab.nvo987.us/experiments",
-"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://lab.nvo987.us/models",
-"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://lab.nvo987.us/prototypes",
-"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://lab.nvo987.us/data",
-"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://lab.nvo987.us/tools",
-"isPartOf":{"@id":"https://lab.nvo987.us/#site"}
-},
-
-{
-"@type":"CreativeWork",
-"@id":"https://identity.nvo987.us/publications",
-"creator":{"@id":"https://identity.nvo987.us/#person"}
-},
-
-{
-"@type":"CreativeWork",
-"@id":"https://identity.nvo987.us/articles",
-"creator":{"@id":"https://identity.nvo987.us/#person"}
-},
-
-{
-"@type":"CreativeWork",
-"@id":"https://identity.nvo987.us/datasets",
-"creator":{"@id":"https://identity.nvo987.us/#person"}
-},
-
-{
-"@type":"CreativeWork",
-"@id":"https://identity.nvo987.us/research",
-"creator":{"@id":"https://identity.nvo987.us/#person"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://identity.nvo987.us/contact",
-"isPartOf":{"@id":"https://identity.nvo987.us/#identity"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://identity.nvo987.us/about",
-"isPartOf":{"@id":"https://identity.nvo987.us/#identity"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://identity.nvo987.us/identity",
-"isPartOf":{"@id":"https://identity.nvo987.us/#identity"}
+"@type":"PropertyValue",
+"@id":"https://identity.nvo987.us/#did",
+"name":"Decentralized Identifier",
+"value":"did:web:identity.nvo987.us"
 }
 
 ]
 }
 </script>
-</head>
-
-<body>
-
-<header class="hero">
-<div class="hero-overlay">
-<h1>nvo987 Identity</h1>
-<p>Decentralized identity root</p>
-</div>
-</header>
-
-<main>
-
-<section>
-
-<h2>Identity Node</h2>
-
-<p>
-This website represents the root identity node for the decentralized identifier
-<strong>did:web:identity.nvo987.us</strong>.
-</p>
-
-<p>
-The identity node federates multiple domains and knowledge endpoints forming a decentralized identity architecture.
-</p>
-
-</section>
-
-<section>
-
-<h2>DID Document</h2>
-
-<p>
-<a href="/.well-known/did.json">
-https://identity.nvo987.us/.well-known/did.json
-</a>
-</p>
-
-<p>
-The DID document provides machine-readable identity metadata and service endpoints.
-</p>
-
-</section>
-
-<section>
-
-<h2>Associated Domains</h2>
-
-<ul>
-
-<li>
-<a href="https://nvo987.us">nvo987.us</a>
-</li>
-
-<li>
-<a href="https://nvo987.fr">nvo987.fr</a>
-</li>
-
-<li>
-<a href="https://knowledge.nvo987.us">knowledge.nvo987.us</a>
-</li>
-
-<li>
-<a href="https://lab.nvo987.us">lab.nvo987.us</a>
-</li>
-
-</ul>
-
-</section>
-
-<section>
-
-<h2>Machine Endpoints</h2>
-
-<ul>
-
-<li>
-<a href="https://identity.nvo987.us/machine/schema.jsonld">
-schema.jsonld
-</a>
-</li>
-
-<li>
-<a href="https://identity.nvo987.us/machine/publications.jsonld">
-publications.jsonld
-</a>
-</li>
-
-<li>
-<a href="https://identity.nvo987.us/machine/vc.jsonld">
-vc.jsonld
-</a>
-</li>
-
-</ul>
-
-</section>
-
-<section>
-
-<h2>Scholarly Identifiers</h2>
-
-<ul>
-
-<li>
-<a href="https://orcid.org/0009-0007-4628-1871">
-ORCID
-</a>
-</li>
-
-<li>
-<a href="https://isni.org/isni/0000000529640885">
-ISNI
-</a>
-</li>
-
-<li>
-<a href="https://www.wikidata.org/wiki/Q137675227">
-Wikidata
-</a>
-</li>
-
-</ul>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>
-© nvo987
-</p>
-
-<p>
-Decentralized identity node for the DID
-<strong>did:web:identity.nvo987.us</strong>
-</p>
-
-</footer>
-
-</body>
-
-</html>
