@@ -1,0 +1,13 @@
+Contact: https://identity.nvo987.us
+Canonical: https://identity.nvo987.us/.well-known/security.txt
+Policy: https://identity.nvo987.us
+Preferred-Languages: en
+
+Identity: did:web:identity.nvo987.us
+
+Domains:
+https://identity.nvo987.us
+https://nvo987.us
+https://nvo987.fr
+https://knowledge.nvo987.us
+https://lab.nvo987.us
