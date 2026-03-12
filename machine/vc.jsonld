@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://www.w3.org/ns/did/v1",
+    "https://schema.org"
+  ],
+
+  "id": "https://identity.nvo987.us/machine/vc.jsonld",
+
+  "type": [
+    "VerifiableCredentialSchema",
+    "Dataset"
+  ],
+
+  "name": "NVO987 Verifiable Credential Schema",
+
+  "description": "Credential schema and issuer metadata for verifiable credentials issued by the NVO987 decentralized identity.",
+
+  "issuer": {
+    "id": "did:web:identity.nvo987.us",
+    "name": "NVO987 Identity"
+  },
+
+  "credentialTypes": [
+
+    {
+      "id": "https://identity.nvo987.us/vc/research-credential",
+      "type": "ResearchCredential",
+      "description": "Credential asserting authorship or contribution to research outputs."
+    },
+
+    {
+      "id": "https://identity.nvo987.us/vc/publication-credential",
+      "type": "PublicationCredential",
+      "description": "Credential confirming authorship or publication of scholarly works."
+    },
+
+    {
+      "id": "https://identity.nvo987.us/vc/knowledge-credential",
+      "type": "KnowledgeCredential",
+      "description": "Credential asserting knowledge graph contributions or dataset authorship."
+    },
+
+    {
+      "id": "https://identity.nvo987.us/vc/ai-agent-credential",
+      "type": "AIAgentCredential",
+      "description": "Credential issued to AI agents operating under the NVO987 identity."
+    }
+
+  ],
+
+  "verificationMethod": "did:web:identity.nvo987.us#identity-key"
+}
