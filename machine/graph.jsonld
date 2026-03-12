@@ -1,0 +1,76 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "did": "https://www.w3.org/ns/did#"
+  },
+
+  "@id": "https://identity.nvo987.us/machine/graph.jsonld",
+
+  "@type": "Dataset",
+
+  "name": "NVO987 Knowledge Graph",
+
+  "description": "Root knowledge graph connecting domains, datasets, publications and AI systems of the NVO987 decentralized identity.",
+
+  "creator": {
+    "@id": "did:web:identity.nvo987.us"
+  },
+
+  "about": {
+    "@id": "did:web:identity.nvo987.us"
+  },
+
+  "dataset": [
+
+    {
+      "@id": "https://identity.nvo987.us/machine/schema.jsonld"
+    },
+    {
+      "@id": "https://identity.nvo987.us/machine/publications.jsonld"
+    },
+    {
+      "@id": "https://identity.nvo987.us/machine/vc.jsonld"
+    },
+    {
+      "@id": "https://identity.nvo987.us/machine/ai.jsonld"
+    },
+    {
+      "@id": "https://identity.nvo987.us/machine/agents.jsonld"
+    }
+
+  ],
+
+  "isPartOf": [
+
+    {
+      "@id": "https://identity.nvo987.us",
+      "@type": "WebSite",
+      "name": "NVO987 Identity"
+    },
+
+    {
+      "@id": "https://nvo987.us",
+      "@type": "WebSite",
+      "name": "NVO987 Main Site"
+    },
+
+    {
+      "@id": "https://nvo987.fr",
+      "@type": "WebSite",
+      "name": "NVO987 France"
+    },
+
+    {
+      "@id": "https://knowledge.nvo987.us",
+      "@type": "WebSite",
+      "name": "NVO987 Knowledge"
+    },
+
+    {
+      "@id": "https://lab.nvo987.us",
+      "@type": "WebSite",
+      "name": "NVO987 Lab"
+    }
+
+  ]
+}
