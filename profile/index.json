@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "did:web:identity.nvo987.us",
+
+  "name": "NVO987",
+
+  "url": "https://nvo987.us",
+
+  "founder": {
+    "@type": "Person",
+    "name": "Nicholas Van-Orton",
+    "sameAs": [
+      "https://orcid.org/0009-0007-4628-1871",
+      "https://isni.org/isni/0000000529640885",
+      "https://www.wikidata.org/wiki/Q137675227"
+    ]
+  },
+
+  "sameAs": [
+    "https://mastodon.social/@nvo987",
+    "https://bsky.app/profile/nvo987.us"
+  ]
+}
