@@ -1,0 +1,9 @@
+{
+ "subject": "did:web:identity.nvo987.us",
+ "links": [
+  {
+   "rel": "self",
+   "href": "https://identity.nvo987.us/.well-known/did.json"
+  }
+ ]
+}
