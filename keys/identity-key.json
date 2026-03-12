@@ -1,0 +1,15 @@
+{
+ "@context": [
+  "https://w3id.org/security/suites/ed25519-2020/v1"
+ ],
+
+ "id": "https://identity.nvo987.us/keys/identity-key",
+
+ "type": "Ed25519VerificationKey2020",
+
+ "controller": "did:web:identity.nvo987.us",
+
+ "publicKeyPem": "-----BEGIN PUBLIC KEY-----
+MCowBQYDK2VwAyEAOHTUtam4WSrM99Zrf4gKv4crd2KE7p1Sx+8UYDrHoKs=
+-----END PUBLIC KEY-----"
+}
