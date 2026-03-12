@@ -1,0 +1,22 @@
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+
+ "@id": "did:web:identity.nvo987.us",
+
+ "name": "NVO987 Identity",
+
+ "url": "https://identity.nvo987.us",
+
+ "identifier": "did:web:identity.nvo987.us",
+
+ "sameAs": [
+   "https://nvo987.us",
+   "https://nvo987.fr",
+   "https://knowledge.nvo987.us",
+   "https://lab.nvo987.us",
+   "https://orcid.org/0009-0007-4628-1871",
+   "https://isni.org/isni/0000000529640885",
+   "https://www.wikidata.org/wiki/Q137675227"
+ ]
+}
