@@ -1,0 +1,52 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "did": "https://www.w3.org/ns/did#"
+  },
+
+  "@id": "https://identity.nvo987.us/machine/ai.jsonld",
+
+  "@type": "Dataset",
+
+  "name": "NVO987 AI Systems Metadata",
+
+  "description": "Machine-readable metadata describing AI systems, agents and models operating under the NVO987 decentralized identity.",
+
+  "creator": {
+    "@id": "did:web:identity.nvo987.us"
+  },
+
+  "agentOwner": {
+    "@id": "did:web:identity.nvo987.us"
+  },
+
+  "agents": [
+
+    {
+      "@id": "https://identity.nvo987.us/ai/research-agent",
+      "@type": "SoftwareApplication",
+      "name": "NVO987 Research Agent",
+      "applicationCategory": "AIResearchAgent",
+      "creator": {
+        "@id": "did:web:identity.nvo987.us"
+      },
+      "description": "AI agent assisting research, knowledge extraction and publication analysis.",
+      "url": "https://identity.nvo987.us/ai"
+    },
+
+    {
+      "@id": "https://identity.nvo987.us/ai/knowledge-agent",
+      "@type": "SoftwareApplication",
+      "name": "NVO987 Knowledge Agent",
+      "applicationCategory": "KnowledgeGraphAgent",
+      "creator": {
+        "@id": "did:web:identity.nvo987.us"
+      },
+      "description": "AI agent responsible for maintaining and updating the NVO987 knowledge graph.",
+      "url": "https://identity.nvo987.us/ai"
+    }
+
+  ],
+
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
