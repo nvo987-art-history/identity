@@ -1,0 +1,26 @@
+{
+  "did": "did:web:identity.nvo987.us",
+
+  "identityRoot": "https://identity.nvo987.us",
+
+  "services": {
+    "profile": "https://identity.nvo987.us/profile",
+    "verification": "https://identity.nvo987.us/verification",
+    "keys": "https://identity.nvo987.us/keys",
+    "documents": "https://identity.nvo987.us/documents",
+    "signedDocuments": "https://identity.nvo987.us/signed",
+
+    "machineSchema": "https://identity.nvo987.us/machine/schema.jsonld",
+    "machinePublications": "https://identity.nvo987.us/machine/publications.jsonld",
+    "machineVC": "https://identity.nvo987.us/machine/vc.jsonld",
+    "machineAI": "https://identity.nvo987.us/machine/ai.jsonld",
+    "machineAgents": "https://identity.nvo987.us/machine/agents.jsonld",
+    "knowledgeGraph": "https://identity.nvo987.us/machine/graph.jsonld",
+
+    "identityAPI": "https://identity.nvo987.us/api",
+    "researchAPI": "https://identity.nvo987.us/api/research",
+    "knowledgeAPI": "https://identity.nvo987.us/api/knowledge",
+
+    "aiAgents": "https://identity.nvo987.us/ai"
+  }
+}
