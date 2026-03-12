@@ -1,0 +1,44 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "did": "https://www.w3.org/ns/did#"
+  },
+
+  "@id": "https://identity.nvo987.us/machine/agents.jsonld",
+
+  "@type": "Dataset",
+
+  "name": "NVO987 AI Agent Registry",
+
+  "description": "Machine-readable registry of AI agents operating under the NVO987 decentralized identity.",
+
+  "creator": {
+    "@id": "did:web:identity.nvo987.us"
+  },
+
+  "agents": [
+
+    {
+      "@id": "https://identity.nvo987.us/ai/research-agent",
+      "@type": "SoftwareAgent",
+      "name": "NVO987 Research Agent",
+      "description": "AI agent assisting research analysis and scientific knowledge extraction.",
+      "owner": {
+        "@id": "did:web:identity.nvo987.us"
+      },
+      "url": "https://identity.nvo987.us/ai"
+    },
+
+    {
+      "@id": "https://identity.nvo987.us/ai/knowledge-agent",
+      "@type": "SoftwareAgent",
+      "name": "NVO987 Knowledge Graph Agent",
+      "description": "Agent responsible for maintaining and updating the NVO987 knowledge graph.",
+      "owner": {
+        "@id": "did:web:identity.nvo987.us"
+      },
+      "url": "https://identity.nvo987.us/ai"
+    }
+
+  ]
+}
