@@ -1,0 +1,64 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "did": "https://www.w3.org/ns/did#",
+    "name": "name",
+    "description": "description",
+    "url": "url",
+    "identifier": "identifier",
+    "sameAs": "sameAs",
+    "founder": "founder",
+    "knowsAbout": "knowsAbout",
+    "Dataset": "Dataset",
+    "Person": "Person",
+    "Organization": "Organization",
+    "Brand": "Brand"
+  },
+
+  "@graph": [
+
+    {
+      "@id": "did:web:identity.nvo987.us",
+      "@type": "Organization",
+      "name": "NVO987",
+      "url": "https://nvo987.us",
+      "description": "Decentralized identity and knowledge infrastructure built around the NVO987 digital identity."
+    },
+
+    {
+      "@id": "https://identity.nvo987.us/profile",
+      "@type": "Dataset",
+      "name": "Identity Profile",
+      "description": "Human-readable and machine-readable profile of the NVO987 identity."
+    },
+
+    {
+      "@id": "https://identity.nvo987.us/machine/publications.jsonld",
+      "@type": "Dataset",
+      "name": "Publications Dataset",
+      "description": "Machine-readable list of publications and research outputs associated with the identity."
+    },
+
+    {
+      "@id": "https://identity.nvo987.us/machine/agents.jsonld",
+      "@type": "Dataset",
+      "name": "Agent Directory",
+      "description": "Directory of AI agents and automated systems operating under the NVO987 identity."
+    },
+
+    {
+      "@id": "https://identity.nvo987.us/machine/graph.jsonld",
+      "@type": "Dataset",
+      "name": "Knowledge Graph",
+      "description": "Linked data knowledge graph describing entities, identities and relations."
+    },
+
+    {
+      "@id": "https://identity.nvo987.us/machine/ai.jsonld",
+      "@type": "Dataset",
+      "name": "AI Metadata",
+      "description": "Metadata describing AI-readable capabilities, services and APIs of the identity."
+    }
+
+  ]
+}
