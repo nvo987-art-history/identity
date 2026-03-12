@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "did": "https://www.w3.org/ns/did#"
+  },
+
+  "@graph": [
+
+    {
+      "@id": "did:web:identity.nvo987.us",
+      "@type": "Organization",
+      "name": "NVO987",
+      "url": "https://nvo987.us",
+      "identifier": "did:web:identity.nvo987.us"
+    },
+
+    {
+      "@id": "https://identity.nvo987.us/machine/publications.jsonld",
+      "@type": "Dataset",
+      "name": "NVO987 Publications Dataset",
+      "creator": {
+        "@id": "did:web:identity.nvo987.us"
+      },
+      "description": "Machine-readable dataset listing publications and research outputs associated with the NVO987 identity."
+    },
+
+    {
+      "@id": "https://orcid.org/0009-0007-4628-1871",
+      "@type": "Person",
+      "name": "Nicholas Van-Orton",
+      "alternateName": "NVO987",
+      "sameAs": [
+        "https://isni.org/isni/0000000529640885",
+        "https://www.wikidata.org/wiki/Q137675227"
+      ]
+    }
+
+  ]
+}
