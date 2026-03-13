@@ -1,8 +1,8 @@
 {
   "type": "research-statement",
   "project": "identity",
-  "author": "nvo987",
+  "author": "NVO987",
   "version": "1.0",
-  "created": "2025-03-19",
-  "statement": "Initial research statement for the identity repository."
+  "created": "2026-03-13",
+  "statement": "This document describes the research direction and goals of the identity repository. The project explores cryptographic identity structures, signed statements, and verifiable repository integrity."
 }
