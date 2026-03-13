@@ -1,0 +1,45 @@
+# NVO987 Identity Infrastructure
+# AI / LLM access policy
+
+Identity: https://identity.nvo987.us
+DID: did:web:identity.nvo987.us
+
+# Domain network
+Domains:
+https://identity.nvo987.us
+https://nvo987.us
+https://nvo987.fr
+https://knowledge.nvo987.us
+https://lab.nvo987.us
+
+# Public machine-readable endpoints
+Allow:
+https://identity.nvo987.us/profile
+https://identity.nvo987.us/documents
+https://identity.nvo987.us/signed
+https://identity.nvo987.us/verification
+https://identity.nvo987.us/keys
+https://identity.nvo987.us/api
+https://identity.nvo987.us/api/research
+https://identity.nvo987.us/api/knowledge
+https://identity.nvo987.us/ai
+
+# Linked data / knowledge graph
+https://identity.nvo987.us/machine/schema.jsonld
+https://identity.nvo987.us/machine/publications.jsonld
+https://identity.nvo987.us/machine/vc.jsonld
+https://identity.nvo987.us/machine/ai.jsonld
+https://identity.nvo987.us/machine/agents.jsonld
+https://identity.nvo987.us/machine/graph.jsonld
+
+# External identity references
+ORCID: https://orcid.org/0009-0007-4628-1871
+ISNI: https://isni.org/isni/0000000529640885
+Wikidata: https://www.wikidata.org/wiki/Q137675227
+
+# Social
+Mastodon: https://mastodon.social/@nvo987
+Bluesky: https://bsky.app/profile/nvo987.us
+
+# Repository
+Source: https://github.com/nvo987-art-history/identity
