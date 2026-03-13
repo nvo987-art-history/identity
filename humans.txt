@@ -1,0 +1,47 @@
+/* HUMAN IDENTITY */
+
+Name: Nicholas Van-Orton
+DID: did:web:identity.nvo987.us
+Primary Identity: https://identity.nvo987.us
+
+/* DOMAIN NETWORK */
+
+identity.nvo987.us
+nvo987.us
+nvo987.fr
+knowledge.nvo987.us
+lab.nvo987.us
+
+/* SERVICES */
+
+Profile: https://identity.nvo987.us/profile
+Documents: https://identity.nvo987.us/documents
+Signed Documents: https://identity.nvo987.us/signed
+Verification: https://identity.nvo987.us/verification
+Keys: https://identity.nvo987.us/keys
+API: https://identity.nvo987.us/api
+AI Agents: https://identity.nvo987.us/ai
+
+/* MACHINE DATA */
+
+Schema: https://identity.nvo987.us/machine/schema.jsonld
+Publications: https://identity.nvo987.us/machine/publications.jsonld
+Credentials: https://identity.nvo987.us/machine/vc.jsonld
+AI Metadata: https://identity.nvo987.us/machine/ai.jsonld
+Agents: https://identity.nvo987.us/machine/agents.jsonld
+Knowledge Graph: https://identity.nvo987.us/machine/graph.jsonld
+
+/* SOCIAL */
+
+Mastodon: https://mastodon.social/@nvo987
+Bluesky: https://bsky.app/profile/nvo987.us
+
+/* SCHOLARLY */
+
+ORCID: https://orcid.org/0009-0007-4628-1871
+ISNI: https://isni.org/isni/0000000529640885
+Wikidata: https://www.wikidata.org/wiki/Q137675227
+
+/* REPOSITORY */
+
+Source: https://github.com/nvo987-art-history/identity
