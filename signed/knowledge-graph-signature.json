@@ -1,0 +1,7 @@
+{
+  "type": "knowledge-graph-signature",
+  "author": "NVO987",
+  "statement": "This file cryptographically signs the connection between the identity repository and the associated knowledge graph structure. The signature confirms that the knowledge graph references originate from the same cryptographic identity.",
+  "key": "identity-public.pem",
+  "algorithm": "ed25519"
+}
