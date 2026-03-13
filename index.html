@@ -127,183 +127,184 @@
 <link rel="agent" href="https://identity.nvo987.us/ai/sync-agent">
 
 <!-- IDENTITY GRAPH -->
-
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
+"@context":[
+"https://schema.org",
+"https://www.w3.org/ns/did/v1"
+],
+
 "@graph":[
 
-{ "@type":"Organization",
-"@id":"https://identity.nvo987.us/#organization",
-"name":"NVO987 Identity Network",
-"url":"https://identity.nvo987.us",
+{
+"@id":"did:web:identity.nvo987.us",
+"@type":"Organization",
+"name":"NVO987 Identity",
 "identifier":"did:web:identity.nvo987.us",
-"subOrganization":[{"@id":"https://nvo987.fr/#organization"}],
-"brand":{"@id":"https://identity.nvo987.us/#brand"},
-"founder":{"@id":"https://identity.nvo987.us/#nicholas"}
+"url":"https://identity.nvo987.us",
+
+"founder":{"@id":"#nicholas-van-orton"},
+"creator":{"@id":"#nicholas-van-orton"},
+
+"sameAs":[
+"https://identity.nvo987.us",
+"https://nvo987.us",
+"https://nvo987.fr",
+"https://knowledge.nvo987.us",
+"https://lab.nvo987.us"
+],
+
+"hasPart":[
+{"@id":"did:web:identity.nvo987.us#identity-key"},
+{"@id":"did:web:identity.nvo987.us#profile"},
+{"@id":"did:web:identity.nvo987.us#identity-documents"},
+{"@id":"did:web:identity.nvo987.us#signed-documents"},
+{"@id":"did:web:identity.nvo987.us#verification"},
+{"@id":"did:web:identity.nvo987.us#key-directory"},
+{"@id":"did:web:identity.nvo987.us#identity-directory"},
+{"@id":"did:web:identity.nvo987.us#machine-schema"},
+{"@id":"did:web:identity.nvo987.us#machine-publications"},
+{"@id":"did:web:identity.nvo987.us#machine-vc"},
+{"@id":"did:web:identity.nvo987.us#machine-ai"},
+{"@id":"did:web:identity.nvo987.us#machine-agents"},
+{"@id":"did:web:identity.nvo987.us#machine-graph"},
+{"@id":"did:web:identity.nvo987.us#identity-api"},
+{"@id":"did:web:identity.nvo987.us#research-api"},
+{"@id":"did:web:identity.nvo987.us#knowledge-api"},
+{"@id":"did:web:identity.nvo987.us#ai-agents"},
+{"@id":"did:web:identity.nvo987.us#social"},
+{"@id":"did:web:identity.nvo987.us#scholarly"}
+]
 },
 
-{ "@type":"Brand",
-"@id":"https://identity.nvo987.us/#brand",
-"name":"NVO987",
-"url":"https://nvo987.us"
-},
-
-{ "@type":"Person",
-"@id":"https://identity.nvo987.us/#nicholas",
+{
+"@id":"#nicholas-van-orton",
+"@type":"Person",
 "name":"Nicholas Van-Orton",
-"sameAs":[
-"https://orcid.org/0009-0007-4628-1871",
-"https://isni.org/isni/0000000529640885",
-"https://www.wikidata.org/wiki/Q137675227"
-]
-},
-
-{ "@type":"Organization",
-"@id":"https://nvo987.fr/#organization",
-"name":"NVO987 Association",
-"url":"https://nvo987.fr"
-},
-
-{ "@type":"WebSite",
-"@id":"https://identity.nvo987.us/#site",
-"url":"https://identity.nvo987.us",
-"name":"Identity Node",
-"publisher":{"@id":"https://identity.nvo987.us/#organization"}
-},
-
-{ "@type":"WebSite",
-"@id":"https://nvo987.us/#site",
-"url":"https://nvo987.us",
-"name":"Primary Domain"
-},
-
-{ "@type":"WebSite",
-"@id":"https://knowledge.nvo987.us/#site",
-"url":"https://knowledge.nvo987.us",
-"name":"Knowledge Network"
-},
-
-{ "@type":"WebSite",
-"@id":"https://lab.nvo987.us/#site",
-"url":"https://lab.nvo987.us",
-"name":"Research Lab"
-},
-
-{ "@type":"DigitalDocument",
-"@id":"https://identity.nvo987.us/.well-known/did.json",
-"name":"DID Document"
-},
-
-{ "@type":"Dataset",
-"@id":"https://identity.nvo987.us/machine/schema.jsonld"
-},
-
-{ "@type":"Dataset",
-"@id":"https://identity.nvo987.us/machine/publications.jsonld"
-},
-
-{ "@type":"Dataset",
-"@id":"https://identity.nvo987.us/machine/vc.jsonld"
-},
-
-{ "@type":"CreativeWork",
-"@id":"https://identity.nvo987.us/research/color-generative-principle",
-"name":"Color Generative Principle",
-"author":{"@id":"https://identity.nvo987.us/#nicholas"}
-},
-
-{ "@type":"SoftwareAgent",
-"@id":"https://identity.nvo987.us/ai/research-agent",
-"name":"Research AI Agent"
-},
-
-{ "@type":"SoftwareAgent",
-"@id":"https://identity.nvo987.us/ai/knowledge-agent",
-"name":"Knowledge Graph Agent"
-},
-
-{ "@type":"SoftwareAgent",
-"@id":"https://identity.nvo987.us/ai/sync-agent",
-"name":"Identity Sync Agent"
-},
-
-{ "@type":"WebAPI",
-"@id":"https://identity.nvo987.us/api",
-"name":"Identity API",
-"provider":{"@id":"https://identity.nvo987.us/#organization"}
-},
-
-{ "@type":"ResearchProject",
-"@id":"https://identity.nvo987.us/#research-program",
-"name":"NVO987 Research Program",
-"parentOrganization":{"@id":"https://identity.nvo987.us/#organization"}
-},
-
-{ "@type":"ScholarlyArticle",
-"@id":"https://identity.nvo987.us/research/color-generative-principle#paper",
-"name":"Color Generative Principle Paper",
-"author":{"@id":"https://identity.nvo987.us/#nicholas"}
-},
-
-{ "@type":"DatasetCatalog",
-"@id":"https://knowledge.nvo987.us/#catalog",
-"name":"NVO987 Knowledge Dataset Catalog",
-"publisher":{"@id":"https://identity.nvo987.us/#organization"}
-},
-
-{ "@type":"DefinedTerm",
-"@id":"https://knowledge.nvo987.us/#concept-color-principle",
-"name":"Color Generative Principle"
-},
-
-{ "@type":"SoftwareApplication",
-"@id":"https://identity.nvo987.us/#ai-system",
-"name":"NVO987 Autonomous Knowledge System",
-"creator":{"@id":"https://identity.nvo987.us/#organization"}
-},
-
-{ "@type":"SoftwareAgent",
-"@id":"https://identity.nvo987.us/ai/graph-agent",
-"name":"Knowledge Graph Builder Agent"
+"url":"https://identity.nvo987.us"
 },
 
 {
-"@type":"Thing",
-"@id":"https://identity.nvo987.us/#identity-links",
-"sameAs":[
-"https://orcid.org/0009-0007-4628-1871",
-"https://isni.org/isni/0000000529640885",
-"https://www.wikidata.org/wiki/Q137675227"
-]
+"@id":"did:web:identity.nvo987.us#identity-key",
+"@type":"CryptographicKey",
+"name":"Identity Public Key",
+"encodingFormat":"application/x-pem-file",
+"value":"MCowBQYDK2VwAyEAOHTUtam4WSrM99Zrf4gKv4crd2KE7p1Sx+8UYDrHoKs="
 },
 
 {
+"@id":"did:web:identity.nvo987.us#profile",
 "@type":"ProfilePage",
-"@id":"https://identity.nvo987.us/#profile",
-"url":"https://identity.nvo987.us",
-"about":{"@id":"https://identity.nvo987.us/#organization"}
+"url":"https://identity.nvo987.us/profile"
 },
 
 {
-"@type":"Project",
-"@id":"https://lab.nvo987.us/#projects",
-"name":"NVO987 Research Projects",
-"sponsor":{"@id":"https://identity.nvo987.us/#organization"}
+"@id":"did:web:identity.nvo987.us#identity-documents",
+"@type":"DataCatalog",
+"url":"https://identity.nvo987.us/documents"
 },
 
 {
+"@id":"did:web:identity.nvo987.us#signed-documents",
+"@type":"DataCatalog",
+"url":"https://identity.nvo987.us/signed"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#verification",
+"@type":"WebAPI",
+"url":"https://identity.nvo987.us/verification"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#key-directory",
+"@type":"DataCatalog",
+"url":"https://identity.nvo987.us/keys"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#identity-directory",
+"@type":"DataCatalog",
+"url":"https://identity.nvo987.us/identity"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#machine-schema",
 "@type":"Dataset",
-"@id":"https://knowledge.nvo987.us/#knowledge-graph",
-"name":"NVO987 Knowledge Graph",
-"creator":{"@id":"https://identity.nvo987.us/#organization"}
+"url":"https://identity.nvo987.us/machine/schema.jsonld"
 },
 
 {
-"@type":"PropertyValue",
-"@id":"https://identity.nvo987.us/#did",
-"name":"Decentralized Identifier",
-"value":"did:web:identity.nvo987.us"
+"@id":"did:web:identity.nvo987.us#machine-publications",
+"@type":"Dataset",
+"url":"https://identity.nvo987.us/machine/publications.jsonld"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#machine-vc",
+"@type":"Dataset",
+"url":"https://identity.nvo987.us/machine/vc.jsonld"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#machine-ai",
+"@type":"Dataset",
+"url":"https://identity.nvo987.us/machine/ai.jsonld"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#machine-agents",
+"@type":"Dataset",
+"url":"https://identity.nvo987.us/machine/agents.jsonld"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#machine-graph",
+"@type":"Dataset",
+"url":"https://identity.nvo987.us/machine/graph.jsonld"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#identity-api",
+"@type":"WebAPI",
+"url":"https://identity.nvo987.us/api"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#research-api",
+"@type":"WebAPI",
+"url":"https://identity.nvo987.us/api/research"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#knowledge-api",
+"@type":"WebAPI",
+"url":"https://identity.nvo987.us/api/knowledge"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#ai-agents",
+"@type":"WebAPI",
+"url":"https://identity.nvo987.us/ai"
+},
+
+{
+"@id":"did:web:identity.nvo987.us#social",
+"@type":"ProfilePage",
+"sameAs":[
+"https://mastodon.social/@nvo987",
+"https://bsky.app/profile/nvo987.us"
+]
+},
+
+{
+"@id":"did:web:identity.nvo987.us#scholarly",
+"@type":"ProfilePage",
+"sameAs":[
+"https://orcid.org/0009-0007-4628-1871",
+"https://isni.org/isni/0000000529640885",
+"https://www.wikidata.org/wiki/Q137675227"
+]
 }
 
 ]
