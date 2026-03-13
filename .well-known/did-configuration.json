@@ -1,6 +1,28 @@
 {
  "@context": "https://identity.foundation/.well-known/did-configuration/v1",
  "linked_dids": [
-  "did:web:identity.nvo987.us"
+  {
+   "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://identity.foundation/.well-known/did-configuration/v1"
+   ],
+   "type": [
+    "VerifiableCredential",
+    "DomainLinkageCredential"
+   ],
+   "issuer": "did:web:identity.nvo987.us",
+   "issuanceDate": "2026-03-13T00:00:00Z",
+   "credentialSubject": {
+    "id": "did:web:identity.nvo987.us",
+    "origin": "https://identity.nvo987.us"
+   },
+   "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-03-13T00:00:00Z",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://identity.nvo987.us/keys/identity-key",
+    "jws": "cuF7AwxnBm09RRyTXEU7Y+nPyMBAzwGdHQvS6j+TfASAUIWjDCIM5ARh500CePUcJCH/LpHbqwjmk3ti7dm2Ag=="
+   }
+  }
  ]
 }
