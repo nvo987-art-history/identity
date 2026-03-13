@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebAPI",
+  "name": "NVO987 Research API",
+  "url": "https://identity.nvo987.us/api/research",
+  "description": "Research metadata and scholarly datasets",
+  "provider": {
+    "@type": "Organization",
+    "name": "NVO987"
+  }
+}
