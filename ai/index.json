@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "NVO987 AI Agents",
+  "url": "https://identity.nvo987.us/ai",
+  "description": "Directory of AI agents associated with the NVO987 identity infrastructure",
+  "creator": {
+    "@type": "Person",
+    "name": "Nicholas Van-Orton"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "NVO987"
+  }
+}
