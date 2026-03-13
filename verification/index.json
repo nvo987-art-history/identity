@@ -1,0 +1,14 @@
+{
+ "verification": {
+  "identity": {
+   "document": "https://identity.nvo987.us/identity/identity.json",
+   "signature": "https://identity.nvo987.us/identity/identity.sig",
+   "hash": "https://identity.nvo987.us/identity/identity.sha512"
+  },
+  "proof": {
+   "document": "https://identity.nvo987.us/identity/proof.json",
+   "signature": "https://identity.nvo987.us/identity/proof.sig",
+   "hash": "https://identity.nvo987.us/identity/proof.sha512"
+  }
+ }
+}
