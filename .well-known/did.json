@@ -73,6 +73,12 @@
 },
 
 {
+"id":"did:web:identity.nvo987.us#identity-directory",
+"type":"IdentityRepository",
+"serviceEndpoint":"https://identity.nvo987.us/identity"
+},
+
+{
 "id":"did:web:identity.nvo987.us#machine-schema",
 "type":"Dataset",
 "serviceEndpoint":"https://identity.nvo987.us/machine/schema.jsonld"
