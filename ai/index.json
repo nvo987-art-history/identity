@@ -1,15 +1,45 @@
 {
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  "name": "NVO987 AI Agents",
-  "url": "https://identity.nvo987.us/ai",
-  "description": "Directory of AI agents associated with the NVO987 identity infrastructure",
-  "creator": {
-    "@type": "Person",
-    "name": "Nicholas Van-Orton"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "NVO987"
-  }
+"@context":[
+"https://schema.org",
+"https://www.w3.org/ns/did/v1"
+],
+
+"@type":"ItemList",
+
+"name":"NVO987 AI Agent Directory",
+
+"url":"https://identity.nvo987.us/ai",
+
+"identifier":"did:web:identity.nvo987.us",
+
+"provider":{
+"@type":"Organization",
+"name":"NVO987 Identity Network",
+"url":"https://identity.nvo987.us"
+},
+
+"itemListElement":[
+
+{
+"@type":"SoftwareAgent",
+"name":"Research Agent",
+"url":"https://identity.nvo987.us/ai/research-agent",
+"description":"Agent responsible for indexing and processing research outputs."
+},
+
+{
+"@type":"SoftwareAgent",
+"name":"Knowledge Agent",
+"url":"https://identity.nvo987.us/ai/knowledge-agent",
+"description":"Agent responsible for building and maintaining the knowledge graph."
+},
+
+{
+"@type":"SoftwareAgent",
+"name":"Identity Sync Agent",
+"url":"https://identity.nvo987.us/ai/sync-agent",
+"description":"Agent responsible for synchronizing identity metadata and machine endpoints."
+}
+
+]
 }
