@@ -17,6 +17,10 @@ body {
   background: #6b3f2a;
   color: #ffffff;
   line-height: 1.6;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* =========================
@@ -54,16 +58,17 @@ body {
 
 /* =========================
    MAIN CONTENT
-   (EZ VOLT A HIBA FORRÁSA)
 ========================= */
 
 main {
   max-width: 920px;
   margin: 0 auto;
-  padding: 28px 22px 56px;   /* FELÜL KICSIBB */
+  padding: 28px 22px 24px;
+  flex: 1;
 }
 
 /* első szekció ne „ússzon le” */
+
 main section:first-child {
   margin-top: 0;
 }
@@ -154,7 +159,7 @@ a:hover {
   }
 
   main {
-    padding: 24px 18px 48px;
+    padding: 24px 18px 24px;
   }
 
   p {
@@ -168,7 +173,7 @@ a:hover {
 
 footer {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   opacity: 0.85;
   font-size: 0.95rem;
 }
