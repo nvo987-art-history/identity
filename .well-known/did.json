@@ -267,6 +267,11 @@
     "id": "#dcat",
     "type": "LinkedResource",
     "serviceEndpoint": "https://identity.nvo987.us/dcat.json"
+	},
+	{
+    "id": "#wikidata-publication",
+    "type": "PublicationService",
+    "serviceEndpoint": "https://www.wikidata.org/wiki/Q137674546"
 	}, 
     {
      "id": "#isni",
