@@ -1,0 +1,233 @@
+{
+"@context": [
+  "https://www.w3.org/ns/did/v1",
+  "https://w3id.org/security/suites/ed25519-2020/v1",
+  "https://w3id.org/security/suites/secp256k1recovery-2020/v2"
+],
+  "id": "did:web:identity.nvo987.us",
+  "controller": "did:web:identity.nvo987.us",
+  "name": "Nicholas Van-Orton",
+  "brand": "NVO987",
+  "organization": "NVO987 – Culture Visuelle Moderne et Contemporaine",
+  "ecosystem": "NEXARIUM",
+  "created": "2026-06-19",
+
+  "alsoKnownAs": [
+    "https://nexarium.us",
+    "https://nvo987.us",
+    "https://nvo987.eu",
+    "https://nvo987.fr",
+    "https://nvo987.ai.in",
+    "https://did.ai.in",
+    "https://kellycode.us",
+    "https://identity.ai.in",
+    "https://web3.internet.in",
+
+    "https://orcid.org/0009-0007-4628-1871",
+
+    "did:key:z6MkmmbpWcJvqcPLfLryetykAH3Rb6VcCymCPpuaJgNFSvyo",
+    "did:pkh:eip155:1:0x4778d725393c2cc4fdd033c8f8a14ac4a8034414",
+    "did:ethr:mainnet:0x4778d725393c2cc4fdd033c8f8a14ac4a8034414", 
+	"did:pkh:eip155:1:0xca58fbc898c9467a91e60471f307ec3c1e319aad",
+	"did:ethr:mainnet:0xca58fbc898c9467a91e60471f307ec3c1e319aad" 
+  ],
+
+  "verificationMethod": [
+    {
+      "id": "did:web:identity.nvo987.us#identity-key",
+      "type": "Ed25519VerificationKey2020",
+      "controller": "did:web:identity.nvo987.us",
+      "publicKeyMultibase": "z6MkmmbpWcJvqcPLfLryetykAH3Rb6VcCymCPpuaJgNFSvyo"
+    },
+    {
+      "id": "did:web:identity.nvo987.us#ethereum",
+      "type": "EcdsaSecp256k1RecoveryMethod2020",
+      "controller": "did:web:identity.nvo987.us",
+      "blockchainAccountId": "eip155:1:0x4778d725393c2cc4fdd033c8f8a14ac4a8034414"
+    }, 
+	  {
+	  "id": "did:web:identity.nvo987.us#ethereum2",
+      "type": "EcdsaSecp256k1RecoveryMethod2020",
+      "controller": "did:web:identity.nvo987.us",
+      "blockchainAccountId": "eip155:1:0xca58fbc898c9467a91e60471f307ec3c1e319aad"
+	  }
+  ],
+
+  "authentication": [
+    "did:web:identity.nvo987.us#identity-key",
+    "did:web:identity.nvo987.us#ethereum"
+  ],
+
+  "assertionMethod": [
+    "did:web:identity.nvo987.us#identity-key",
+    "did:web:identity.nvo987.us#ethereum"
+  ],
+
+  "capabilityInvocation": [
+    "did:web:identity.nvo987.us#identity-key"
+  ],
+
+  "capabilityDelegation": [
+    "did:web:identity.nvo987.us#identity-key"
+  ],
+
+  "service": [
+    {
+      "id": "#identity",
+      "type": "IdentityService",
+      "serviceEndpoint": "https://identity.nvo987.us"
+    },
+	  {
+	 "id": "#nexarium",
+	 "type": "LinkedDomains",
+	 "serviceEndpoint": {
+	 "origins": [
+      "https://nexarium.us",
+      "https://civilizational.nexarium.us",
+      "https://mcp.nexarium.us",
+      "https://web3.nexarium.us"
+    ]
+	}
+	  },
+    {
+      "id": "#knowledge",
+      "type": "KnowledgeService",
+      "serviceEndpoint": "https://knowledge.nvo987.us"
+    },
+    {
+      "id": "#person",
+      "type": "PersonService",
+      "serviceEndpoint": "https://person.nvo987.us"
+    },
+    {
+      "id": "#lab",
+      "type": "ResearchService",
+      "serviceEndpoint": "https://lab.nvo987.us"
+    },
+    {
+      "id": "#journal",
+      "type": "JournalService",
+      "serviceEndpoint": "https://journal.nvo987.us"
+    },
+    {
+      "id": "#newsletter",
+      "type": "PublicationService",
+      "serviceEndpoint": "https://newsletter.nvo987.us"
+    },
+    {
+      "id": "#archive",
+      "type": "ArchiveService",
+      "serviceEndpoint": "https://archive.nvo987.us"
+    },
+    {
+      "id": "#software",
+      "type": "SoftwareService",
+      "serviceEndpoint": "https://software.nvo987.us"
+    },
+    {
+      "id": "#web3",
+      "type": "Web3Service",
+      "serviceEndpoint": "https://web3.nvo987.us"
+    },
+    {
+      "id": "#ipfs",
+      "type": "IPFSService",
+      "serviceEndpoint": "https://ipfs.nvo987.us"
+    },
+    {
+      "id": "#sha256",
+      "type": "CryptographyService",
+      "serviceEndpoint": "https://sha256.nvo987.us"
+    },
+    {
+		"id": "#verify-mail-app",
+		"type": "SoftwareService",
+		"serviceEndpoint": "https://nexarium.us"
+		},
+    {
+      "id": "#sha3",
+      "type": "CryptographyService",
+      "serviceEndpoint": "https://sha3.nvo987.us"
+    },
+    {
+      "id": "#fediverse",
+      "type": "SocialDiscoveryService",
+      "serviceEndpoint": "https://fediverse.nvo987.us"
+    },
+    {
+      "id": "#video",
+      "type": "MediaService",
+      "serviceEndpoint": "https://video.nvo987.us"
+    },
+    {
+      "id": "#art",
+      "type": "CultureService",
+      "serviceEndpoint": "https://art.nvo987.us"
+    },
+    {
+      "id": "#bluesky",
+      "type": "SocialService",
+      "serviceEndpoint": "https://bluesky.nvo987.us"
+    },
+    {
+      "id": "#musees",
+      "type": "MuseumService",
+      "serviceEndpoint": "https://musees.nvo987.eu"
+    },
+    {
+      "id": "#unesco-fr",
+      "type": "HeritageService",
+      "serviceEndpoint": "https://unesco-fr.nvo987.eu"
+    },
+    {
+      "id": "#civilizational",
+      "type": "CivilizationalResearchService",
+      "serviceEndpoint": "https://civilizational.nexarium.us"
+    },
+    {
+      "id": "#mcp",
+      "type": "MachineCoordinationService",
+      "serviceEndpoint": "https://mcp.nexarium.us"
+    },
+    {
+      "id": "#nexarium-web3",
+      "type": "BlockchainService",
+      "serviceEndpoint": "https://web3.nexarium.us"
+    },
+    {
+      "id": "#studies",
+      "type": "CaseStudyService",
+      "serviceEndpoint": "https://studies.kellycode.us"
+    },
+    {
+      "id": "#benevoles",
+      "type": "VolunteerService",
+      "serviceEndpoint": "https://benevoles.nvo987.fr"
+    },
+    {
+      "id": "#images",
+      "type": "ImageArchiveService",
+      "serviceEndpoint": "https://images.nvo987.fr"
+    },
+    {
+      "id": "#misskey",
+      "type": "InternationalRelationsService",
+      "serviceEndpoint": "https://misskey.nvo987.fr"
+    },
+	{
+	  "id": "#orcid",
+	  "type": "IdentityService",
+	  "serviceEndpoint": "https://orcid.org/0009-0007-4628-1871"
+	}, 
+    {
+      "id": "#valoriax",
+      "type": "TransparencyService",
+      "serviceEndpoint": "https://valoriax.nvo987.fr"
+    },
+    {
+      "id": "#india-did",
+      "type": "InternationalIdentityService",
+      "serviceEndpoint": "https://did.ai.in"
+    }
+  ]
+}
