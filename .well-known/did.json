@@ -129,6 +129,11 @@
       "type": "JournalService",
       "serviceEndpoint": "https://journal.nvo987.us"
     },
+	{
+	  "id": "#crossref",
+	  "type": "ResearchService",
+      "serviceEndpoint": "https://doi.org/10.2139/ssrn.6131506"
+	},
     {
       "id": "#newsletter",
       "type": "PublicationService",
