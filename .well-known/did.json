@@ -73,7 +73,8 @@
 
   "authentication": [
     "did:web:identity.nvo987.us#identity-key",
-    "did:web:identity.nvo987.us#ethereum"
+    "did:web:identity.nvo987.us#ethereum",
+	"did:web:identity.nvo987.us#ethereum2" 
   ],
 
   "assertionMethod": [
