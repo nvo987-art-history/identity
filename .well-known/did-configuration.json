@@ -1,0 +1,20 @@
+{
+  "@context": "https://identity.foundation/.well-known/did-configuration/v1",
+  "linked_dids": [
+    {
+      "@context": [
+        "https://www.w3.org/ns/credentials/v2"
+      ],
+      "type": [
+        "VerifiableCredential",
+        "DomainLinkageCredential"
+      ],
+      "issuer": "did:web:identity.nvo987.us",
+      "validFrom": "2026-06-24T00:00:00Z",
+      "credentialSubject": {
+        "id": "did:web:identity.nvo987.us",
+        "origin": "https://identity.nvo987.us"
+      }
+    }
+  ]
+}
