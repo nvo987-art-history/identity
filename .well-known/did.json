@@ -51,6 +51,7 @@
     "https://europepmc.org/authors/0009-0007-4628-1871",
     "https://doi.org/10.2139/ssrn.6007654",
 	"https://github.com/nvo987-art-history",
+	"https://gitlab.com/nvo987-art-history",
 
     "did:key:z6MkmmbpWcJvqcPLfLryetykAH3Rb6VcCymCPpuaJgNFSvyo",
     "did:pkh:eip155:1:0x4778d725393c2cc4fdd033c8f8a14ac4a8034414",
@@ -158,6 +159,11 @@
       "type": "SoftwareService",
       "serviceEndpoint": "https://software.nvo987.us"
     },
+	{
+      "id": "#gitlab",
+      "type": "SoftwareRepositoryService",
+      "serviceEndpoint": "https://gitlab.com/nvo987-art-history"
+	},
 	{
     "id": "#internetarchive-v91",
     "type": "ResearchPublicationService",
