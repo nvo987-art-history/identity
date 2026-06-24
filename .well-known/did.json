@@ -58,13 +58,13 @@
   ],
 
   "verificationMethod": [
-    {
+  {
       "id": "did:web:identity.nvo987.us#identity-key",
       "type": "Ed25519VerificationKey2020",
       "controller": "did:web:identity.nvo987.us",
       "publicKeyMultibase": "z6MkmmbpWcJvqcPLfLryetykAH3Rb6VcCymCPpuaJgNFSvyo"
-    },
-    {
+  },
+  {
       "id": "did:web:identity.nvo987.us#ethereum",
       "type": "EcdsaSecp256k1RecoveryMethod2020",
       "controller": "did:web:identity.nvo987.us",
@@ -75,7 +75,7 @@
       "type": "EcdsaSecp256k1RecoveryMethod2020",
       "controller": "did:web:identity.nvo987.us",
       "blockchainAccountId": "eip155:1:0xca58fbc898c9467a91e60471f307ec3c1e319aad"
-	}
+  }
   ],
 
   "authentication": [
@@ -99,12 +99,12 @@
   ],
 
   "service": [
-    {
+  {
       "id": "#identity",
       "type": "IdentityService",
       "serviceEndpoint": "https://identity.nvo987.us"
-    },
-	  {
+  },
+  {
 	 "id": "#nexarium",
 	 "type": "LinkedDomains",
 	 "serviceEndpoint": {
@@ -115,7 +115,7 @@
       "https://web3.nexarium.us"
     ]
 	}
-	  },
+	},
     {
       "id": "#knowledge",
       "type": "KnowledgeService",
