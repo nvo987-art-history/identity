@@ -289,6 +289,11 @@
       "type": "TransparencyService",
       "serviceEndpoint": "https://valoriax.nvo987.fr"
     },
+	{
+    "id": "#french-registry",
+    "type": "GovernmentRegistryService",
+    "serviceEndpoint": "https://annuaire-entreprises.data.gouv.fr/entreprise/nvo987-culture-visuelle-moderne-et-contemporaine-102148160"
+	},
     {
       "id": "#india-did",
       "type": "InternationalIdentityService",
