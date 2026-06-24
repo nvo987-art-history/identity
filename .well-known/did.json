@@ -70,12 +70,12 @@
       "controller": "did:web:identity.nvo987.us",
       "blockchainAccountId": "eip155:1:0x4778d725393c2cc4fdd033c8f8a14ac4a8034414"
     }, 
-	  {
+	{
 	  "id": "did:web:identity.nvo987.us#ethereum2",
       "type": "EcdsaSecp256k1RecoveryMethod2020",
       "controller": "did:web:identity.nvo987.us",
       "blockchainAccountId": "eip155:1:0xca58fbc898c9467a91e60471f307ec3c1e319aad"
-	  }
+	}
   ],
 
   "authentication": [
@@ -172,10 +172,10 @@
       "serviceEndpoint": "https://sha256.nvo987.us"
     },
     {
-		"id": "#verify-mail-app",
-		"type": "SoftwareService",
-		"serviceEndpoint": "https://nexarium.us"
-		},
+	  "id": "#verify-mail-app",
+	  "type": "SoftwareService",
+	  "serviceEndpoint": "https://nexarium.us"
+	},
     {
       "id": "#sha3",
       "type": "CryptographyService",
@@ -256,6 +256,11 @@
      "type": "IdentityService",
      "serviceEndpoint": "https://www.wikidata.org/wiki/Q137675227"
     },
+	{
+    "id": "#dcat",
+    "type": "LinkedResource",
+    "serviceEndpoint": "https://identity.nvo987.us/dcat.json"
+	}, 
     {
      "id": "#isni",
      "type": "IdentityService",
