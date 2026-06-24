@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Page Not Found</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --gold:#d4af37;
+    --gold-light:#f5e7a1;
+    --black:#050505;
+    --card:#0d0d0d;
+    --border:rgba(212,175,55,.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:radial-gradient(circle at top,
+    #111 0%,
+    #080808 30%,
+    #000 100%);
+    color:#f5f5f5;
+    font-family:'Cormorant Garamond', serif;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,
+    rgba(212,175,55,.08),
+    transparent 70%);
+    top:-250px;
+    left:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+}
+
+.hero{
+    text-align:center;
+    padding:140px 20px 100px;
+}
+
+.logo{
+    font-family:'Playfair Display', serif;
+    font-size:8rem;
+    letter-spacing:12px;
+    font-weight:700;
+
+    background:linear-gradient(
+    180deg,
+    #fff7d1,
+    #f8d56c,
+    #d4af37,
+    #8b6b11);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 0 25px rgba(212,175,55,.35);
+}
+
+.subtitle{
+    margin-top:15px;
+    letter-spacing:6px;
+    color:#b99a37;
+    text-transform:uppercase;
+    font-size:1rem;
+}
+
+.tagline{
+    max-width:800px;
+    margin:40px auto 0;
+    font-size:1.5rem;
+    line-height:1.8;
+    color:#d8d8d8;
+}
+
+.section{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    padding:0 0 80px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:60px;
+
+    background:linear-gradient(
+    180deg,
+    #fff8d7,
+    #d4af37);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.03),
+    rgba(212,175,55,.04));
+
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:40px;
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 40px rgba(212,175,55,.15),
+    inset 0 0 40px rgba(212,175,55,.04);
+}
+
+.card h3{
+    font-size:2rem;
+    margin-bottom:15px;
+
+    background:linear-gradient(
+    180deg,
+    #fff4c7,
+    #d4af37);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.card p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#d4d4d4;
+}
+
+.feature{
+    margin-top:90px;
+
+    border:1px solid var(--border);
+
+    padding:70px;
+    border-radius:30px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(212,175,55,.05),
+    rgba(255,255,255,.01));
+}
+
+.feature h2{
+    font-size:4rem;
+    margin-bottom:20px;
+
+    background:linear-gradient(
+    180deg,
+    #fff8d0,
+    #d4af37);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.feature p{
+    font-size:1.4rem;
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#d7d7d7;
+}
+
+.home-btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:15px 40px;
+    border:1px solid rgba(212,175,55,.4);
+    border-radius:50px;
+    color:#d4af37;
+    text-decoration:none;
+    font-size:1.2rem;
+    transition:.3s ease;
+}
+
+.home-btn:hover{
+    background:rgba(212,175,55,.08);
+    box-shadow:0 0 20px rgba(212,175,55,.2);
+}
+
+footer{
+    margin-top:120px;
+    border-top:1px solid rgba(212,175,55,.15);
+    text-align:center;
+    padding:40px;
+}
+
+.footer-brand{
+    font-size:1.2rem;
+    letter-spacing:5px;
+    color:#d4af37;
+}
+
+.footer-copy{
+    margin-top:10px;
+    color:#999;
+}
+
+@media(max-width:768px){
+
+.logo{
+    font-size:5rem;
+    letter-spacing:6px;
+}
+
+.feature h2{
+    font-size:2.5rem;
+}
+
+.tagline{
+    font-size:1.2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1 class="logo">404</h1>
+
+<div class="subtitle">
+PAGE NOT FOUND
+</div>
+
+<p class="tagline">
+The page you are looking for may have been moved,
+renamed, deleted, or is temporarily unavailable.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Resource Unavailable
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Invalid Address</h3>
+<p>
+The URL entered may be incorrect or no longer exists on this website.
+Please verify the address and try again.
+</p>
+</div>
+
+<div class="card">
+<h3>Content Moved</h3>
+<p>
+The requested page may have been relocated, archived,
+or removed during a website update.
+</p>
+</div>
+
+<div class="card">
+<h3>Continue Browsing</h3>
+<p>
+Return to the homepage to explore available content
+and navigate through the website.
+</p>
+</div>
+
+</div>
+
+<div class="feature">
+
+<h2 id="site-name">Website</h2>
+
+<p>
+We couldn't find the page you requested on this domain.
+Please return to the homepage or use the site's navigation
+to locate the content you are looking for.
+</p>
+
+<a href="/" class="home-btn">
+Return to Homepage
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-brand" id="domain">
+LOADING...
+</div>
+
+<div class="footer-copy">
+Error 404 • The requested page could not be found
+</div>
+
+</footer>
+
+<script>
+const domain = window.location.hostname || 'Website';
+document.getElementById('domain').textContent = domain.toUpperCase();
+document.getElementById('site-name').textContent = domain;
+document.title = '404 - ' + domain;
+</script>
+
+</body>
+</html>
