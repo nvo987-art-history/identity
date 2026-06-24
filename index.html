@@ -1,78 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Core -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NEXARIUM Identity Infrastructure Node</title>
+    <!-- Title -->
+    <title>NEXARIUM Identity Infrastructure Node | Decentralized Identity & Trust Services</title>
 
-<meta name="description" content="Decentralized identity infrastructure node of the NEXARIUM ecosystem. Providing DID resolution, verification services, semantic identity metadata, and machine-readable trust infrastructure.">
+    <!-- SEO -->
+    <meta name="description" content="Official decentralized identity infrastructure node of the NEXARIUM ecosystem. DID resolution, cryptographic trust anchors, semantic identity metadata, verification services and machine-readable trust infrastructure.">
 
-<meta name="keywords" content="NEXARIUM, DID, Decentralized Identity, Identity Infrastructure, Semantic Web, Verifiable Identity, Knowledge Infrastructure, Web3, Digital Trust">
+    <meta name="keywords" content="NEXARIUM,DID,Decentralized Identity,Identity Infrastructure,Verifiable Credentials,Semantic Web,Knowledge Graph,Trust Infrastructure,Web3,DID Web,Machine Readable Identity">
 
-<meta name="robots" content="index, follow">
+    <meta name="author" content="Nicholas Van-Orton">
+    <meta name="creator" content="NEXARIUM">
+    <meta name="publisher" content="NEXARIUM">
 
-<link rel="canonical" href="https://identity.nvo987.us/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 
-<link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://identity.nvo987.us/">
 
-<meta property="og:title" content="NEXARIUM Identity Infrastructure Node">
+    <!-- Language -->
+    <meta http-equiv="content-language" content="en">
+    <meta name="language" content="English">
 
-<meta property="og:description"
-      content="Official decentralized identity infrastructure of the NEXARIUM ecosystem.">
+    <!-- Theme -->
+    <meta name="theme-color" content="#0b0f19">
+    <meta name="color-scheme" content="dark">
 
-<meta property="og:type" content="website">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<meta property="og:url"
-      content="https://identity.nvo987.us">
+    <!-- DNS / Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
-<meta property="og:site_name"
-      content="NEXARIUM">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<meta name="twitter:card"
-      content="summary_large_image">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+          rel="stylesheet">
 
-<meta name="twitter:title"
-      content="NEXARIUM Identity Infrastructure Node">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
 
-<meta name="twitter:description"
-      content="Decentralized identity, verification and semantic infrastructure for the NEXARIUM ecosystem.">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NEXARIUM Identity Infrastructure Node">
+    <meta property="og:description" content="Official decentralized identity infrastructure of the NEXARIUM ecosystem. DID resolution, verification services, semantic metadata and trust infrastructure.">
+    <meta property="og:url" content="https://identity.nvo987.us/">
+    <meta property="og:site_name" content="NEXARIUM">
+    <meta property="og:locale" content="en_US">
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
+    <!-- Replace with actual image -->
+    <meta property="og:image" content="https://identity.nvo987.us/assets/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NEXARIUM Identity Infrastructure Node">
+    <meta name="twitter:description" content="Decentralized identity, verification services and semantic trust infrastructure for the NEXARIUM ecosystem.">
+    <meta name="twitter:image" content="https://identity.nvo987.us/assets/og-cover.jpg">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap"
-      rel="stylesheet">
+    <!-- Security -->
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
-<link rel="stylesheet"
-      href="style.css">
+    <!-- Verification -->
+    <meta name="did" content="did:web:identity.nvo987.us">
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Person",
-  "name":"Nicholas Van-Orton",
-  "url":"https://identity.nvo987.us",
-  "identifier":"did:web:identity.nvo987.us",
-  "memberOf":{
-    "@type":"Organization",
-    "name":"NEXARIUM"
-  },
-  "sameAs":[
-    "https://nexarium.us",
-    "https://orcid.org/0009-0007-4628-1871",
-    "https://www.wikidata.org/wiki/Q137675227"
-  ]
-}
-</script>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@graph":[
+
+        {
+          "@type":"Organization",
+          "name":"NEXARIUM",
+          "url":"https://nexarium.us",
+          "identifier":"did:web:identity.nvo987.us"
+        },
+
+        {
+          "@type":"Person",
+          "name":"Nicholas Van-Orton",
+          "url":"https://identity.nvo987.us",
+          "identifier":"did:web:identity.nvo987.us",
+          "memberOf":{
+            "@type":"Organization",
+            "name":"NEXARIUM"
+          },
+          "sameAs":[
+            "https://nexarium.us",
+            "https://orcid.org/0009-0007-4628-1871",
+            "https://www.wikidata.org/wiki/Q137675227"
+          ]
+        },
+
+        {
+          "@type":"WebSite",
+          "name":"NEXARIUM Identity Infrastructure Node",
+          "url":"https://identity.nvo987.us/"
+        },
+
+        {
+          "@type":"WebPage",
+          "name":"NEXARIUM Identity Infrastructure Node",
+          "url":"https://identity.nvo987.us/",
+          "description":"Official decentralized identity infrastructure node of the NEXARIUM ecosystem."
+        }
+      ]
+    }
+    </script>
 
 </head>
+
 <body>
 
 <div class="premium-bar">
