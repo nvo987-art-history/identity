@@ -24,7 +24,7 @@
     "https://web3.internet.in"
 
   ],
-	
+  	
   "softwareHeritage": [
   "swh:1:dir:e5208c1ff90692048e837724d12f7c1ef755621f",
   "swh:1:dir:2a61098512d935d5dfb2f18f53a42df981fe6b72",
@@ -59,14 +59,15 @@
 	"https://github.com/nvo987-art-history",
 	"https://gitlab.com/nvo987-art-history"
 	
-	], 
-
+	],
+	
+	"web3Identities": [
     "did:key:z6MkmmbpWcJvqcPLfLryetykAH3Rb6VcCymCPpuaJgNFSvyo",
     "did:pkh:eip155:1:0x4778d725393c2cc4fdd033c8f8a14ac4a8034414",
     "did:ethr:mainnet:0x4778d725393c2cc4fdd033c8f8a14ac4a8034414", 
 	"did:pkh:eip155:1:0xca58fbc898c9467a91e60471f307ec3c1e319aad",
 	"did:ethr:mainnet:0xca58fbc898c9467a91e60471f307ec3c1e319aad" 
-  ],
+	 ],
 
   "verificationMethod": [
   {
