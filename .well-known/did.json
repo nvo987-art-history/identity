@@ -21,6 +21,7 @@
     "https://did.ai.in",
     "https://kellycode.us",
     "https://identity.ai.in",
+	"https://nvo987.in",
     "https://web3.internet.in"
 
   ],
@@ -202,6 +203,16 @@
       "id": "#sha3",
       "type": "CryptographyService",
       "serviceEndpoint": "https://sha3.nvo987.us"
+    },
+	{
+      "id": "#sha",
+      "type": "CryptographyService",
+      "serviceEndpoint": "https://sha.nvo987.us"
+    },
+	{
+      "id": "#sha512",
+      "type": "CryptographyService",
+      "serviceEndpoint": "https://sha512.nvo987.us"
     },
     {
       "id": "#fediverse",
