@@ -1,0 +1,16 @@
+NEXARIUM Identity Infrastructure Node
+
+Homepage:
+https://identity.nvo987.us
+
+Organization:
+NEXARIUM
+
+Ecosystem:
+https://nexarium.us
+
+DID:
+did:web:identity.nvo987.us
+
+Purpose:
+Decentralized identity infrastructure, semantic metadata and trust services.
