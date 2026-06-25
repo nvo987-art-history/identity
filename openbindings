@@ -1,0 +1,23 @@
+version: 1.0
+
+identity:
+  did: did:web:identity.nvo987.us
+
+owner:
+  name: Nicholas Van-Orton
+
+organization:
+  name: NEXARIUM
+  website: https://nexarium.us
+
+services:
+  did_document:
+    endpoint: https://identity.nvo987.us/.well-known/did.json
+
+  website:
+    endpoint: https://identity.nvo987.us
+
+metadata:
+  type: identity-infrastructure-node
+  semantic_web: true
+  machine_readable: true
