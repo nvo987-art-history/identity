@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "network": "NEXARIUM",
+  "trustAnchor": {
+    "did": "did:web:identity.nvo987.us",
+    "url": "https://identity.nvo987.us",
+    "verificationMethod": "DID Web"
+  },
+  "relationships": [
+    {
+      "source": "https://identity.nvo987.us",
+      "target": "https://nexarium.us",
+      "relation": "memberOf"
+    },
+    {
+      "source": "https://identity.nvo987.us",
+      "target": "https://nvo987.us",
+      "relation": "maintainer"
+    },
+    {
+      "source": "https://nexarium.us",
+      "target": "https://identity.nvo987.us",
+      "relation": "identityProvider"
+    }
+  ],
+  "integrity": {
+    "semanticWeb": true,
+    "machineReadable": true,
+    "decentralizedIdentity": true
+  }
+}
