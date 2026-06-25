@@ -1,0 +1,21 @@
+/* TEAM */
+
+Organization: NEXARIUM
+
+Maintainer:
+Nicholas Van-Orton
+
+Website:
+https://nexarium.us
+
+Identity Node:
+https://identity.nvo987.us
+
+/* SITE */
+
+Standards:
+HTML5
+Schema.org
+DID Web
+FOAF
+Semantic Web
