@@ -1,0 +1,11 @@
+NEXARIUM
+https://nexarium.us
+
+Identity Infrastructure
+https://identity.nvo987.us
+
+NVO987
+https://nvo987.us
+
+DID Document
+https://identity.nvo987.us/.well-known/did.json
