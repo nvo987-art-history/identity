@@ -1,0 +1,16 @@
+# NEXARIUM Identity Infrastructure Node
+
+Purpose:
+Decentralized identity infrastructure.
+
+Primary DID:
+did:web:identity.nvo987.us
+
+Website:
+https://identity.nvo987.us
+
+Organization:
+NEXARIUM
+
+Canonical:
+https://identity.nvo987.us
