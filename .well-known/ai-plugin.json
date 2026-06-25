@@ -7,11 +7,7 @@
   "auth": {
     "type": "none"
   },
-  "api": {
-    "type": "openapi",
-    "url": "https://identity.nvo987.us/openapi.json"
-  },
   "logo_url": "https://identity.nvo987.us/favicon.ico",
   "contact_email": "contact@nexarium.us",
   "legal_info_url": "https://identity.nvo987.us"
-}
+} 
