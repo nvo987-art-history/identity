@@ -1,0 +1,10 @@
+Trust Anchor
+
+Organization: NEXARIUM
+Website: https://nexarium.us
+
+Identity Node:
+https://identity.nvo987.us
+
+DID:
+did:web:identity.nvo987.us
