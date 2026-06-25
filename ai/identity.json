@@ -1,0 +1,6 @@
+{
+  "name": "NEXARIUM Identity Infrastructure Node",
+  "url": "https://identity.nvo987.us",
+  "did": "did:web:identity.nvo987.us",
+  "organization": "NEXARIUM"
+}
