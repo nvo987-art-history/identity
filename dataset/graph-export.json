@@ -1,32 +1,39 @@
 {
   "version": "1.0",
-  "generatedBy": "NEXARIUM Identity Infrastructure Node",
+  "node": "https://identity.nvo987.us",
+  "did": "did:web:identity.nvo987.us",
   "graph": {
     "nodes": [
       {
+        "id": "https://identity.nvo987.us",
+        "type": "IdentityInfrastructureNode"
+      },
+      {
         "id": "did:web:identity.nvo987.us",
-        "type": "IdentityNode",
-        "label": "NEXARIUM Identity Infrastructure"
+        "type": "DecentralizedIdentifier"
       },
       {
         "id": "https://nexarium.us",
-        "type": "Organization",
-        "label": "NEXARIUM"
+        "type": "Organization"
       },
       {
         "id": "https://nvo987.us",
-        "type": "PersonSite",
-        "label": "NVO987"
+        "type": "Maintainer"
       }
     ],
     "edges": [
       {
-        "source": "did:web:identity.nvo987.us",
+        "source": "https://identity.nvo987.us",
+        "target": "did:web:identity.nvo987.us",
+        "relation": "publishes"
+      },
+      {
+        "source": "https://identity.nvo987.us",
         "target": "https://nexarium.us",
         "relation": "memberOf"
       },
       {
-        "source": "did:web:identity.nvo987.us",
+        "source": "https://identity.nvo987.us",
         "target": "https://nvo987.us",
         "relation": "maintainedBy"
       }
