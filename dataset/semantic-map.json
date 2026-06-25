@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "did": "https://www.w3.org/ns/did#",
+    "schema": "https://schema.org/"
+  },
+  "identity": {
+    "did": "did:web:identity.nvo987.us",
+    "homepage": "https://identity.nvo987.us"
+  },
+  "organization": {
+    "name": "NEXARIUM",
+    "url": "https://nexarium.us"
+  },
+  "maintainer": {
+    "name": "Nicholas Van-Orton",
+    "website": "https://nvo987.us"
+  },
+  "relationships": [
+    {
+      "subject": "did:web:identity.nvo987.us",
+      "predicate": "schema:memberOf",
+      "object": "https://nexarium.us"
+    },
+    {
+      "subject": "did:web:identity.nvo987.us",
+      "predicate": "schema:creator",
+      "object": "https://nvo987.us"
+    }
+  ]
+}
