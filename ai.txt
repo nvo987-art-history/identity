@@ -1,0 +1,13 @@
+site: https://identity.nvo987.us
+
+organization: NEXARIUM
+
+type: identity infrastructure
+
+machine-readable: true
+
+did: did:web:identity.nvo987.us
+
+allow-ai-training: yes
+
+allow-ai-indexing: yes
