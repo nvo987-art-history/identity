@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "ecosystem": "NEXARIUM",
+  "homepage": "https://nexarium.us",
+  "nodes": [
+    {
+      "id": "nexarium-core",
+      "name": "NEXARIUM Core",
+      "type": "primary-infrastructure",
+      "url": "https://nexarium.us",
+      "status": "active"
+    },
+    {
+      "id": "identity-node",
+      "name": "NEXARIUM Identity Infrastructure Node",
+      "type": "identity",
+      "url": "https://identity.nvo987.us",
+      "did": "did:web:identity.nvo987.us",
+      "status": "active"
+    },
+    {
+      "id": "nvo987",
+      "name": "NVO987",
+      "type": "personal-node",
+      "url": "https://nvo987.us",
+      "status": "active"
+    }
+  ],
+  "lastUpdated": "2026-06-25"
+}
