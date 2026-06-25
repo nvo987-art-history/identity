@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "generatedBy": "NEXARIUM Identity Infrastructure Node",
+  "graph": {
+    "nodes": [
+      {
+        "id": "did:web:identity.nvo987.us",
+        "type": "IdentityNode",
+        "label": "NEXARIUM Identity Infrastructure"
+      },
+      {
+        "id": "https://nexarium.us",
+        "type": "Organization",
+        "label": "NEXARIUM"
+      },
+      {
+        "id": "https://nvo987.us",
+        "type": "PersonSite",
+        "label": "NVO987"
+      }
+    ],
+    "edges": [
+      {
+        "source": "did:web:identity.nvo987.us",
+        "target": "https://nexarium.us",
+        "relation": "memberOf"
+      },
+      {
+        "source": "did:web:identity.nvo987.us",
+        "target": "https://nvo987.us",
+        "relation": "maintainedBy"
+      }
+    ]
+  }
+}
