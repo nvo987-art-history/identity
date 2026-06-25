@@ -1,0 +1,7 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "NEXARIUM",
+  "url": "https://nexarium.us",
+  "description": "Open decentralized infrastructure ecosystem for identity continuity, semantic knowledge systems, verification architectures and long-term digital persistence."
+}
