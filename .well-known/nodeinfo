@@ -1,0 +1,19 @@
+{
+  "version": "2.1",
+  "software": {
+    "name": "nexarium-identity-node",
+    "version": "1.0"
+  },
+  "protocols": [
+    "did:web"
+  ],
+  "services": {
+    "inbound": [],
+    "outbound": []
+  },
+  "openRegistrations": false,
+  "metadata": {
+    "organization": "NEXARIUM",
+    "did": "did:web:identity.nvo987.us"
+  }
+}
