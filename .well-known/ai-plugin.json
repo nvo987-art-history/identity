@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "NEXARIUM Identity Node",
+  "name_for_model": "nexarium_identity",
+  "description_for_human": "Identity infrastructure and DID services.",
+  "description_for_model": "Provides decentralized identity metadata and trust information.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://identity.nvo987.us/openapi.json"
+  },
+  "logo_url": "https://identity.nvo987.us/favicon.ico",
+  "contact_email": "contact@nexarium.us",
+  "legal_info_url": "https://identity.nvo987.us"
+}
