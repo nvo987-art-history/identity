@@ -1,0 +1,9 @@
+{
+  "name": "NEXARIUM Identity Infrastructure Node",
+  "type": "identity-infrastructure",
+  "homepage": "https://identity.nvo987.us",
+  "ecosystem": "https://nexarium.us",
+  "did": "did:web:identity.nvo987.us",
+  "organization": "NEXARIUM",
+  "maintainer": "Nicholas Van-Orton"
+}
