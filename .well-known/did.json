@@ -147,6 +147,11 @@
       "serviceEndpoint": "https://lab.nvo987.us"
     },
     {
+    "id": "#kellycode",
+    "type": "ResearchProject",
+    "serviceEndpoint": "https://kellycode.us/kellycode.jsonld"
+    }, 
+    {
       "id": "#journal",
       "type": "JournalService",
       "serviceEndpoint": "https://journal.nvo987.us"
