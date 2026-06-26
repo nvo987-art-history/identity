@@ -150,7 +150,12 @@
     "id": "#kellycode",
     "type": "ResearchProject",
     "serviceEndpoint": "https://kellycode.us/kellycode.jsonld"
-    }, 
+    },
+	{
+    "id": "#sonia-delaunay-color-research",
+    "type": "ResearchProject",
+    "serviceEndpoint": "https://nexarium.us/color-as-a-generative-principle-in-the-work-of-sonia-delaunay.jsonld"
+	},
     {
       "id": "#journal",
       "type": "JournalService",
