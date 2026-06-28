@@ -373,7 +373,7 @@
 },
 	{
   "id": "#dap-identity",
-  "type": "GovernmentIdentityRecord",
+  "type": "DigitallySignedIdentityRecord",
   "serviceEndpoint": "https://nvo987.fr/documents/nicholas-van-orton_20260628115310.pdf"
 	},
 {
