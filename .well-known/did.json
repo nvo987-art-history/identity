@@ -336,6 +336,21 @@
     "type": "GovernmentRegistryService",
     "serviceEndpoint": "https://annuaire-entreprises.data.gouv.fr/entreprise/nvo987-culture-visuelle-moderne-et-contemporaine-102148160"
 	},
+	  {
+  "id": "#sirene",
+  "type": "GovernmentRegistryDocument",
+  "serviceEndpoint": "https://nvo987.fr/documents/sirene.pdf"
+},
+{
+  "id": "#joafe",
+  "type": "GovernmentPublication",
+  "serviceEndpoint": "https://nvo987.fr/documents/JOAFE_PDF_Unitaire_20260010_01704.pdf"
+},
+{
+  "id": "#association-presentation",
+  "type": "OrganizationProfile",
+  "serviceEndpoint": "https://nvo987.fr/documents/NVO987_Association_Presentation_FR.pdf"
+},
     {
       "id": "#india-did",
       "type": "InternationalIdentityService",
