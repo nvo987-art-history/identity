@@ -119,6 +119,29 @@
       "type": "IdentityService",
       "serviceEndpoint": "https://identity.nvo987.us"
   },
+	{
+  "id": "#official-documents",
+  "type": "OfficialDocuments",
+  "serviceEndpoint": {
+    "jurisdiction": "FR",
+    "documents": [
+      {
+        "type": "SIRENECertificate",
+        "url": "https://nvo987.fr/documents/sirene.pdf",
+        "issuer": "INSEE"
+      },
+      {
+        "type": "JOAFEPublication",
+        "url": "https://nvo987.fr/documents/JOAFE_PDF_Unitaire_20260010_01704.pdf",
+        "issuer": "Journal Officiel de la République Française"
+      },
+      {
+        "type": "AssociationPresentation",
+        "url": "https://nvo987.fr/documents/NVO987_Association_Presentation_FR.pdf",
+        "issuer": "NVO987"
+      }
+    ]
+  },
   {
 	 "id": "#nexarium",
 	 "type": "LinkedDomains",
