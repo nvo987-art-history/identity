@@ -166,10 +166,20 @@
 	  "type": "ResearchService",
       "serviceEndpoint": "https://doi.org/10.2139/ssrn.6131506"
 	},
-    {
-      "id": "#newsletter",
-      "type": "PublicationService",
-      "serviceEndpoint": "https://newsletter.nvo987.us"
+	{
+    "id": "#color-paper",
+    "type": "ResearchPublicationService",
+    "serviceEndpoint": "https://doi.org/10.2139/ssrn.6007654"
+   },
+   {
+  "id": "#citation-policy",
+  "type": "ResearchPublicationService",
+  "serviceEndpoint": "https://doi.org/10.2139/ssrn.6131506"
+  },
+  {
+  "id": "#newsletter",
+  "type": "PublicationService",
+  "serviceEndpoint": "https://newsletter.nvo987.us"
     },
     {
       "id": "#archive",
