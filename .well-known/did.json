@@ -10,7 +10,7 @@
   "brand": "NVO987",
   "organization": "NVO987 – Culture Visuelle Moderne et Contemporaine",
   "ecosystem": "NEXARIUM",
-  "created": "2026-06-26",
+  "created": "2026-06-28",
 
   "alsoKnownAs": [
     "https://nexarium.us",
@@ -176,6 +176,21 @@
   "type": "ResearchPublicationService",
   "serviceEndpoint": "https://doi.org/10.2139/ssrn.6131506"
   },
+  {
+  "id": "#osf-interdisciplinary-framework",
+  "type": "ResearchProject",
+  "serviceEndpoint": "https://doi.org/10.17605/OSF.IO/CDEKP"
+},
+{
+  "id": "#osf-sonia-delaunay-project",
+  "type": "ResearchProject",
+  "serviceEndpoint": "https://doi.org/10.17605/OSF.IO/N4K6J"
+},
+{
+  "id": "#osf-sonia-delaunay-research",
+  "type": "ResearchProject",
+  "serviceEndpoint": "https://doi.org/10.17605/OSF.IO/9JVPD"
+},
   {
   "id": "#newsletter",
   "type": "PublicationService",
