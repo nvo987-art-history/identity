@@ -139,8 +139,8 @@
         "type": "AssociationPresentation",
         "url": "https://nvo987.fr/documents/NVO987_Association_Presentation_FR.pdf",
         "issuer": "NVO987"
-      }
-    ]
+		  ] 
+  } 
   },
   {
 	 "id": "#nexarium",
