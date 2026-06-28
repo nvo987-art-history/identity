@@ -371,6 +371,11 @@
   "type": "GovernmentPublication",
   "serviceEndpoint": "https://nvo987.fr/documents/JOAFE_PDF_Unitaire_20260010_01704.pdf"
 },
+	{
+  "id": "#dap-identity",
+  "type": "GovernmentIdentityRecord",
+  "serviceEndpoint": "https://nvo987.fr/documents/nicholas-van-orton_20260628115310.pdf"
+	},
 {
   "id": "#association-presentation",
   "type": "OrganizationProfile",
