@@ -157,6 +157,11 @@
       "type": "PodcastService",
       "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
     },
+	{
+      "id": "#podcast",
+      "type": "PodcastService",
+      "serviceEndpoint": "https://api.substack.com/feed/podcast/5327162/s/239466.rss"
+    },
     {
       "id": "#podcast-youtube",
       "type": "MediaService",
