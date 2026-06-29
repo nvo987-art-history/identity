@@ -306,6 +306,11 @@
       "type": "SocialService",
       "serviceEndpoint": "https://bluesky.nvo987.us"
     },
+	  {
+     "id": "#isbn",
+     "type": "BookMetadataService",
+     "serviceEndpoint": "https://isbn.nvo987.us"
+	},
     {
       "id": "#musees",
       "type": "MuseumService",
