@@ -157,21 +157,19 @@
     "serviceEndpoint": "https://nexarium.us/color-as-a-generative-principle-in-the-work-of-sonia-delaunay.jsonld"
 	},
 	{
-  "id": "#book-pop-culture-1980s",
-  "type": "BookService",
-  "serviceEndpoint": {
-    "url": "https://nvo987.substack.com/p/nvo987-book",
+    "id": "#book-pop-culture-1980s",
+    "type": "BookService",
+    "serviceEndpoint": "https://nvo987.substack.com/p/nvo987-book",
     "isbn": "978-615-02-4509-6",
     "title": "The Pop Culture of the 1980s"
-},
-{
-  "id": "#book-sonia-delaunay",
-  "type": "BookService",
-  "serviceEndpoint": {
-    "url": "https://nvo987.substack.com/p/nvo987-book",
+    },
+    {
+    "id": "#book-sonia-delaunay",
+    "type": "BookService",
+    "serviceEndpoint": "https://nvo987.substack.com/p/nvo987-book",
     "isbn": "978-615-02-6092-1",
     "title": "Color as a Generative Principle in the Work of Sonia Delaunay"
-  },
+    },
     {
       "id": "#journal",
       "type": "JournalService",
