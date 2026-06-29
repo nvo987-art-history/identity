@@ -151,7 +151,17 @@
       "id": "#github",
       "type": "SoftwareRepositoryService",
       "serviceEndpoint": "https://github.com/nvo987"
-	  }, 
+	},
+	{
+      "id": "#podcast",
+      "type": "PodcastService",
+      "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
+    },
+    {
+      "id": "#podcast-youtube",
+      "type": "MediaService",
+      "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
+    }, 
     {
     "id": "#kellycode",
     "type": "ResearchProject",
