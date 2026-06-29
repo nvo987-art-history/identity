@@ -146,6 +146,11 @@
       "type": "ResearchService",
       "serviceEndpoint": "https://lab.nvo987.us"
     },
+	{
+      "id": "#github",
+      "type": "SoftwareRepositoryService",
+      "serviceEndpoint": "https://github.com/nvo987"
+	  }, 
     {
     "id": "#kellycode",
     "type": "ResearchProject",
