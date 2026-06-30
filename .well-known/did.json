@@ -387,6 +387,11 @@
     "serviceEndpoint": "https://identity.nvo987.us/dcat.json"
 	},
 	{
+    "id": "#credentials",
+    "type": "CredentialService",
+    "serviceEndpoint": "https://identity.nvo987.us/credentials/"
+	},
+	{
     "id": "#wikidata-publication",
     "type": "PublicationService",
     "serviceEndpoint": "https://www.wikidata.org/wiki/Q137674546"
