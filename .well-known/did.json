@@ -196,7 +196,7 @@
     "id": "#issn",
     "type": "SerialPublicationService",
     "serviceEndpoint": "https://issn.nvo987.us"
-	}
+	}, 
     {
       "id": "#journal",
       "type": "JournalService",
