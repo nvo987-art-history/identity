@@ -272,11 +272,6 @@
       "serviceEndpoint": "https://sha256.nvo987.us"
     },
     {
-    "id": "#sha",
-    "type": "CryptographyService",
-    "serviceEndpoint": "https://sha.nvo987.us/"
-    },
-    {
     "id": "#sha512",
     "type": "CryptographyService",
     "serviceEndpoint": "https://sha512.nvo987.us/"
@@ -316,6 +311,11 @@
       "type": "CultureService",
       "serviceEndpoint": "https://art.nvo987.us"
     },
+	{
+      "id": "#culture-visuelle",
+      "type": "EducationService",
+      "serviceEndpoint": "https://culturevisuelle.nvo987.fr"
+	},
     {
       "id": "#bluesky",
       "type": "SocialService",
