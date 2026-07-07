@@ -164,12 +164,12 @@
       "serviceEndpoint": "https://github.com/nvo987"
 	},
 	{
-      "id": "#podcast",
+      "id": "#podcast-youtube",
       "type": "PodcastService",
       "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
     },
 	{
-      "id": "#podcast",
+      "id": "#podcast-rss",
       "type": "PodcastService",
       "serviceEndpoint": "https://api.substack.com/feed/podcast/5327162/s/239466.rss"
     },
@@ -306,11 +306,6 @@
       "id": "#sha",
       "type": "CryptographyService",
       "serviceEndpoint": "https://sha.nvo987.us"
-    },
-	{
-      "id": "#sha512",
-      "type": "CryptographyService",
-      "serviceEndpoint": "https://sha512.nvo987.us"
     },
     {
       "id": "#fediverse",
