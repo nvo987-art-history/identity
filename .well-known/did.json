@@ -191,6 +191,11 @@
     "isbn": "978-615-02-6092-1",
     "title": "Color as a Generative Principle in the Work of Sonia Delaunay"
     },
+	{
+    "id": "#issn",
+    "type": "SerialPublicationService",
+    "serviceEndpoint": "https://issn.nvo987.us"
+	}
     {
       "id": "#journal",
       "type": "JournalService",
