@@ -21,7 +21,7 @@
   "country": "France",
 
   "created": "2026-06-28",
-  "updated": "2026-07-07",
+  "updated": "2026-07-13",
 
   "alsoKnownAs": [
     "https://nexarium.us",
@@ -168,16 +168,19 @@
       "type": "PodcastService",
       "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
     },
-	{
-      "id": "#podcast-rss",
-      "type": "PodcastService",
-      "serviceEndpoint": "https://api.substack.com/feed/podcast/5327162/s/239466.rss"
-    },
     {
       "id": "#podcast-youtube",
       "type": "MediaService",
       "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
-    }, 
+    },
+	{
+      "id": "#book-sonia-delaunay",
+      "type": "BookService",
+      "serviceEndpoint": "https://book.nvo987.us",
+      "isbn": "978-615-83133-1-5",
+      "title": "A szín mint generatív elv Sonia Delaunay életművében",
+      "olid": "OL16511669A"
+	}, 
     {
     "id": "#kellycode",
     "type": "ResearchProject",
