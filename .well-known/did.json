@@ -226,6 +226,12 @@
       "serviceEndpoint": "https://doi.org/10.2139/ssrn.6131506"
 	},
 	{
+      "id": "#openlibrary",
+      "type": "OpenLibraryService",
+      "serviceEndpoint": "https://openlibrary.org/books/OL16511669A",
+      "olid": "OL16511669A"
+    }, 
+	{
     "id": "#color-paper",
     "type": "ResearchPublicationService",
     "serviceEndpoint": "https://doi.org/10.2139/ssrn.6007654"
@@ -239,8 +245,8 @@
   "id": "#osf-interdisciplinary-framework",
   "type": "ResearchProject",
   "serviceEndpoint": "https://doi.org/10.17605/OSF.IO/CDEKP"
-},
-{
+  },
+  {
   "id": "#osf-sonia-delaunay-project",
   "type": "ResearchProject",
   "serviceEndpoint": "https://doi.org/10.17605/OSF.IO/N4K6J"
