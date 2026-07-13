@@ -153,11 +153,6 @@
       "type": "PersonService",
       "serviceEndpoint": "https://person.nvo987.us"
     },
-	{
-    "id": "#book-sonia-delaunay-doi",
-    "type": "ResearchPublicationService",
-    "serviceEndpoint": "https://doi.org/10.17613/y22fc-g0f98"
-	},
     {
       "id": "#lab",
       "type": "ResearchService",
