@@ -420,6 +420,11 @@
       "serviceEndpoint": "https://valoriax.nvo987.fr"
     },
 	{
+      "id": "#book-sonia-delaunay-doi",
+      "type": "ResearchPublicationService",
+      "serviceEndpoint": "https://doi.org/10.17613/y22fc-g0f98"
+	}, 
+	{
     "id": "#french-registry",
     "type": "GovernmentRegistryService",
     "serviceEndpoint": "https://annuaire-entreprises.data.gouv.fr/entreprise/nvo987-culture-visuelle-moderne-et-contemporaine-102148160"
