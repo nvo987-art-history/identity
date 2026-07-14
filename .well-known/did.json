@@ -164,6 +164,11 @@
       "serviceEndpoint": "https://github.com/nvo987"
 	},
 	{
+      "id": "#academia",
+      "type": "AcademiaService",
+      "serviceEndpoint": "https://independent.academia.edu/nvo987"
+    },
+	{
       "id": "#podcast-youtube",
       "type": "PodcastService",
       "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
