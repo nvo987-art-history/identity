@@ -181,7 +181,7 @@
       "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
     },
 	{
-      "id": "#book-sonia-delaunay",
+      "id": "#book-sonia-delaunay-hu",
       "type": "BookService",
       "serviceEndpoint": "https://book.nvo987.us",
       "isbn": "978-615-83133-1-5",
@@ -199,7 +199,7 @@
     "serviceEndpoint": "https://nexarium.us/color-as-a-generative-principle-in-the-work-of-sonia-delaunay.jsonld"
 	},
     {
-    "id": "#book-sonia-delaunay",
+    "id": "#book-sonia-delaunay-en",
     "type": "BookService",
     "serviceEndpoint": "https://book.nvo987.us",
     "isbn": "978-615-02-6092-1",
