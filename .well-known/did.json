@@ -175,7 +175,12 @@
       "type": "PublisherService",
       "name": "Nicholas Van-Orton",
       "serviceEndpoint": "https://www.wikidata.org/wiki/Q140529224"
-	} 
+	},
+	{
+     "id": "#wikidata-book-sonia-delaunay-hu",
+     "type": "LinkedDataService",
+     "serviceEndpoint": "https://www.wikidata.org/entity/Q140528834"
+    }, 
 	{
       "id": "#podcast-youtube",
       "type": "PodcastService",
