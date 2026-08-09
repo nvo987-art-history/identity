@@ -94,20 +94,24 @@
     <meta name="did" content="did:web:identity.nvo987.us">
 
     <!-- Structured Data -->
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Person",
-          "@id": "https://nvo987.us#person",
-          "name": "Nicholas Van-Orton",
-          "jobTitle": "Independent researcher, Founder of NVO987 Association",
-          "url": "https://nvo987.us",
-           "identifier": {
-           "@type": "PropertyValue",
-           "propertyID": "DID Document",
-            "value": "https://identity.nvo987.us/.well-known/did.json"
+       "@type": "Person",
+       "@id": "https://nvo987.us#person",
+       "name": "Nicholas Van-Orton",
+       "jobTitle": "Independent researcher, founder of NVO987 Association",
+       "url": "https://nvo987.us",
+       "memberOf": {
+       "@id": "https://nvo987.fr#organization"
+       },
+       "identifier": {
+       "@type": "PropertyValue",
+       "propertyID": "DID Document",
+        "value": "https://identity.nvo987.us/.well-known/did.json"
            }, 
             "sameAs": [
             "https://nexarium.us",
@@ -166,26 +170,31 @@
       "https://www.reddit.com/user/Grand_Service448/",
       "https://t.me/nvo987",
       "https://wa.me/36702674440", 
-	         "https://gitlab.com/nvo987-art-history"
+	   "https://gitlab.com/nvo987-art-history"
           ]
         },
         {
-          "@type": "Organization",
-          "@id": "https://nvo987.fr#organization",
-          "name": "NVO987",
-          "alternateName": "NVO987-Culture Visuelle Moderne et Contemporaine",
-          "url": "https://nvo987.fr",
-          "foundingDate": "2026",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Paris",
-            "addressCountry": "FR"
-          },
-          "founder": {
-            "@id": "https://nvo987.us"
-           } 
-        }, 
-          {
+  "@type": "Organization",
+  "@id": "https://nvo987.fr#organization",
+  "name": "NVO987 – Culture Visuelle Moderne et Contemporaine Association",
+  "alternateName": [
+    "NVO987 Association",
+    "NVO987 – Culture Visuelle Moderne et Contemporaine"
+  ],
+  "url": "https://nvo987.fr",
+  "foundingDate": "2026",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "44 Rue Pasquier",
+    "postalCode": "75008",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "founder": {
+    "@id": "https://nvo987.us#person"
+  }
+},
+        {
       "@type": "Book",
       "@id": "https://delaunaybook.us/#book-hu-print",
       "name": "A szín mint generatív elv Sonia Delaunay életművében",
@@ -339,6 +348,8 @@
       "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.2139/ssrn.6007654",
       "name": "Color as a Generative Principle in the Work of Sonia Delaunay",
+      "headline": "Color as a Generative Principle in the Work of Sonia Delaunay",
+      "image": "https://delaunaybook.us/images/image.png",
       "url": "https://doi.org/10.2139/ssrn.6007654",
       "author": {
         "@id": "https://nvo987.us#person"
@@ -360,6 +371,8 @@
       "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.2139/ssrn.6131506",
       "name": "Interdisciplinary Foundation Edition",
+      "headline": "Interdisciplinary Foundation Edition",
+      "image": "https://delaunaybook.us/images/image.png",
       "url": "https://doi.org/10.2139/ssrn.6131506",
       "author": {
         "@id": "https://nvo987.us#person"
@@ -395,7 +408,7 @@
     }
   ]
 }
-</script>
+	</script>
 
 </head>
 
