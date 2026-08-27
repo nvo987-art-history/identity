@@ -363,7 +363,7 @@
     "serviceEndpoint": "https://unesco-fr.nvo987.eu",
     "issn": "3131-3213",
     "title": "Sites UNESCO en France"
-	} 
+	},
     {
       "id": "#civilizational",
       "type": "CivilizationalResearchService",
