@@ -186,7 +186,7 @@
 	{
      "id": "#wikidata-book-sonia-delaunay-hu",
      "type": "LinkedDataService",
-     "serviceEndpoint": "https://www.wikidata.org/entity/Q140528834"
+     "serviceEndpoint": "https://www.wikidata.org/wiki/Q140528834"
     }, 
 	{
       "id": "#podcast-youtube",
@@ -211,28 +211,13 @@
     "type": "ResearchProject",
     "serviceEndpoint": "https://kellycode.us/kellycode.jsonld"
     },
-	{
-    "id": "#sonia-delaunay-color-research",
-    "type": "ResearchProject",
-    "serviceEndpoint": "https://nexarium.us/color-as-a-generative-principle-in-the-work-of-sonia-delaunay.jsonld"
-	},
     {
     "id": "#book-sonia-delaunay-en",
     "type": "BookService",
-    "serviceEndpoint": "https://book.nvo987.us",
+    "serviceEndpoint": "https://books.nvo987.us",
     "isbn": "978-615-02-6092-1",
     "title": "Color as a Generative Principle in the Work of Sonia Delaunay"
-    },
-	{
-    "id": "#issn",
-    "type": "SerialPublicationService",
-    "serviceEndpoint": "https://issn.nvo987.us"
-	}, 
-    {
-      "id": "#journal",
-      "type": "JournalService",
-      "serviceEndpoint": "https://journal.nvo987.us"
-    },
+    }, 
 	{
     "id": "#doi",
     "type": "ResearchPublicationService",
@@ -294,11 +279,6 @@
     "type": "ResearchPublicationService",
     "serviceEndpoint": "https://archive.org/details/v-9-1-color-as-a-generative-principle-in-the-work-of-sonia-delaunay"
 	},
-    {
-      "id": "#web3",
-      "type": "Web3Service",
-      "serviceEndpoint": "https://web3.nvo987.us"
-    },
     {
       "id": "#ipfs",
       "type": "IPFSService",
@@ -378,11 +358,6 @@
       "id": "#mcp",
       "type": "MachineCoordinationService",
       "serviceEndpoint": "https://mcp.nexarium.us"
-    },
-    {
-      "id": "#nexarium-web3",
-      "type": "BlockchainService",
-      "serviceEndpoint": "https://web3.nexarium.us"
     },
     {
       "id": "#studies",
