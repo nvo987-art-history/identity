@@ -249,7 +249,14 @@
   "type": "ResearchProject",
   "serviceEndpoint": "https://doi.org/10.17605/OSF.IO/N4K6J"
 },
-{
+  {
+  "id": "#osf-color-pedagogy",
+  "type": "ResearchProject",
+  "serviceEndpoint": "https://doi.org/10.17605/OSF.IO/WZB5A",
+  "doi": "10.17605/OSF.IO/WZB5A",
+  "title": "The Role of Color in Pedagogical And Learning Environments And Children’s Perception"
+  },
+  {
   "id": "#osf-sonia-delaunay-research",
   "type": "ResearchProject",
   "serviceEndpoint": "https://doi.org/10.17605/OSF.IO/9JVPD"
