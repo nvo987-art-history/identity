@@ -390,6 +390,11 @@
      "serviceEndpoint": "https://www.wikidata.org/wiki/Q137675227"
     },
 	{
+     "id": "#wikidata-organization",
+     "type": "IdentityService",
+     "serviceEndpoint": "https://www.wikidata.org/wiki/Q141086020"
+	}, 
+	{
     "id": "#dcat",
     "type": "LinkedResource",
     "serviceEndpoint": "https://identity.nvo987.us/dcat.json"
