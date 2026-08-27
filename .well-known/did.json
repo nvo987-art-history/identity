@@ -235,8 +235,8 @@
 	{
       "id": "#openlibrary",
       "type": "OpenLibraryService",
-      "serviceEndpoint": "https://openlibrary.org/books/OL16511669A",
-      "olid": "OL16511669A"
+      "serviceEndpoint": "https://openlibrary.org/books/OL45758706W",
+      "olid": "OL45758706W" 
     }, 
 	{
     "id": "#color-paper",
