@@ -340,10 +340,12 @@
      "serviceEndpoint": "https://isbn.nvo987.us"
 	},
     {
-      "id": "#musees",
-      "type": "MuseumService",
-      "serviceEndpoint": "https://musees.nvo987.eu"
-    },
+    "id": "#carte-culturelle",
+    "type": "PublicationService",
+    "serviceEndpoint": "https://musees.nvo987.eu",
+    "issn": "3131-3272",
+    "title": "Carte culturelle"
+	}, 
     {
       "id": "#unesco-fr",
       "type": "HeritageService",
