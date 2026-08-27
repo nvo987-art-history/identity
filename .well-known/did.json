@@ -193,11 +193,6 @@
       "type": "PodcastService",
       "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
     },
-    {
-      "id": "#podcast-youtube",
-      "type": "MediaService",
-      "serviceEndpoint": "https://youtube.com/playlist?list=PL-sd6mRfFhjh64LE7uU5uDKLPrR-m0-xC"
-    },
 	{
       "id": "#book-sonia-delaunay-hu",
       "type": "BookService",
